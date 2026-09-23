@@ -18,6 +18,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 안내</summary>
 
 - GPT/Claude/Gemini 계열은 없음. 정확한 전체 목록은 가입 후 계정 limits 페이지에서 확인 필요.
+
 </details>
 - 한도: 공식 문서는 Developer plan 기본 한도만 공개 (예: gpt-oss-120b — 분당 30회 / 일 1,000회 / 분당 8K 토큰 / 일 200K 토큰). 무료 티어 정확한 수치는 미확인 (가입 후 계정 limits 페이지에서 확인 필요).
 - API: OpenAI 호환. 엔드포인트 `https://api.groq.com/openai/v1`
@@ -33,6 +34,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 목록</summary>
 
 - `nvidia/nemotron-nano-3-30b-a3b`, `meta/muse-glimmer-30b`, `deepseek-ai/deepseek-v3.2` 등 카탈로그 100+ 오픈웨이트 모델 (ID는 카탈로그에서 복사 필요 — 예고 없이 변경됨)
+
 </details>
 - 한도: 키당 분당 약 40회 요청 (커뮤니티 기준, 모델·트래픽에 따라 상이). 일일 상한은 rate limit 외 별도 없음(보고 기준).
 - API: OpenAI 호환. 엔드포인트 `https://integrate.api.nvidia.com/v1`, 인증은 `Bearer nvapi-...` 키.
@@ -48,6 +50,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 안내</summary>
 
 - `orcarouter/free` 자동 라우팅 별칭도 제공. 무료 라인업은 로테이션됨 (2026-09-07 이후 `qwen/qwen3.8-27b-free` → GLM-5.3 Flash 교체 보고).
+
 </details>
 - 한도: 무료 모델은 $0/토큰, 요청 속도(request rate) 기준으로 상한 적용 — 구체적 수치 미확인. 무료 "Hacker" 티어는 200+ 모델 카탈로그 접근 포함.
 - API: OpenAI 호환. 엔드포인트 `https://api.orcarouter.ai/v1` (Anthropic·Gemini 호환 엔드포인트도 제공). 키 발급: GitHub 로그인 후 대시보드에서 발급.
@@ -63,6 +66,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 무료 모델 범위 안내</summary>
 
 - Flash 계열만 무료 (Gemini 2.5/3.x Flash, Flash-Lite, Gemma). Pro 모델은 2026년 4월부터 무료 티어 제외 (유료 전용). 한도는 프로젝트·리전별 변동이 큼.
+
 </details>
 - 한도: Flash — 분당 10회 / 일 250~1,500회 (프로젝트·리전별 변동 큼). Flash-Lite — 분당 15회 / 일 1,000~1,500회.
 - API: OpenAI 호환 엔드포인트 제공 — `https://generativelanguage.googleapis.com/v1beta/openai/`
@@ -78,6 +82,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 목록</summary>
 
 - `space-bunny-free`, `mimo-v2.5-free`, `ling-3.0-flash-fin-free`, `nemotron-3.5-lightning-free`, `muse-spark-1.3-contributor-free`, `jev-1.13-free` (공식 문서 가격표 기준 "Free" 행 — 로테이션됨)
+
 </details>
 - 한도: 커뮤니티 보고 기준 일 약 100회 요청 (공식 문서에 무료 티어 수치 미기재 → 미확인)
 - API: OpenAI 호환. 엔드포인트 `https://opencode.ai/zen/v1` (chat/completions, responses, messages, systemone 등 모델별 상이)
@@ -93,6 +98,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 안내</summary>
 
 - Experiment 플랜에서는 전 모델 무료.
+
 </details>
 - 한도: Experiment 티어 — 초당 1회 / 분당 50만 토큰 / 월 10억 토큰
 - API: OpenAI 호환. 엔드포인트 `https://api.mistral.ai/v1`
@@ -108,6 +114,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 안내</summary>
 
 - 모델명 끝에 `:free`가 붙는 모델들 (2026-09-11 기준 약 19개 텍스트 모델 — 로테이션됨)
+
 </details>
 - 한도: 분당 20회 / 일 50회 (누적 $10 이상 구매 시 일 1,000회)
 - API: OpenAI 호환. 엔드포인트 `https://openrouter.ai/api/v1`
@@ -133,6 +140,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 목록</summary>
 
 - `openai/gpt-5-mini`, `openai/gpt-4o`, `meta/Llama-3.3-70B-Instruct`, `xai/grok-3`, `mistral-ai/Mistral-Medium-3`, `cohere/Cohere-Command-A` 등 16개 (목록 변동 가능)
+
 </details>
 - 한도: 무료 티어 기준 분당 약 15회 / 일 150회 / 분당 8K 토큰. 호출당 토큰 제한이 매우 낮음 (입력 약 8K / 출력 약 4K).
 - API: OpenAI 호환. 엔드포인트 `https://models.github.ai/inference`, models scope가 있는 GitHub PAT로 인증.
@@ -148,6 +156,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>더보기 — 전체 무료 모델 목록</summary>
 
 - `mistral-Nemo-Instruct-2407` (turbo 티어 — "turbo"는 익명/무료 토큰 사용자가 쓸 수 있는 빠른 모델 그룹)
+
 </details>
 - 한도: 익명(키 없음) — 초당 1회 / 분당 10회 / 시간당 60회 / 24시간 50만 토큰. 무료 토큰(dash.llm7.io 발급) — 분당 40회 / 시간당 100회 / 24시간 100만 토큰.
 - API: OpenAI 호환. 엔드포인트 `https://api.llm7.io/v1`. 익명 사용 시 api_key에 "unused" 입력.
