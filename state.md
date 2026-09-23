@@ -14,6 +14,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 성능 비교
 
+- [추천 무료 모델 + 프론티어 모델 바로 비교](https://artificialanalysis.ai/models/comparisons/gpt-oss-120b-vs-kimi-k2-5?models=gpt-oss-120b,kimi-k2-5,deepseek-v4-flash,gemini-2-5-flash,gpt-5-6-sol,claude-opus-5-5,gemini-3-8-flash): 클릭하면 바로 비교 화면이 열립니다. 추천 무료 모델 4종(`gpt-oss-120b`, `kimi-k2-5`, `deepseek-v4-flash`, `gemini-2-5-flash`)과 프론티어 모델 3종(GPT-5.6 Sol, Claude Opus 5.5, Gemini 3.8 Flash)을 지능·속도·가격 기준으로 나란히 비교. 프론티어 모델은 버전이 자주 바뀌므로 링크가 오래되면 최신 버전으로 교체가 필요할 수 있음.
 - [Artificial Analysis 모델 비교](https://artificialanalysis.ai/models): 모델 선택기로 여러 모델을 지정해 지능(Intelligence Index)·속도·가격을 차트에서 나란히 비교 가능. 모델별 전용 페이지에서는 유사 모델과의 직접 비교도 제공.
 - 무료 엔드포인트(`:free`, `-free` 등)는 제공자별 별칭이므로, 비교 시에는 기반 모델명(예: DeepSeek V4, Kimi K2)으로 검색.
 
@@ -225,6 +226,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - 비고: Cline은 API 제공자가 아니라 VS Code/JetBrains/CLI용 코딩 에이전트 도구임. Hermes Agent에 연결할 수 없으므로 조사 대상에서 제외. 형님께 "Cline 무료 모델은 Cline 안에서만 쓸 수 있다"고 안내 필요.
 
 ## 변경 이력
+
+- 2026-09-24: 성능 비교에 파라미터 포함 비교 링크 추가 (추천 무료 4종 + 프론티어 3종), 더보기 뒤 빈 줄 추가로 목록 서식 수정.
 
 작성 규칙: `- YYYY-MM-DD: 변경 내용 (출처: URL)` 형식으로 한 줄 요약. 본문은 항상 최신 상태로 유지하고, 바뀐 사실만 여기에 날짜순으로 추가함.
 
