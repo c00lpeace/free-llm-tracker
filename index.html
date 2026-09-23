@@ -170,6 +170,8 @@
         el.innerHTML = marked.parse(md);
         var links = el.querySelectorAll("a[href]");
         for (var i = 0; i < links.length; i++) {
+          var href = links[i].getAttribute("href") || "";
+          if (href.charAt(0) === "#") continue; // 페이지 내 목차 앵커는 현재 탭에서 이동
           links[i].target = "_blank";
           links[i].rel = "noopener";
         }
