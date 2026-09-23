@@ -14,7 +14,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 성능 비교
 
-- [추천 무료 모델 바로 비교](https://artificialanalysis.ai/models/comparisons?compare=gpt-oss-120b,kimi-k2-5,deepseek-v4-flash-vision&models=gpt-oss-120b,kimi-k2-5,deepseek-v4-flash,gemini-2-5-flash): 클릭하면 바로 비교 화면이 열립니다. 상단 표에는 3종(gpt-oss-120b, Kimi K2.5, DeepSeek V4 Flash Vision)이 나란히 표시되고, 하단 지능·가격·속도 차트에는 추천 무료 4종(gpt-oss-120b, Kimi K2.5, DeepSeek V4 Flash, Gemini 2.5 Flash)이 함께 비교됩니다. Gemini 2.5 Flash는 상단 표 선택기에서 고를 수 없어 차트에서만 비교됩니다. 프론티어 모델(GPT·Claude·Gemini 최신)은 페이지에서 직접 추가해 비교할 수 있습니다.
+- [추천 무료 모델 바로 비교](https://artificialanalysis.ai/models/comparisons?compare=kimi-k2-5,gpt-oss-120b,deepseek-v4-flash-vision&models=gpt-oss-120b,kimi-k2-5,deepseek-v4-flash,gemini-2-5-flash): 클릭하면 바로 비교 화면이 열립니다. 상단 표에는 3종(Kimi K2.5, gpt-oss-120b, DeepSeek V4 Flash Vision)이 나란히 표시되고, 하단 지능·가격·속도 차트에는 추천 무료 4종(gpt-oss-120b, Kimi K2.5, DeepSeek V4 Flash, Gemini 2.5 Flash)이 함께 비교됩니다. Gemini 2.5 Flash는 상단 표 선택기에서 고를 수 없어 차트에서만 비교됩니다. 프론티어 모델(GPT·Claude·Gemini 최신)은 페이지에서 직접 추가해 비교할 수 있습니다.
 - [Artificial Analysis 모델 비교](https://artificialanalysis.ai/models): 모델 선택기로 여러 모델을 지정해 지능(Intelligence Index)·속도·가격을 차트에서 나란히 비교 가능. 모델별 전용 페이지에서는 유사 모델과의 직접 비교도 제공.
 - 무료 엔드포인트(`:free`, `-free` 등)는 제공자별 별칭이므로, 비교 시에는 기반 모델명(예: DeepSeek V4, Kimi K2)으로 검색.
 
