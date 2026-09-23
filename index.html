@@ -166,12 +166,18 @@
         return r.text();
       })
       .then(function (md) {
-        document.getElementById("content").innerHTML = marked.parse(md);
+        var el = document.getElementById("content");
+        el.innerHTML = marked.parse(md);
+        var links = el.querySelectorAll("a[href]");
+        for (var i = 0; i < links.length; i++) {
+          links[i].target = "_blank";
+          links[i].rel = "noopener";
+        }
       })
       .catch(function () {
         document.getElementById("content").innerHTML =
           '<p class="error">기준선을 불러오지 못했습니다. ' +
-          '<a href="https://github.com/c00lpeace/free-llm-tracker/blob/main/state.md">' +
+          '<a href="https://github.com/c00lpeace/free-llm-tracker/blob/main/state.md" target="_blank" rel="noopener">' +
           'GitHub에서 직접 확인</a>해 주세요.</p>';
       });
 
@@ -183,7 +189,9 @@
           var d = new Date(c[0].commit.committer.date);
           var s = d.getFullYear() + "-" +
             String(d.getMonth() + 1).padStart(2, "0") + "-" +
-            String(d.getDate()).padStart(2, "0");
+            String(d.getDate()).padStart(2, "0") + " " +
+            String(d.getHours()).padStart(2, "0") + ":" +
+            String(d.getMinutes()).padStart(2, "0");
           document.getElementById("updated").textContent = "마지막 갱신 " + s + " · 매일 06:00/18:00";
         }
       })
