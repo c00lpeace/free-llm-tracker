@@ -22,12 +22,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [NVIDIA NIM](#nvidia-nim)
 - [OrcaRouter](#orcarouter)
 - [Google AI Studio — Gemini](#gemini)
-- [OpenCode Zen](#opencode-zen)
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
 - [Cerebras](#cerebras)
 - [GitHub Models](#github-models)
 - [LLM7.io](#llm7)
+- [OpenCode Zen](#opencode-zen)
+- [Token Harbor](#token-harbor)
+- [Nous Portal (Hermes Agent)](#nous-portal)
 - [Cline](#cline)
 - [변경 이력](#changelog)
 
@@ -64,18 +66,18 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 ## Groq (이전 조사) <span class="prio p-high">높음</span>
 
 - **대표 무료 모델 (사용성 순):**
-  - `gpt-oss-120b` — 한도 문서에 명시된 무료 모델
-  - Llama 3.3 70B 계열
-  - Qwen3 계열
+  - `openai/gpt-oss-120b` — 한도 문서에 명시된 무료 모델
+  - `openai/gpt-oss-20b` — 경량·고속
+  - `qwen/qwen3.8-27b` — 한도 문서에 명시된 무료 모델
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - GPT/Claude/Gemini 계열은 없음.
+  - GPT/Claude/Gemini/Llama 채팅 계열은 무료 테이블에 없음.
   - 전체 무료 모델 목록: [Groq 공식 모델 문서](https://console.groq.com/docs/models) (정확한 목록은 가입 후 계정 limits 페이지에서 확인)
 
   </details>
 
-- **한도**: 공식 문서는 Developer plan 기본 한도만 공개 (예: gpt-oss-120b — 분당 30회 / 일 1,000회 / 분당 8K 토큰 / 일 200K 토큰). 무료 티어 정확한 수치는 미확인 (가입 후 계정 limits 페이지에서 확인 필요).
+- **한도**: 공식 한도 문서의 공개 테이블 기준 — gpt-oss-120b/20b/safeguard-20b, qwen3.8-27b에 30 RPM / 1K RPD / 8K TPM / 200K TPD (2026-09-24 직접 확인). Llama 3.1/3.3 채팅 모델은 2026-08-16 종료 이후 무료 테이블에 없음 (2026-09-17 3자 검증 "free plan에 Llama 없음"). 정확한 무료 티어 수치는 계정 limits 페이지에서 확인 필요.
 - **API**: OpenAI 호환. 엔드포인트 `https://api.groq.com/openai/v1`
 - **도구 호출**: 지원
 - **제한**: 카드 불필요. 학습 활용 안 함 (커뮤니티 보고 기준).
@@ -148,28 +150,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **제한**: 카드 불필요(Google 계정만). 무료 티어 데이터 학습 활용 가능 (과금 활성화 시 opt-out). 한도가 예고 없이 삭감된 전례 있음 (250→20 RPD 보고).
 - **출처**: https://help.apiyi.com/en/google-ai-studio-free-quota-limits-solution-en.html
 - **비고**: 한국어 성능 강점. 단, 한도 변동 리스크가 있어 메인 단독 사용은 주의.
-
-<a id="opencode-zen"></a>
-
-## OpenCode Zen <span class="prio p-mid">중간</span>
-
-- **대표 무료 모델 (사용성 순):**
-  - `nemotron-3-ultra-free` — 플래그십
-  - `mimo-v2.6-flash-free` — 고속
-  - `big-pickle`
-  <details>
-  <summary>더보기 — 전체 무료 모델 목록</summary>
-
-  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨)
-
-  </details>
-
-- **한도**: 커뮤니티 보고 기준 일 약 100회 요청 (공식 문서에 무료 티어 수치 미기재 → 미확인)
-- **API**: OpenAI 호환. 엔드포인트 `https://opencode.ai/zen/v1` (chat/completions, responses, messages, systemone 등 모델별 상이)
-- **도구 호출**: 지원 (3자 검증 기준)
-- **제한**: 공식 문서는 API 키 발급 시 "billing details 추가" 요구. 커뮤니티 보고는 "카드 불필요·무료 티어 존재" — 상충하므로 주의. 무료 모델 데이터가 학습에 활용될 수 있음(커뮤니티 보고). 2026-09-17 이후 일부 보고에서 "무료 티어는 OpenCode 외부에서 403" 발생 — Hermes 등 외부 하네스 사용 가능 여부는 계정/키 종류에 따라 상이할 수 있음(미확인). 무료 preview 키는 약 7일 만료 보고 있음.
-- **출처**: https://opencode.ai/docs/zen/ , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/opencode.md , https://github.com/barestack-labs/quality-free-ai-providers/blob/HEAD/providers/opencode-zen.md
-- **비고**: Hermes 연동 자체는 base_url 변경만으로 가능하나, 무료 티어의 외부 하네스 차단·키 만료 리스크가 있어 폴백용으로만 권장. 유료 모델은 pay-as-you-go.
 
 <a id="mistral"></a>
 
@@ -276,6 +256,73 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/llm7.md , https://github.com/velo4705/awesome-free-byok-models
 - **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 익명 티어의 분당 10회는 에이전트 루프에 빠듯하므로 무료 토큰 발급 권장.
 
+<a id="opencode-zen"></a>
+
+## OpenCode Zen <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (사용성 순, OpenCode 내부 전용):**
+  - `big-pickle`
+  - `nemotron-3-ultra`
+  - `muse-spark-1.3-contributor` — 데이터 제공 대가 할인 행
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-09-18 기준 big-pickle, mimo-v2.5, ling-3.0-flash-fin, nemotron-3-ultra, nemotron-3.5-lightning, muse-spark-1.3-contributor
+
+  </details>
+
+- **한도**: 커뮤니티 보고 기준 일 약 100회 요청 (공식 문서에 무료 티어 수치 미기재 → 미확인)
+- **API**: OpenAI 호환. 엔드포인트 `https://opencode.ai/zen/v1` — 단, **무료 티어는 OpenCode 외부 하네스에서 사용 불가**
+- **도구 호출**: 지원 (3자 검증 기준)
+- **제한**: **2026-09-17부터 무료 티어가 OpenCode가 아닌 모든 클라이언트를 403으로 차단** (`FreeTierError: OpenCode's free tier can only be used from within OpenCode`) — 2026-09-18 OpenCode maintainer가 "무료 티어는 다른 하네스에서 사용 불가" 확인. Hermes 등 외부 하네스에서 무료 티어 사용 불가 확정. 무료 모델 데이터가 학습에 활용될 수 있음.
+- **출처**: https://opencode.ai/docs/zen/ , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/opencode.md , https://github.com/decolua/9router/issues/4103
+- **비고**: Hermes에서 Zen 무료 티어는 쓸 수 없으므로 폴백 후보에서 제외. 유료 Zen 잔액이 있으면 연동 가능.
+
+<a id="token-harbor"></a>
+
+## Token Harbor <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (사용성 순):**
+  - `deepseek-v4.1-flash:free` — 무료 라우트 (대시보드에서 :free 라우트 활성화 필요)
+  - `deepseek-v4-flash:free` — 구형 V4 Flash 무료 라우트
+  - `mimo-v2.5:free`
+  <details>
+  <summary>더보기 — 전체 무료 모델 안내</summary>
+
+  - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time")
+
+  </details>
+
+- **한도**: $0/월 플랜 — 4주 롤링 주기로 갱신되는 무료 할당량 (정확한 양 미공개, 이월 여부는 보고가 상충). 카드 불필요.
+- **API**: OpenAI 호환. 엔드포인트 `https://tokenharbor.ai/v1` (Anthropic 호환 `/v1/messages`도 제공)
+- **도구 호출**: 미확인
+- **제한**: 소규모 게이트웨이 — 중국 본토/홍콩/마카오에서 region_blocked. 무료 요청이 플랫폼에 저장될 수 있음. 할당량·라인업이 예고 없이 바뀔 수 있어 프로토타입/폴백용 권장.
+- **출처**: https://tokenharbor.ai/pricing , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md
+- **비고**: DeepSeek V4.1 Flash(공식 API는 상시 무료 티어 없음)를 무료로 쓸 수 있는 몇 안 되는 경로. 성능 비교 링크의 대표 모델이라 테스트 가치가 있음.
+
+<a id="nous-portal"></a>
+
+## Nous Portal (Hermes Agent) <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (사용성 순):**
+  - `stepfun/step-3.7-flash:free`
+  - `poolside/laguna-s-2.1:free`
+  - `meituan/longcat-2.0:free` — 1M 컨텍스트
+  <details>
+  <summary>더보기 — 전체 무료 모델 안내</summary>
+
+  - 2026-09-18 기준 $0 행 7종: `stepfun/step-3.7-flash:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `inclusionai/ling-3.0-flash-fin:free`, `inclusionai/ling-3.0-flash-sante:free`, `upstage/solar-pro4:free`, `meituan/longcat-2.0:free` (변동 가능)
+  - 카탈로그: [Nous inference API models](https://inference-api.nousresearch.com/v1/models)
+
+  </details>
+
+- **한도**: Free $0 플랜 — "$0 행 모델만, Standard rate limits" (구체 수치 미공개). 카드 불필요.
+- **API**: OpenAI 호환. 엔드포인트 `https://inference-api.nousresearch.com/v1`
+- **도구 호출**: 미확인
+- **제한**: Privacy Mode를 켜지 않으면 추론 페이로드가 학습·개선에 활용될 수 있음. 2026-09-16에 처음 포착된 신규 항목이라 안정성 검증 중 (3자 추적 기준 provisional).
+- **출처**: https://portal.nousresearch.com/ , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/nous-portal.md
+- **비고**: Nous Research(Hermes Agent 제작사)의 공식 추론 포털. 형님이 세팅 중인 Hermes Agent와 같은 생태계라 연동 테스트 가치가 높음.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -295,6 +342,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-09-24: OpenCode Zen 무료 티어, 2026-09-17부터 OpenCode 외부 하네스에서 403 차단 확정 (maintainer 확인) — 우선순위 중간→낮음으로 하향, Hermes 무료 연동 불가로 비고 수정 (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/opencode.md).
+- 2026-09-24: Groq 무료 테이블에서 Llama 채팅 모델 제외 확인 — 대표 모델을 gpt-oss-120b/20b, qwen3.8-27b로 교체 (출처: https://console.groq.com/docs/rate-limits).
+- 2026-09-24: 신규 제공자 2곳 추가 — Token Harbor (DeepSeek V4.1 Flash 무료 라우트, $0 플랜), Nous Portal (Hermes Agent 제작사의 공식 포털, Free $0 플랜) (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md).
 - 2026-09-24: 표시 형식 개선 — 성능 비교 설명을 링크 하위 중첩 접기 블록으로 변경, 변경 이력 접기 블록화, 목차·앵커 이동 기능 추가, 제공자 스펙 라벨 굵게 처리.
 - 2026-09-24: AA 비교 링크를 대표 무료 3종으로 교체 (DeepSeek V4.1 Flash 적용, models 파라미터 제거).
 - 2026-09-24: 성능 비교 섹션에 대표 모델 선정 기준 안내(접기 블록) 추가.
