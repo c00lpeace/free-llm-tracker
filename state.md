@@ -73,7 +73,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
   - GPT/Claude/Gemini/Llama 채팅 계열은 무료 테이블에 없음.
-  - 전체 무료 모델 목록: [Groq 무료 티어 한도표](https://console.groq.com/docs/rate-limits) (정확한 목록은 가입 후 계정 limits 페이지에서 확인)
+  - 전체 무료 모델 목록: [Groq 공식 모델 문서](https://console.groq.com/docs/models) (정확한 목록은 가입 후 계정 limits 페이지에서 확인)
 
   </details>
 
@@ -117,7 +117,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 무료 라인업: [OrcaRouter 요금제](https://www.orcarouter.ai/pricing) — 무료 Hacker 플랜 명시, 라인업은 로테이션됨. `orcarouter/free` 자동 라우팅 별칭도 제공.
+  - 무료 라인업: [OrcaRouter](https://www.orcarouter.ai) — 로테이션됨. `orcarouter/free` 자동 라우팅 별칭도 제공.
 
   </details>
 
@@ -140,7 +140,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 무료 모델 범위 안내</summary>
 
   - Flash 계열만 무료 (Gemini 2.5/3.x Flash, Flash-Lite, Gemma). Pro 모델은 2026년 4월부터 무료 티어 제외 (유료 전용).
-  - 전체 모델 목록: [Gemini API 무료 티어 한도](https://ai.google.dev/gemini-api/docs/rate-limits) — Free 티어 표에서 무료 범위 확인
+  - 전체 모델 목록: [Gemini API 모델 문서](https://ai.google.dev/gemini-api/docs/models)
 
   </details>
 
@@ -163,7 +163,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
   - Experiment 플랜에서는 전 모델 무료.
-  - 전체 모델 목록: [Mistral 모델 문서](https://docs.mistral.ai/getting-started/models/) — 무료는 모델이 아닌 플랜 단위, [Mistral 요금제](https://docs.mistral.ai/getting-started/pricing/)의 Free 플랜 확인
+  - 전체 모델 목록: [Mistral 모델 문서](https://docs.mistral.ai/getting-started/models/)
 
   </details>
 
@@ -222,7 +222,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - `openai/gpt-5-mini`, `openai/gpt-4o`, `meta/Llama-3.3-70B-Instruct`, `xai/grok-3`, `mistral-ai/Mistral-Medium-3`, `cohere/Cohere-Command-A` 등 16개 (목록 변동 가능)
-  - 전체 목록: [GitHub Models 마켓플레이스](https://github.com/marketplace/models) (GitHub 로그인 필요)
+  - 전체 목록: [GitHub Models 마켓플레이스](https://github.com/marketplace/models)
 
   </details>
 
@@ -245,7 +245,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - `mistral-Nemo-Instruct-2407` (turbo 티어 — "turbo"는 익명/무료 토큰 사용자가 쓸 수 있는 빠른 모델 그룹)
-  - 전체 목록: [LLM7.io 모델 카탈로그](https://llm7.io/models)
+  - 전체 목록: [LLM7.io](https://llm7.io)
 
   </details>
 
@@ -312,7 +312,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
   - 2026-09-18 기준 $0 행 7종: `stepfun/step-3.7-flash:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `inclusionai/ling-3.0-flash-fin:free`, `inclusionai/ling-3.0-flash-sante:free`, `upstage/solar-pro4:free`, `meituan/longcat-2.0:free` (변동 가능)
-  - 무료 모델 가격표: [Nous Portal](https://portal.nousresearch.com/) — `$0.00/1M`·`(free)` 표시로 무료 모델 식별 (변동 가능)
+  - 카탈로그: [Nous inference API models](https://inference-api.nousresearch.com/v1/models)
 
   </details>
 
@@ -342,7 +342,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
-- 2026-09-24: '더보기' 블록 링크 7곳 검증·교체 — Groq/OrcaRouter/Gemini/Mistral/LLM7.io/Nous Portal은 실제 무료 정보가 확인되는 공식 페이지로 교체, GitHub Models는 "(GitHub 로그인 필요)" 병기 (출처: 각 공식 페이지).
 - 2026-09-24: OpenCode Zen 무료 티어, 2026-09-17부터 OpenCode 외부 하네스에서 403 차단 확정 (maintainer 확인) — 우선순위 중간→낮음으로 하향, Hermes 무료 연동 불가로 비고 수정 (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/opencode.md).
 - 2026-09-24: Groq 무료 테이블에서 Llama 채팅 모델 제외 확인 — 대표 모델을 gpt-oss-120b/20b, qwen3.8-27b로 교체 (출처: https://console.groq.com/docs/rate-limits).
 - 2026-09-24: 신규 제공자 2곳 추가 — Token Harbor (DeepSeek V4.1 Flash 무료 라우트, $0 플랜), Nous Portal (Hermes Agent 제작사의 공식 포털, Free $0 플랜) (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md).
