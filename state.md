@@ -1,8 +1,8 @@
-# Free LLM Tracker — 기준선 (2026-09-24)
+# Free LLM Tracker — 기준선 (2026-09-25)
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
-모든 수치는 2026-09-24 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
+모든 수치는 2026-09-25 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
 '미확인'은 조사 시점에 확인되지 않은 항목임.
 </p>
 
@@ -167,12 +167,12 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   </details>
 
-- **한도**: Experiment 티어 — 초당 1회 / 분당 50만 토큰 / 월 10억 토큰
+- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시).
 - **API**: OpenAI 호환. 엔드포인트 `https://api.mistral.ai/v1`
 - **도구 호출**: 지원
 - **제한**: 카드 불필요. 학습 활용 위험 보고 있음.
-- **출처**: https://console.mistral.ai (커뮤니티 검증 기준)
-- **비고**: 월 10억 토큰은 넉넉하나 초당 1회는 에이전트 루프에 빠듯. 데이터 정책 주의.
+- **출처**: https://console.mistral.ai (커뮤니티 검증 기준), https://mistral.ai/pricing
+- **비고**: 월 $10 크레딧은 에이전트 실사용에 빠듯 (Mistral Large 기준 입력 약 2천만 토큰 수준). 데이터 정책 주의 (기본적으로 학습 활용 가능, Admin 패널 opt-out 필요).
 
 <a id="openrouter"></a>
 
@@ -203,12 +203,12 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **대표 무료 모델:**
   - `gpt-oss-120b`
   - `qwen-3.8-27b` — 무료 티어 8K 컨텍스트 제한 보고 있음
-- **한도**: Free Trial 기준 분당 5회 / 일 100만 토큰
+- **한도**: Free Trial 기준 분당 5회 / 일 100만 토큰 (gpt-oss-120b, qwen-3.8-27b 공식 한도 표 기준)
 - **API**: OpenAI 호환. 엔드포인트 `https://api.cerebras.ai/v1`
 - **도구 호출**: 미확인 (모델별 상이 가능)
-- **제한**: 카드 불필요. 데이터 학습 활용 정책 미확인.
+- **제한**: **카드 필요** — 공식 문서 명시: verified payment method(결제수단) 추가 후에만 $5 크레딧 지급(30일 유효), 결제수단 추가 전에는 Playground·API 접근 비활성. "상시 무료 티어 없음". 데이터 학습 활용 정책 미확인.
 - **출처**: https://inference-docs.cerebras.ai/support/rate-limits
-- **비고**: 속도 매우 빠름 (최대 ~2000 tok/s). 분당 5회는 병렬 작업 시 빨리 소진되므로 폴백용 적합.
+- **비고**: 카드 등록이 필요해져 카드 없는 무료 조합에서는 실질적으로 제외. 속도는 매우 빠름 (최대 ~2000 tok/s)이었으나, 카드 없는 대안(Groq·NIM·LLM7 등)이 우선.
 
 <a id="github-models"></a>
 
@@ -342,6 +342,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-09-25: Cerebras — '카드 불필요' 표기 정정: verified payment method 추가 후에만 $5 크레딧 지급(30일 유효), 추가 전 API/Playground 접근 비활성, 공식 문서에 "상시 무료 티어 없음" 명시 — 카드 없는 무료 조합에서 실질 제외 (출처: https://inference-docs.cerebras.ai/support/rate-limits).
+- 2026-09-25: Mistral — 한도 표기를 공식 기준으로 정정: Experiment 티어 수치(커뮤니티 보고, 초당 1회/월 10억 토큰) → Free 플랜 월 $10 API 크레딧 (출처: https://mistral.ai/pricing).
 - 2026-09-24: OpenCode Zen 무료 티어, 2026-09-17부터 OpenCode 외부 하네스에서 403 차단 확정 (maintainer 확인) — 우선순위 중간→낮음으로 하향, Hermes 무료 연동 불가로 비고 수정 (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/opencode.md).
 - 2026-09-24: Groq 무료 테이블에서 Llama 채팅 모델 제외 확인 — 대표 모델을 gpt-oss-120b/20b, qwen3.8-27b로 교체 (출처: https://console.groq.com/docs/rate-limits).
 - 2026-09-24: 신규 제공자 2곳 추가 — Token Harbor (DeepSeek V4.1 Flash 무료 라우트, $0 플랜), Nous Portal (Hermes Agent 제작사의 공식 포털, Free $0 플랜) (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md).
