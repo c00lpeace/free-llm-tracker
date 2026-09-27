@@ -261,13 +261,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 ## OpenCode Zen <span class="prio p-low">낮음</span>
 
 - **대표 무료 모델 (사용성 순, OpenCode 내부 전용):**
-  - `big-pickle`
-  - `nemotron-3-ultra`
-  - `muse-spark-1.3-contributor` — 데이터 제공 대가 할인 행
+  - `big-pickle` — 스텔스 모델, 기간 한정 무료
+  - `nemotron-3-ultra-free` — 기간 한정 무료
+  - `muse-spark-1.3-contributor-free` — 데이터 제공 대가 무료 행
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-09-18 기준 big-pickle, mimo-v2.5, ling-3.0-flash-fin, nemotron-3-ultra, nemotron-3.5-lightning, muse-spark-1.3-contributor
+  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-09-27 기준 `big-pickle`, `space-bunny-free`, `longcat-2.5-preview-free`, `mimo-v2.6-flash-free`, `mimo-v2.5-free`, `ling-3.0-flash-fin-free`, `nemotron-3-ultra-free`, `nemotron-3.5-lightning-free`, `muse-spark-1.3-contributor-free`, `jev-1.13-free` (전부 기간 한정)
 
   </details>
 
@@ -342,6 +342,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-09-27: OpenCode Zen 무료 모델 목록 갱신 — 공식 문서 'The free models' 섹션 기준 10종으로 교체 (space-bunny-free, longcat-2.5-preview-free, mimo-v2.6-flash-free, jev-1.13-free 추가). 대표 모델 ID도 실제 무료 ID(`-free` 접미사)로 정정. 외부 하네스 403 차단은 유지 (출처: https://opencode.ai/docs/zen/).
 - 2026-09-27: '더보기' 공식 링크 점검·교체 — Groq→한도 문서, OrcaRouter→무료 필터 페이지, Gemini→가격 페이지, Mistral→가격 페이지(Experiment 문구 정정), LLM7.io→모델 카탈로그 API, Nous Portal→Portal 가격 목록, NVIDIA→'Free inference' 섹션 안내. OpenRouter·OpenCode Zen·Token Harbor는 기존 링크로 무료 목록 확인이 가능해 유지, GitHub Models는 퇴역 확정으로 제거 제안 대기 중이라 제외.
 - 2026-09-25: Cerebras — '카드 불필요' 표기 정정: verified payment method 추가 후에만 $5 크레딧 지급(30일 유효), 추가 전 API/Playground 접근 비활성, 공식 문서에 "상시 무료 티어 없음" 명시 — 카드 없는 무료 조합에서 실질 제외 (출처: https://inference-docs.cerebras.ai/support/rate-limits).
 - 2026-09-25: Mistral — 한도 표기를 공식 기준으로 정정: Experiment 티어 수치(커뮤니티 보고, 초당 1회/월 10억 토큰) → Free 플랜 월 $10 API 크레딧 (출처: https://mistral.ai/pricing).
