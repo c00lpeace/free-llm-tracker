@@ -268,6 +268,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-09-27 기준 `big-pickle`, `space-bunny-free`, `longcat-2.5-preview-free`, `mimo-v2.6-flash-free`, `mimo-v2.5-free`, `ling-3.0-flash-fin-free`, `nemotron-3-ultra-free`, `nemotron-3.5-lightning-free`, `muse-spark-1.3-contributor-free`, `jev-1.13-free` (전부 기간 한정)
+  - 스텔스 모델 관련 정보:
+    - Big Pickle: [SWE Atlas 벤치마크 측정](https://github.com/PhillipChaffee/big-pickle-swe-atlas) — 코드베이스 QnA 50.8% 해결률 (정체 미공개, 커뮤니티에서는 GLM-4.6 추정)
+    - Space Bunny: [지문 분석](https://github.com/majiayu000/stealthprint/blob/main/docs/case-space-bunny.md) — MiniMax 계열 토크나이저, 1M 컨텍스트 확인. Space Bunny Alpha는 [Nous Portal](https://portal.nousresearch.com/)에서도 무료($0.00/1M) 제공 중
 
   </details>
 
@@ -342,6 +345,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-09-27: OpenCode Zen 스텔스 모델(Big Pickle, Space Bunny) 관련 정보 링크 추가 — 벤치마크 측정·지문 분석, Nous Portal 무료 제공 교차 안내.
 - 2026-09-27: OpenCode Zen 무료 모델 목록 갱신 — 공식 문서 'The free models' 섹션 기준 10종으로 교체 (space-bunny-free, longcat-2.5-preview-free, mimo-v2.6-flash-free, jev-1.13-free 추가). 대표 모델 ID도 실제 무료 ID(`-free` 접미사)로 정정. 외부 하네스 403 차단은 유지 (출처: https://opencode.ai/docs/zen/).
 - 2026-09-27: '더보기' 공식 링크 점검·교체 — Groq→한도 문서, OrcaRouter→무료 필터 페이지, Gemini→가격 페이지, Mistral→가격 페이지(Experiment 문구 정정), LLM7.io→모델 카탈로그 API, Nous Portal→Portal 가격 목록, NVIDIA→'Free inference' 섹션 안내. OpenRouter·OpenCode Zen·Token Harbor는 기존 링크로 무료 목록 확인이 가능해 유지, GitHub Models는 퇴역 확정으로 제거 제안 대기 중이라 제외.
 - 2026-09-25: Cerebras — '카드 불필요' 표기 정정: verified payment method 추가 후에만 $5 크레딧 지급(30일 유효), 추가 전 API/Playground 접근 비활성, 공식 문서에 "상시 무료 티어 없음" 명시 — 카드 없는 무료 조합에서 실질 제외 (출처: https://inference-docs.cerebras.ai/support/rate-limits).
