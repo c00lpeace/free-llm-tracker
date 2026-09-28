@@ -30,6 +30,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
 - [Nous Portal (Hermes Agent)](#nous-portal)
+- [Fireworks AI](#fireworks)
 - [Cline](#cline)
 - [변경 이력](#changelog)
 
@@ -326,6 +327,29 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://portal.nousresearch.com/models , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/nous-portal.md
 - **비고**: Nous Research(Hermes Agent 제작사)의 공식 추론 포털. 형님이 세팅 중인 Hermes Agent와 같은 생태계라 연동 테스트 가치가 높음.
 
+<a id="fireworks"></a>
+
+## Fireworks AI <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델:**
+  - `accounts/fireworks/models/deepseek-v3p1` — 코딩 강점
+  - `accounts/fireworks/models/llama-v3p3-70b-instruct` — 공식 SDK 예시 모델
+  - `accounts/fireworks/models/ember-1` — Kimi K3 기반 추론 효율화 신모델 (Function Calling 지원, 1040k 컨텍스트). 유료 $3/$15 per 1M — $1 크레딧 소모가 빠름
+  <details>
+  <summary>더보기 — 전체 무료 모델 안내</summary>
+
+  - 전체 모델 목록: [Fireworks AI 모델 목록](https://fireworks.ai/models) — Serverless 표시 모델은 가입 시 $1 크레딧으로 호출 가능
+  - Ember-1 발표: [Introducing Ember-1](https://fireworks.ai/blog/ember-1) — Research Preview(2주 serverless access)이며, 무료 모델 발표가 아님 (가격: input $3.00 / cached $0.30 / output $15.00 per 1M)
+
+  </details>
+
+- **한도**: 가입 시 $1 일회성 크레딧 소진까지 (소형 모델 기준 약 5M 토큰). 구체 rate limit 미확인.
+- **API**: OpenAI 호환. 엔드포인트 `https://api.fireworks.ai/inference/v1`
+- **도구 호출**: 지원 (Function Calling·structured outputs)
+- **제한**: **상시 무료 티어 없음** — $1은 일회성 가입 크레딧이며 소진 후 유료 전환. 카드 등록 필요 여부 미확인.
+- **출처**: https://fireworks.ai/pricing , https://docs.fireworks.ai/tools-sdks/openai-compatibility , https://fireworks.ai/blog/ember-1
+- **비고**: Hermes Agent에 `--provider fireworks` 내장 지원 (`hermes chat --provider fireworks`, `FIREWORKS_API_KEY` in `~/.hermes/.env`). Ember-1 자체는 무료가 아니라 유료 리서치 프리뷰 모델이라 대표 목록에서도 유료 주의 표기.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -345,6 +369,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-09-28: Fireworks AI 신규 추가 — 가입 시 $1 일회성 크레딧 (상시 무료 티어 없음, 소진 후 유료). OpenAI 호환(`https://api.fireworks.ai/inference/v1`), Hermes Agent `--provider fireworks` 내장 지원. Ember-1은 유료 리서치 프리뷰($3/$15 per 1M)라 무료 모델이 아님 (출처: https://fireworks.ai/pricing, https://fireworks.ai/blog/ember-1).
 - 2026-09-27: Nous Portal '더보기' 링크를 /models로 정정 — Free Models 섹션·FREE 필터로 무료 8종 직접 확인 (Space Bunny Alpha 포함, 형님 확인 요청 반영).
 - 2026-09-27: OpenCode Zen 스텔스 모델(Big Pickle, Space Bunny) 관련 정보 링크 추가 — 벤치마크 측정·지문 분석, Nous Portal 무료 제공 교차 안내.
 - 2026-09-27: OpenCode Zen 무료 모델 목록 갱신 — 공식 문서 'The free models' 섹션 기준 10종으로 교체 (space-bunny-free, longcat-2.5-preview-free, mimo-v2.6-flash-free, jev-1.13-free 추가). 대표 모델 ID도 실제 무료 ID(`-free` 접미사)로 정정. 외부 하네스 403 차단은 유지 (출처: https://opencode.ai/docs/zen/).
