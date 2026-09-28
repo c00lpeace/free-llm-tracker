@@ -24,7 +24,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Google AI Studio — Gemini](#gemini)
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
-- [Cerebras](#cerebras)
 - [GitHub Models](#github-models)
 - [LLM7.io](#llm7)
 - [OpenCode Zen](#opencode-zen)
@@ -196,20 +195,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://buldrr.com/openrouter-free-api-keys-free-models-simple-guide/
 - **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고.
 
-<a id="cerebras"></a>
-
-## Cerebras (이전 조사) <span class="prio p-low">낮음</span>
-
-- **대표 무료 모델:**
-  - `gpt-oss-120b`
-  - `qwen-3.8-27b` — 무료 티어 8K 컨텍스트 제한 보고 있음
-- **한도**: Free Trial 기준 분당 5회 / 일 100만 토큰 (gpt-oss-120b, qwen-3.8-27b 공식 한도 표 기준)
-- **API**: OpenAI 호환. 엔드포인트 `https://api.cerebras.ai/v1`
-- **도구 호출**: 미확인 (모델별 상이 가능)
-- **제한**: **카드 필요** — 공식 문서 명시: verified payment method(결제수단) 추가 후에만 $5 크레딧 지급(30일 유효), 결제수단 추가 전에는 Playground·API 접근 비활성. "상시 무료 티어 없음". 데이터 학습 활용 정책 미확인.
-- **출처**: https://inference-docs.cerebras.ai/support/rate-limits
-- **비고**: 카드 등록이 필요해져 카드 없는 무료 조합에서는 실질적으로 제외. 속도는 매우 빠름 (최대 ~2000 tok/s)이었으나, 카드 없는 대안(Groq·NIM·LLM7 등)이 우선.
-
 <a id="github-models"></a>
 
 ## GitHub Models <span class="prio p-low">낮음</span>
@@ -344,6 +329,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 <details>
 <summary>변경 이력 펼쳐보기</summary>
+
+- 2026-09-28: Cerebras·Fireworks AI 섹션 제거 — 일회성 체험 크레딧 제공자는 조사 대상 아님 (Tracker 범위 확정: 상시 무료로 쓸 수 있는 제공자만 추적).
 
 - 2026-09-27: Nous Portal '더보기' 링크를 /models로 정정 — Free Models 섹션·FREE 필터로 무료 8종 직접 확인 (Space Bunny Alpha 포함, 형님 확인 요청 반영).
 - 2026-09-27: OpenCode Zen 스텔스 모델(Big Pickle, Space Bunny) 관련 정보 링크 추가 — 벤치마크 측정·지문 분석, Nous Portal 무료 제공 교차 안내.
