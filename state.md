@@ -28,6 +28,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
 - [Nous Portal (Hermes Agent)](#nous-portal)
+- [AnyAPI](#anyapi)
+- [Api.Airforce](#api-airforce)
+- [Ollama Cloud](#ollama-cloud)
 - [Cline](#cline)
 - [변경 이력](#changelog)
 
@@ -294,6 +297,72 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://portal.nousresearch.com/models , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/nous-portal.md
 - **비고**: Nous Research(Hermes Agent 제작사)의 공식 추론 포털. 형님이 세팅 중인 Hermes Agent와 같은 생태계라 연동 테스트 가치가 높음. `step-3.7-flash:free`는 2026-09-30·10-01 실제 브라우저 라이브 확인에서 만료일·"limited time" 표기 없이 무료 등재 유지 — 2026-10-01 만료설은 공식 근거 없는 소문으로 확인됨.
 
+<a id="anyapi"></a>
+
+## AnyAPI <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-01 공개 카탈로그 확인 — Tier 필터 Free):**
+  - Qwen2.5 Coder 32B Instruct (free) — 코딩 특화 32B
+  - Ling 3.0 Flash Sante (free) — inclusionAI
+  - Gemma 3n 4B (free) — Google 경량 모델
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 전체 목록: [AnyAPI AI 모델 카탈로그](https://anyapi.ai/ai-models) — 좌측 Tier 필터에서 Free 선택 (각 무료 모델에 "Free" 배지 표시)
+  - 2026-10-01 확인 기준 무료 예시: Ling 3.0 Flash Fin (free), Ling 3.0 Flash Sante (free), Qwen2.5 Coder 32B Instruct (free), Gemma 3n 4B (free)
+
+  </details>
+
+- **한도**: Free $0/월 — 일 100,000 ANY Tokens (가격 페이지 "100K / day" 표기)
+- **API**: OpenAI 호환 ("Drop-in replacement for OpenAI SDK" — base URL만 교체)
+- **도구 호출**: 미확인
+- **제한**: **카드 불필요** — 가격 페이지 Free 플랜 카드에 "No credit card required" 명시. 무료 모델의 API 호출용 정확한 모델 ID 형식은 키 발급 후 확인 필요.
+- **출처**: https://anyapi.ai/pricing , https://anyapi.ai/ai-models
+- **비고**: Hermes 연결 가능(예상). 로그인 없이 무료 모델 목록을 미리 볼 수 있어 검증이 쉬움. 일 10만 토큰은 에이전트 실사용에는 빠듯 — 테스트·가벼운 용도 적합.
+
+<a id="api-airforce"></a>
+
+## Api.Airforce <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-01 08:05 공개 API 라이브 확인):**
+  - `gpt-oss-20b` — 무료 티어, 정상 운영
+  - `kimi-k2.7-code` — 무료 티어, 정상 운영
+  - `llama-instant` — 무료 티어, 정상 운영
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-01 기준 전체 약 650종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
+  - 주의: 2026-10-01 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`·`glm-4.7-flash`). 정상 호출 가능한 무료 모델은 `rnj-1`·`llama-instant`·`kimi-k2.7-code`·`unmoderated-gpt`·`gpt-oss-20b` 5종.
+
+  </details>
+
+- **한도**: Free $0.00/월 — 분당 1회 / 일 1,000회 ("Access to basic models")
+- **API**: OpenAI 호환 (공식 홈페이지에서 Cursor·Cline·OpenCode·Claude Code 등 코딩 에이전트/CLI 연동 광고)
+- **도구 호출**: 미확인
+- **제한**: 카드 등록 필요 여부는 가격 페이지에 표기 없음 (미확인). 무료 플랜의 실제 호출 가능 여부는 계정으로 테스트 필요.
+- **출처**: https://api.airforce/pricing , https://api.airforce/v1/models
+- **비고**: 공개 카탈로그의 `tier` 표기와 가격 페이지의 "Free models" 표기가 일치하는지는 실제 키 테스트로 검증 필요. 현재 무료 모델 다수가 장애 상태라 폴백 우선순위는 낮음.
+
+<a id="ollama-cloud"></a>
+
+## Ollama Cloud <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델**: starter 모델 세트 — 공개 목록 미확인 (가격 페이지에 "smaller set of starter models"로만 표기, 구체 모델명·크레딧 금액 미공개)
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - [Ollama Cloud 가격 페이지](https://ollama.com/cloud) — Free 플랜에 "Includes access to starter models" 표기. starter 모델의 구체 목록은 공개 페이지에서 확인 불가 (가입 후 확인 필요).
+
+  </details>
+
+- **한도**: Free $0 — starter usage credits 포함 (금액 미공개), 매월 가입일 기준 리셋, 미사용분 이월 불가, 동시 요청 1개
+- **API**: OpenAI 호환 엔드포인트 `https://ollama.com/v1` (3자 검증 기준 — 공식 키는 https://ollama.com/settings/keys 에서 발급)
+- **도구 호출**: 지원 (공식 FAQ: 도구 지원 학습된 클라우드 모델은 실제 에이전트 워크플로로 테스트 후 공개)
+- **제한**: 카드 요구 여부는 가격 페이지에 표기 없음 (미확인). 프롬프트·응답 데이터는 로깅·학습하지 않음 (공식 FAQ 명시).
+- **출처**: https://ollama.com/cloud
+- **비고**: 매월 리셋되는 상시 무료라 조사 범위 충족. 단, 크레딧 금액·starter 모델 목록이 비공개라 Hermes 폴백으로는 하위 우선순위. 크레딧 구매 시 전체 모델 잠금 해제.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -313,6 +382,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-10-01: 신규 제공자 3곳 추가 — AnyAPI (Free $0/월·일 100K 토큰·카드 불필요 공식 명시, 공개 카탈로그 /ai-models에서 Free 티어 필터로 무료 목록 확인 가능), Api.Airforce (Free $0/월·분당 1회·일 1,000회 — 단 `tier:"free"` 28종 중 23종이 major_outage라 정상 호출 가능 무료 모델은 5종), Ollama Cloud (Free $0·starter 크레딧 월 리셋·이월 불가·동시 1요청, 도구 호출 공식 지원 확인 — starter 모델 목록·크레딧 금액은 미공개). LLMTR은 보류 유지 (출처: https://anyapi.ai/pricing, https://api.airforce/pricing, https://ollama.com/cloud).
 - 2026-10-01: OrcaRouter 무료 라인업 로테이션 — `tencent/hy4-preview-free`(770B MoE·1M 컨텍스트)·`z-ai/glm-5.3-flash-free`·`orca/orcaverify-text1.0-free` 추가, `deepseek/deepseek-v4-pro-free` 제거(모델 페이지 404). 무료 5종, Hacker 티어 정책 변화 없음 (출처: https://www.orcarouter.ai/models?price=free, 공개 API /api/public/models/{id} 직접 확인).
 - 2026-10-01: LLM7.io — Free token 한도 변경(24시간 토큰 100만→10만, 분당 60회·시간 250회, 익명 티어 표기 삭제) + turbo 무료 모델 3종(`GLM-5.3-Flash`·`codestral-latest`·`mistral-Nemo-Instruct-2407`) 확정. `minimax-m2.7` 카탈로그 제거, `deepseek-v4-flash:0731`→pro 티어 (출처: https://docs.llm7.io/limits, https://api.llm7.io/v1/models 라이브 직접 확인).
 - 2026-10-01: Token Harbor 무료 라인업 로테이션 — `mimo-v2.6-flash:free`·`qwen3.8-flash:free`로 교체, `deepseek-v4-flash:free` 제거. `deepseek-v4.1-flash:free` 유지 (출처: https://tokenharbor.ai/models?category=free).
