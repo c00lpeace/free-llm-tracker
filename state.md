@@ -1,8 +1,8 @@
-# Free LLM Tracker — 기준선 (2026-09-25)
+# Free LLM Tracker — 기준선 (2026-10-01)
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
-모든 수치는 2026-09-25 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
+모든 수치는 2026-10-01 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
 '미확인'은 조사 시점에 확인되지 않은 항목임.
 </p>
 
@@ -24,7 +24,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Google AI Studio — Gemini](#gemini)
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
-- [GitHub Models](#github-models)
 - [LLM7.io](#llm7)
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
@@ -88,35 +87,39 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 ## NVIDIA NIM (build.nvidia.com) <span class="prio p-high">높음</span>
 
 - **대표 무료 모델 (사용성 순):**
-  - `moonshotai/kimi-k2.5` — function calling 광고
-  - `deepseek-ai/deepseek-v4-flash-0731` — 고속 플래그십
-  - `meta/llama-3.3-70b-instruct` — 안정적 폴백
+  - `moonshotai/kimi-k3` — function calling 광고 (2026-09-30 공식 무료 라인업 확인)
+  - `deepseek-ai/deepseek-v4-pro-0813` — 고속 플래그십 (2026-09-30 확인)
+  - `nvidia/nemotron-3-ultra-550b-a55b` — 초대형 MoE (2026-09-30 확인)
+  - `nvidia/nemotron-3.5-lightning-30b-a3b` — 경량 고속 (2026-09-30 확인)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 추론 모델: [build.nvidia.com](https://build.nvidia.com) — 'Free inference with leading models' 섹션에서 확인 (예고 없이 변경됨)
+  - 무료 추론 모델: [build.nvidia.com](https://build.nvidia.com) — 'Free inference with leading models' 섹션에서 확인 (예고 없이 변경됨, 2026-09-30 기준 4종)
+  - `meta/llama-3.3-70b-instruct`는 2026-09-30 기준 전면 무료 라인업 노출에서 제외됨 — 무료 종료 여부는 공식 미확인 (모델 페이지는 로그인 요구로 가려져 있음)
 
   </details>
 
-- **한도**: 키당 분당 약 40회 요청 (커뮤니티 기준, 모델·트래픽에 따라 상이). 일일 상한은 rate limit 외 별도 없음(보고 기준).
+- **한도**: 분당 최대 40회 + 일 10,000회 (2026-08-20 이후 표기 시작 — 2026-09-29 페이지 추출 텍스트에서는 직접 확인 불가, 3자 인용 기준). 모델·트래픽·계정에 따라 실제 제공 여부는 유동적.
 - **API**: OpenAI 호환. 엔드포인트 `https://integrate.api.nvidia.com/v1`, 인증은 `Bearer nvapi-...` 키.
 - **도구 호출**: 모델별 상이 (DeepSeek V3/R1, Kimi K2, GLM, GPT-OSS 계열이 function calling 광고하나 품질 편차 있음)
 - **제한**: 카드 불필요. 단, 가입 시 고유 이메일+전화번호 인증 필요. 공식 약관상 프롬프트/응답을 학습에 사용하지 않음(커뮤니티 보고 기준). 프로덕션 용도 아님(프로토타이핑용).
 - **출처**: https://github.com/miztertea/nim-proxy/blob/HEAD/knowledge/research/nim-free-tier-40rpm-no-credits.md , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/nvidia-nim.md
 - **비고**: OpenAI 호환이라 Hermes 연결 가능. 분당 40회는 에이전트 루프에 넉넉한 편. 도구 호출 품질이 모델별로 들쭉날쭉하므로 메인 모델은 DeepSeek/Kimi 계열로 테스트 권장.
+- **2026-09-07 3자 프로브 기준 주석 (공식 문서 아님)**: 한 계정에서 81개 카탈로그 중 실제 응답한 12종은 nemotron-3-super-120b·gpt-oss-20b(선언 기본)·kimi-k3·minimax-m3·nemotron-3-ultra-550b·gemma-4-31b-it 등. 반면 `moonshotai/kimi-k2.6`·Llama 계열은 'Not found for account', `deepseek-ai/deepseek-v4-flash-0731`은 타임아웃으로 도달 불가 — 카탈로그가 계정별로 다르므로 대표 모델은 실제 키로 검증 필요 (출처: https://github.com/murathanx12/aegis-finance/blob/HEAD/docs/BUILD_2026-09-07b_L_FREE_INFERENCE.md).
 
 <a id="orcarouter"></a>
 
 ## OrcaRouter <span class="prio p-high">높음</span>
 
-- **대표 무료 모델 (사용성 순):**
-  - `deepseek/deepseek-v4-pro-free` — 최상위 성능
+- **대표 무료 모델 (사용성 순, 2026-10-01 기준 — 로테이션됨):**
+  - `tencent/hy4-preview-free` — 770B MoE·1M 컨텍스트, 최신 (2026-10-01 공개 API 직접 확인)
   - `deepseek/deepseek-v4-flash-free` — 고속
-  - `tencent/hy3-free`
+  - `tencent/hy3-free` — 무료 풀 잔류
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 무료 라인업: [OrcaRouter 무료 모델](https://www.orcarouter.ai/models?price=free) — 로테이션됨. `orcarouter/free` 자동 라우팅 별칭도 제공.
+  - 무료 5종 (2026-10-01 공개 API 직접 확인): `deepseek/deepseek-v4-flash-free`, `tencent/hy3-free`, `tencent/hy4-preview-free`, `z-ai/glm-5.3-flash-free`, `orca/orcaverify-text1.0-free`. `deepseek/deepseek-v4-pro-free`는 무료 풀에서 제외됨 (모델 페이지 404).
+  - 무료 라인업: [OrcaRouter 무료 모델](https://www.orcarouter.ai/models?price=free) · [공식 pricing API](https://www.orcarouter.ai/api/pricing) — 로테이션됨. `orcarouter/free` 자동 라우팅 별칭도 제공.
 
   </details>
 
@@ -124,31 +127,32 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **API**: OpenAI 호환. 엔드포인트 `https://api.orcarouter.ai/v1` (Anthropic·Gemini 호환 엔드포인트도 제공). 키 발급: GitHub 로그인 후 대시보드에서 발급.
 - **도구 호출**: 지원
 - **제한**: 카드 등록 불필요(Hacker 티어 무료). 무료 모델 외에는 upstream 제공자 요금 그대로 과금(zero markup). 무료 모델 라인업이 자주 교체됨.
-- **출처**: https://www.orcarouter.ai/pricing , https://runtimewire.com/article/orcarouter-glm-5-3-flash-free-tier , https://github.com/12britz/awesome-free-models/pull/53
-- **비고**: 형님이 언급한 "Orcarouter"는 실제 서비스명 "OrcaRouter"임. OpenAI 호환이라 Hermes에 바로 연결 가능. 무료 모델은 rate-limited이므로 메인보다는 폴백/서브용 적합.
+- **출처**: https://www.orcarouter.ai/pricing , https://runtimewire.com/article/orcarouter-glm-5-3-flash-free-tier , https://github.com/vava-nessa/free-coding-models/blob/HEAD/changelog/v0.5.92.md (`qwen3.8-27b-free` 딜리스트 확인)
+- **비고**: 형님이 언급한 "Orcarouter"는 실제 서비스명 "OrcaRouter"임. OpenAI 호환이라 Hermes에 바로 연결 가능. 무료 모델은 rate-limited이므로 메인보다는 폴백/서브용 적합. `z-ai/glm-5.3-flash-free`는 2026-09-07 무료 티어에서 Qwen3.8-27B를 대체 (멀티모달·약 1M 컨텍스트, 첫 토큰 느림).
 
 <a id="gemini"></a>
 
 ## Google AI Studio — Gemini (이전 조사) <span class="prio p-mid">중간</span>
 
-- **대표 무료 모델 (사용성 순):**
-  - Gemini 2.5 Flash-Lite — 일 1,000~1,500회, 한도 최다
-  - Gemini 2.5 Flash
-  - Gemma 계열
+- **대표 무료 모델 (사용성 순, 신규 사용자 기준):**
+  - Gemini 3.8 Flash — 최신 플래그십 무료 (2026-09-18 공식 공지 기준 신규 권장 모델)
+  - Gemini 3.5 Flash-Lite — 한도 최다 (신규 권장 모델)
+  - Gemma 4 계열 — 일 14,400회 (2026-09-13 1개 무료 키 측정)
   <details>
   <summary>더보기 — 무료 모델 범위 안내</summary>
 
-  - Flash 계열만 무료 (Gemini 2.5/3.x Flash, Flash-Lite, Gemma). Pro 모델은 2026년 4월부터 무료 티어 제외 (유료 전용).
+  - Flash 계열만 무료 (Gemini 3.x Flash, Flash-Lite, Gemma 4). Pro 모델은 2026년 4월부터 무료 티어 제외 (유료 전용).
+  - 2026-09-18 공식 공지: `gemini-2.5-flash`, `gemini-2.5-flash-lite`, `gemini-2.5-pro`의 무료 접근은 과거에 실제 사용한 사용자(기존 키)로 제한 — 신규 프로젝트·신규 키는 무료 티어로 사용 불가. 기존에 2.5를 무료로 쓰던 키는 계속 접근 가능.
   - 전체 모델 목록: [Gemini API 가격 페이지](https://ai.google.dev/gemini-api/docs/pricing) — 모델별 Free Tier/Paid Tier 표에서 무료 여부 확인
 
   </details>
 
-- **한도**: Flash — 분당 10회 / 일 250~1,500회 (프로젝트·리전별 변동 큼). Flash-Lite — 분당 15회 / 일 1,000~1,500회.
+- **한도**: 3.8 Flash — 분당 5회 / 일 20회 (2026-09-13 1개 무료 키 측정). 3.5 Flash-Lite — 분당 15회 / 일 500회. 한도는 모델·프로젝트·리전별로 변동 큼 (정확한 수치는 AI Studio rate-limit 페이지에서 확인). ※ 3.x 계열의 정확한 무료 한도는 공식 가격 페이지 라이브 확인 전까지 미확정.
 - **API**: OpenAI 호환 엔드포인트 제공 — `https://generativelanguage.googleapis.com/v1beta/openai/`
 - **도구 호출**: 지원 (function calling, JSON 모드, 구조화 출력)
 - **제한**: 카드 불필요(Google 계정만). 무료 티어 데이터 학습 활용 가능 (과금 활성화 시 opt-out). 한도가 예고 없이 삭감된 전례 있음 (250→20 RPD 보고).
-- **출처**: https://help.apiyi.com/en/google-ai-studio-free-quota-limits-solution-en.html
-- **비고**: 한국어 성능 강점. 단, 한도 변동 리스크가 있어 메인 단독 사용은 주의.
+- **출처**: https://ai.google.dev/gemini-api/docs/changelog (2026-09-18 공지 — 2.5 모델 무료 접근 기존 실사용자 제한) , https://help.apiyi.com/en/google-ai-studio-free-quota-limits-solution-en.html
+- **비고**: 한국어 성능 강점. 신규 키 발급 시 2.5 Flash 무료는 쓸 수 없으므로 Hermes에 새로 붙일 땐 3.8-flash 또는 3.5-flash-lite 기준. 단, 한도 변동 리스크가 있어 메인 단독 사용은 주의.
 
 <a id="mistral"></a>
 
@@ -177,10 +181,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OpenRouter (이전 조사) <span class="prio p-mid">중간</span>
 
-- **대표 무료 모델 (사용성 순, 2026-09 기준 예시 — 라인업 로테이션됨):**
-  - `deepseek/deepseek-r1:free`
-  - `qwen/qwen3-235b-a22b:free`
-  - `meta-llama/llama-3.3-70b-instruct:free`
+- **대표 무료 모델 (사용성 순, 2026-09-29 기준 — 라인업 로테이션됨):**
+  - `nvidia/nemotron-3-super-120b-a12b:free` — 초대형 MoE
+  - `cohere/north-mini-code:free` — 코드 특화
+  - `inclusionai/ling-3.0-flash-sante:free` — 고속·의료 특화 (2026-09-29 무료 신규 등록)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
@@ -193,53 +197,30 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 무료 라우트별 상이 (각 라우트의 supported_parameters 확인 필요)
 - **제한**: 카드 불필요. 무료 라우트별 데이터 정책 상이 (일부는 학습 활용 경고 있음). upstream 429 빈발 보고.
 - **출처**: https://buldrr.com/openrouter-free-api-keys-free-models-simple-guide/
-- **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고.
-
-<a id="github-models"></a>
-
-## GitHub Models <span class="prio p-low">낮음</span>
-
-- **대표 무료 모델 (사용성 순):**
-  - `openai/gpt-5`
-  - `openai/o3`
-  - `deepseek/DeepSeek-R1`
-  <details>
-  <summary>더보기 — 전체 무료 모델 목록</summary>
-
-  - `openai/gpt-5-mini`, `openai/gpt-4o`, `meta/Llama-3.3-70B-Instruct`, `xai/grok-3`, `mistral-ai/Mistral-Medium-3`, `cohere/Cohere-Command-A` 등 16개 (목록 변동 가능)
-  - 전체 목록: [GitHub Models 마켓플레이스](https://github.com/marketplace/models)
-
-  </details>
-
-- **한도**: 무료 티어 기준 분당 약 15회 / 일 150회 / 분당 8K 토큰. 호출당 토큰 제한이 매우 낮음 (입력 약 8K / 출력 약 4K).
-- **API**: OpenAI 호환. 엔드포인트 `https://models.github.ai/inference`, models scope가 있는 GitHub PAT로 인증.
-- **도구 호출**: 모델별 상이 (미확인 — OpenAI 모델 계열은 일반적으로 지원)
-- **제한**: 카드 불필요(GitHub 계정만). 한도가 Copilot 구독 등급과 연동됨. 호출당 토큰 제한이 낮아 긴 컨텍스트 에이전트 작업에는 부적합.
-- **출처**: https://github.com/ishandutta2007/awesome-llm-apis-free , https://freellm.net/providers/github-models
-- **비고**: Hermes 연결 가능. GPT-5/o3를 무료로 쓸 수 있는 몇 안 되는 곳이나, 8K/4K 토큰 제한 때문에 에이전트 메인보다는 짧은 작업용 폴백으로 적합.
+- **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고. 구 무료 모델(DeepSeek R1·Llama 3.3 70B·Qwen3 Coder 등)의 `:free` 버전은 2026-09-28 확인 기준 유료 전용으로 전환됨. 2026-09-29 18:00 라이브 스냅샷 기준 `:free` 16종 — `qwen3.8-27b:free`·`liquid/lfm-2.5-2.6b:free` 신규 등록. `inclusionai/ling-3.0-flash-fin:free`는 유료 전환 (input $0.06/1M, output $0.18/1M). Thinking Machines Inkling은 에이전트 하네스에서만 응답하고 일반 API 호출에는 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (2026-09-28 3자 검증).
 
 <a id="llm7"></a>
 
 ## LLM7.io <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순):**
-  - `GLM-5.3-Flash`
-  - `minimax-m2.7`
-  - `codestral-latest`
+- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-01 라이브 API 직접 확인):**
+  - `GLM-5.3-Flash` — turbo 티어 무료 (카탈로그의 소문자 `glm-5.3`은 ID가 다른 별개 pro 모델)
+  - `codestral-latest` — turbo 티어 무료
+  - `mistral-Nemo-Instruct-2407` — turbo 티어 무료
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - `mistral-Nemo-Instruct-2407` (turbo 티어 — "turbo"는 익명/무료 토큰 사용자가 쓸 수 있는 빠른 모델 그룹)
-  - 전체 목록: [LLM7.io 모델 카탈로그](https://api.llm7.io/v1/models) — `tier: "turbo"` 행이 무료 (익명/무료 토큰 사용자용)
+  - 2026-10-01 라이브 API 직접 확인 기준 turbo(무료) 티어는 위 3종. `minimax-m2.7`은 카탈로그에서 제거됨 (대체로 `minimax-m3` pro 행만 존재), `deepseek-v4-flash:0731`은 pro 티어로 이동.
+  - 전체 목록: [LLM7.io 모델 카탈로그](https://api.llm7.io/v1/models) — `tier: "turbo"` 행이 무료
 
   </details>
 
-- **한도**: 익명(키 없음) — 초당 1회 / 분당 10회 / 시간당 60회 / 24시간 50만 토큰. 무료 토큰(dash.llm7.io 발급) — 분당 40회 / 시간당 100회 / 24시간 100만 토큰.
+- **한도**: 무료 토큰(dash.llm7.io 발급) — 초당 1회 / 분당 60회 / 시간당 250회 / 24시간 100,000 토큰 (2026-10-01 공식 한도 문서 기준 — 24시간 토큰 허용량이 기존 100만에서 1/10로 축소됨). 익명(키 없음) 티어 표기는 공식 문서에서 사라짐 (삭제인지 표기 누락인지 미확인).
 - **API**: OpenAI 호환. 엔드포인트 `https://api.llm7.io/v1`. 익명 사용 시 api_key에 "unused" 입력.
 - **도구 호출**: 미확인
 - **제한**: 카드·가입 불필요(익명 가능). 운영자가 upstream을 공개하지 않음. 무료 모델 구성이 변경될 수 있음.
-- **출처**: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/llm7.md , https://github.com/velo4705/awesome-free-byok-models
-- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 익명 티어의 분당 10회는 에이전트 루프에 빠듯하므로 무료 토큰 발급 권장.
+- **출처**: https://docs.llm7.io/limits , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/llm7.md , https://github.com/velo4705/awesome-free-byok-models
+- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 24시간 10만 토큰은 에이전트 루프 몇 바퀴면 소진이므로 에이전트 실사용 폴백으로는 사실상 부적합 — '가입 없이 짧게 시험' 용도로만 유효.
 
 <a id="opencode-zen"></a>
 
@@ -270,18 +251,20 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Token Harbor <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순):**
-  - `deepseek-v4.1-flash:free` — 무료 라우트 (대시보드에서 :free 라우트 활성화 필요)
-  - `deepseek-v4-flash:free` — 구형 V4 Flash 무료 라우트
-  - `mimo-v2.5:free`
+- **대표 무료 모델 (사용성 순, 2026-10-01 무료 카탈로그 기준):**
+  - `deepseek-v4.1-flash:free` — 무료 라우트 (2026-09-30 Free 플랜 Includes 명시 확인, 대시보드에서 :free 라우트 활성화 필요)
+  - `mimo-v2.6-flash:free` — 2026-10-01 Free 목록 확인 (v2.5→v2.6 교체)
+  - `qwen3.8-flash:free` — 2026-10-01 무료 신규 등록
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
   - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time")
+  - `deepseek-v4-flash:free` (구형 V4 Flash)는 2026-09-30 pricing Free 목록에서 제외됨 — 공식 블로그(9/23 업데이트)에서는 여전히 무료로 기술 중이라 완전 단정은 불가, 최근 1주 내 무료 라인업에서 빠진 것으로 보임
+  - `TH-Rudder` — 2026-09-30 Free 플랜 Includes 신규 표시 (Token Harbor 자체 채팅 제품, API 제공 여부 미확인)
 
   </details>
 
-- **한도**: $0/월 플랜 — 4주 롤링 주기로 갱신되는 무료 할당량 (정확한 양 미공개, 이월 여부는 보고가 상충). 카드 불필요.
+- **한도**: $0/월 플랜 — 4주 롤링 주기로 갱신되는 무료 할당량 (정확한 양 미공개, 이월 여부는 보고가 상충). 분당 60회·시간당 1,800회 제한 (2026-09-28 3자 재검증). 카드 불필요.
 - **API**: OpenAI 호환. 엔드포인트 `https://tokenharbor.ai/v1` (Anthropic 호환 `/v1/messages`도 제공)
 - **도구 호출**: 미확인
 - **제한**: 소규모 게이트웨이 — 중국 본토/홍콩/마카오에서 region_blocked. 무료 요청이 플랫폼에 저장될 수 있음. 할당량·라인업이 예고 없이 바뀔 수 있어 프로토타입/폴백용 권장.
@@ -299,8 +282,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 2026-09-27 기준 무료 8종: `stepfun/step-3.7-flash:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `inclusionai/ling-3.0-flash-fin:free`, `inclusionai/ling-3.0-flash-sante:free`, `upstage/solar-pro4:free`, `meituan/longcat-2.0:free`, `stealth/space-bunny-alpha` (변동 가능)
-  - 카탈로그: [Nous Portal 모델 목록](https://portal.nousresearch.com/models) — 'Free Models' 섹션 및 FREE 필터로 무료 모델 직접 확인 (로그인 불필요)
+  - 2026-09-30 기준 무료 9종 (공식 API 직접 조회): `stepfun/step-3.7-flash:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `inclusionai/ling-3.0-flash-fin:free`, `inclusionai/ling-3.0-flash-sante:free`, `upstage/solar-pro4:free`, `meituan/longcat-2.0:free`, `meituan/longcat-2.5-preview:free` (신규), `stealth/space-bunny-alpha` (변동 가능)
+  - 카탈로그: [Nous Portal 모델 목록](https://portal.nousresearch.com/models) — 'Free Models' 섹션 및 FREE 필터로 무료 모델 직접 확인 (로그인 불필요), 공식 API: https://inference-api.nousresearch.com/v1/models
 
   </details>
 
@@ -309,7 +292,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: Privacy Mode를 켜지 않으면 추론 페이로드가 학습·개선에 활용될 수 있음. 2026-09-16에 처음 포착된 신규 항목이라 안정성 검증 중 (3자 추적 기준 provisional).
 - **출처**: https://portal.nousresearch.com/models , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/nous-portal.md
-- **비고**: Nous Research(Hermes Agent 제작사)의 공식 추론 포털. 형님이 세팅 중인 Hermes Agent와 같은 생태계라 연동 테스트 가치가 높음.
+- **비고**: Nous Research(Hermes Agent 제작사)의 공식 추론 포털. 형님이 세팅 중인 Hermes Agent와 같은 생태계라 연동 테스트 가치가 높음. `step-3.7-flash:free`는 2026-09-30·10-01 실제 브라우저 라이브 확인에서 만료일·"limited time" 표기 없이 무료 등재 유지 — 2026-10-01 만료설은 공식 근거 없는 소문으로 확인됨.
 
 <a id="cline"></a>
 
@@ -329,6 +312,19 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 <details>
 <summary>변경 이력 펼쳐보기</summary>
+
+- 2026-10-01: OrcaRouter 무료 라인업 로테이션 — `tencent/hy4-preview-free`(770B MoE·1M 컨텍스트)·`z-ai/glm-5.3-flash-free`·`orca/orcaverify-text1.0-free` 추가, `deepseek/deepseek-v4-pro-free` 제거(모델 페이지 404). 무료 5종, Hacker 티어 정책 변화 없음 (출처: https://www.orcarouter.ai/models?price=free, 공개 API /api/public/models/{id} 직접 확인).
+- 2026-10-01: LLM7.io — Free token 한도 변경(24시간 토큰 100만→10만, 분당 60회·시간 250회, 익명 티어 표기 삭제) + turbo 무료 모델 3종(`GLM-5.3-Flash`·`codestral-latest`·`mistral-Nemo-Instruct-2407`) 확정. `minimax-m2.7` 카탈로그 제거, `deepseek-v4-flash:0731`→pro 티어 (출처: https://docs.llm7.io/limits, https://api.llm7.io/v1/models 라이브 직접 확인).
+- 2026-10-01: Token Harbor 무료 라인업 로테이션 — `mimo-v2.6-flash:free`·`qwen3.8-flash:free`로 교체, `deepseek-v4-flash:free` 제거. `deepseek-v4.1-flash:free` 유지 (출처: https://tokenharbor.ai/models?category=free).
+- 2026-09-30: GitHub Models 섹션 제거 — 2026-07-30 공식 체인지로그 기준 완전 퇴역 (플레이그라운드·추론 API·BYOK 전부 종료), Hermes 연동 불가 확정 (출처: https://github.blog/changelog/2026-07-30-github-models-is-now-retired/).
+- 2026-09-30: Nous Portal 무료 모델 9종으로 갱신 — `meituan/longcat-2.5-preview:free` 추가 (라이브 확인). `step-3.7-flash:free`는 10/01 만료설과 무관하게 무료 등재 유지 (출처: https://portal.nousresearch.com/models).
+- 2026-09-30: Gemini — 2026-09-18 공식 공지 기준 2.5 모델(`gemini-2.5-flash`/`gemini-2.5-flash-lite`/`gemini-2.5-pro`) 무료 접근을 기존 실사용자로 제한, 신규 프로젝트/키는 `gemini-3.5-flash-lite`·`gemini-3.8-flash` 사용 권장 (출처: https://ai.google.dev/gemini-api/docs/changelog).
+- 2026-09-30: NVIDIA NIM — `llama-3.3-70b-instruct` 전면 무료 라인업 노출 제외 (무료 종료 여부는 공식 미확인), 나머지 4종(kimi-k3·deepseek-v4-pro-0813·nemotron-3-ultra-550b-a55b·nemotron-3.5-lightning-30b-a3b)은 직접 확인으로 확정 (출처: https://build.nvidia.com).
+- 2026-09-29: NVIDIA NIM 대표 모델 교체 — 공식 'Free inference' 라인업 4종, 한도에 '분당 최대 40회 + 일 10,000회' 추가 (3자 인용). 비고에 2026-09-07 3자 프로브 주석 추가 (출처: https://build.nvidia.com).
+- 2026-09-29: OpenRouter 대표 3종 교체 — DeepSeek R1·Llama 3.3 70B·Qwen3 Coder의 `:free` 버전 유료 전용 전환 확인, `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`ling-3.0-flash-sante:free`로 교체. Thinking Machines Inkling은 일반 API 호출에 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (출처: https://openrouter.ai/api/v1/models).
+- 2026-09-29: OrcaRouter — `deepseek/deepseek-v4-pro-free` 무료 풀 제외 확인 (출처: https://www.orcarouter.ai/api/pricing). `z-ai/glm-5.3-flash-free` 무료 티어 신규 추가 (9/7 무료 티어에서 Qwen3.8-27B 대체). `qwen3.8-27b-free` 딜리스트 확인 (출처: https://runtimewire.com/article/orcarouter-glm-5-3-flash-free-tier).
+- 2026-09-29: Token Harbor — 대표 모델 조정: `mimo-v2.5:free` → `mimo-v2.6-flash:free`, `TH-Rudder` Free 플랜 Includes 신규 표시 (출처: https://tokenharbor.ai/pricing). 한도에 분당 60회·시간당 1,800회 제한 확인 (2026-09-28 3자 재검증).
+- 2026-09-29: [철회] Token Harbor '미사용분 이월 불가' 정정 — 공식 근거 없음 확인 (해당 문구는 유료 Pass 설명의 것) → 원문 '이월 여부 상충' 유지.
 
 - 2026-09-28: Cerebras·Fireworks AI 섹션 제거 — 일회성 체험 크레딧 제공자는 조사 대상 아님 (Tracker 범위 확정: 상시 무료로 쓸 수 있는 제공자만 추적).
 
