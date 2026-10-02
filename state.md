@@ -2,7 +2,7 @@
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
-모든 수치는 2026-10-01 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
+모든 수치는 2026-10-02 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
 '미확인'은 조사 시점에 확인되지 않은 항목임.
 </p>
 
@@ -206,14 +206,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## LLM7.io <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-01 라이브 API 직접 확인):**
+- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-02 라이브 API 직접 확인):**
+  - `DeepSeek-V4-Flash-0731` — 400K 컨텍스트·도구 호출·추론 지원 (에이전트 용도로 가장 유망)
   - `GLM-5.3-Flash` — turbo 티어 무료 (카탈로그의 소문자 `glm-5.3`은 ID가 다른 별개 pro 모델)
-  - `codestral-latest` — turbo 티어 무료
-  - `mistral-Nemo-Instruct-2407` — turbo 티어 무료
+  - `gpt-oss:20b` — 128K 컨텍스트·도구 호출 지원
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 2026-10-01 라이브 API 직접 확인 기준 turbo(무료) 티어는 위 3종. `minimax-m2.7`은 카탈로그에서 제거됨 (대체로 `minimax-m3` pro 행만 존재), `deepseek-v4-flash:0731`은 pro 티어로 이동.
+  - 2026-10-02 라이브 API 직접 확인 기준 turbo(무료) 티어 6종: `DeepSeek-V4-Flash-0731`, `GLM-5.3-Flash`, `codestral-latest`, `gpt-oss:20b`, `minimax-m2.7` (180K 컨텍스트·도구 호출·추론 지원), `mistral-Nemo-Instruct-2407`. `minimax-m2.7`은 10/01 카탈로그에서 제거됐다가 10/02 turbo로 복귀. `deepseek-v4-flash:0731`(소문자·콜론 표기)은 별개 ID로 pro 티어 유지.
   - 전체 목록: [LLM7.io 모델 카탈로그](https://api.llm7.io/v1/models) — `tier: "turbo"` 행이 무료
 
   </details>
@@ -382,6 +382,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-10-02: LLM7.io — turbo(무료) 티어에 `DeepSeek-V4-Flash-0731`(400K 컨텍스트·도구 호출·추론 지원)·`gpt-oss:20b`·`minimax-m2.7` 3종 추가, 총 6종. `minimax-m2.7`은 10/01 카탈로그 제거 후 복귀. `deepseek-v4-flash:0731`(소문자)은 별개 ID로 pro 유지 (출처: https://api.llm7.io/v1/models).
 - 2026-10-01: Nous Portal 무료 라인업 축소 — 기준선 9종 중 `stepfun/step-3.7-flash:free`·`poolside/laguna-xs-2.1:free`·`inclusionai/ling-3.0-flash-fin:free`·`upstage/solar-pro4:free`·`meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free` 6종의 무료 variant 제거 확인 (일부 유료 variant는 유지), `stealth/space-bunny-alpha`는 2026-10-05 만료 예정 표시. `poolside/laguna-s-2.1:free`·`inclusionai/ling-3.0-flash-sante:free` 유지 (출처: https://inference-api.nousresearch.com/v1/models).
 - 2026-10-01: OpenRouter — 대표 `:free` 모델 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free` 카탈로그에서 제거 확인 (전체 텍스트 대조), `ling-3.0-flash-sante:free`·`qwen3.8-27b:free`·`dots-3-note-preview:free` 유지 확인 (출처: https://openrouter.ai/api/v1/models).
 - 2026-10-01: Api.Airforce — `unmoderated-gpt`가 partial_outage로 변경 (08:05 정상→18:00 부분 장애), 정상 호출 가능 무료 모델 5종→4종 (출처: https://api.airforce/v1/models).
