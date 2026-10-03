@@ -24,6 +24,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Google AI Studio — Gemini](#gemini)
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
+- [ZeroLimitAI](#zerolimitai)
 - [LLM7.io](#llm7)
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
@@ -31,6 +32,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [AnyAPI](#anyapi)
 - [Api.Airforce](#api-airforce)
 - [Ollama Cloud](#ollama-cloud)
+- [Agnes AI](#agnes-ai)
 - [Cline](#cline)
 - [변경 이력](#changelog)
 
@@ -202,6 +204,27 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://buldrr.com/openrouter-free-api-keys-free-models-simple-guide/
 - **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고. 구 무료 모델(DeepSeek R1·Llama 3.3 70B·Qwen3 Coder 등)의 `:free` 버전은 2026-09-28 확인 기준 유료 전용으로 전환됨. 2026-09-29 18:00 라이브 스냅샷 기준 `:free` 16종 — `qwen3.8-27b:free`·`liquid/lfm-2.5-2.6b:free` 신규 등록. `inclusionai/ling-3.0-flash-fin:free`는 유료 전환 (input $0.06/1M, output $0.18/1M). 2026-10-03 06:00 라이브 확인: `:free` 17종. 10/01에 제거됐던 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free`가 복귀하고, `apodex/apodex-1.1-mini:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free`가 신규 등재. 대표 3종(ling-3.0-flash-sante·qwen3.8-27b·dots-3-note-preview)은 유지 확인 — 교체 불필요. `:free` 라인업은 일 단위 로테이션이므로 대표 교체는 유지 확인 기준으로만. `stealth/space-bunny-alpha`는 무료 등재이나 expiration_date 2026-10-05 표시 (10/05 저녁 워치 만료 확인 예정). Thinking Machines Inkling은 에이전트 하네스에서만 응답하고 일반 API 호출에는 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (2026-09-28 3자 검증).
 
+<a id="zerolimitai"></a>
+
+## ZeroLimitAI <span class="prio p-mid">중간</span>
+
+- **대표 무료 모델 (2026-10-02 공식 페이지 확인):**
+  - `auto` — 자동 라우팅: ZeroOptimize™가 매일 재평가한 무료 모델 중 살아 있는 최고 모델로 자동 연결, 장애 시 폴오버
+  <details>
+  <summary>더보기 — 무료 플랜 안내</summary>
+
+  - 공식 개발자 페이지: [ZeroLimitAI Developers](https://www.zerolimitai.com/developers) — "Free — $0 forever. A permanent free tier, not a trial. No credit card, no waiting list."
+  - `model: "auto"` 하나로 호출, chat completions·스트리밍·함수 호출(tools) 지원
+
+  </details>
+
+- **한도**: Free $0 영구 — 가입 후 첫 주 일 100회 → 이후 일 50회 영구 (키 만료 없음). 키당 분당 60회, 일일 리셋 00:00 UTC
+- **API**: OpenAI 호환. 엔드포인트 `https://www.zerolimitai.com/api/v1`
+- **도구 호출**: 지원 (함수 호출 공식 지원)
+- **제한**: 카드 불필요. 상위 무료 모델 할당량은 전체 사용자와 공유 — 부족 시 유료 계정 우선 제공, 무료 요청은 하위 모델로 처리될 수 있음 (공식 FAQ 명시). 임베딩·이미지 입력 미지원
+- **출처**: https://www.zerolimitai.com/developers
+- **비고**: 영구 무료 티어라 조사 범위 충족. Hermes 폴백 키로 유력 — 단, 무료 할당량 공유 구조라 트래픽 몰리면 하위 모델로 떨어질 수 있음.
+
 <a id="llm7"></a>
 
 ## LLM7.io <span class="prio p-low">낮음</span>
@@ -310,6 +333,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [AnyAPI AI 모델 카탈로그](https://anyapi.ai/ai-models) — 좌측 Tier 필터에서 Free 선택 (각 무료 모델에 "Free" 배지 표시)
   - 2026-10-01 확인 기준 무료 예시: Ling 3.0 Flash Fin (free), Ling 3.0 Flash Sante (free), Qwen2.5 Coder 32B Instruct (free), Gemma 3n 4B (free)
+  - 2026-10-02 확인: Gemma 3n 4B가 무료 목록 텍스트에 미노출 (상세 페이지는 존재 → 제거 미확정, 다음 워치 재확인)
 
   </details>
 
@@ -363,6 +387,28 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://ollama.com/cloud
 - **비고**: 매월 리셋되는 상시 무료라 조사 범위 충족. 단, 크레딧 금액·starter 모델 목록이 비공개라 Hermes 폴백으로는 하위 우선순위. 크레딧 구매 시 전체 모델 잠금 해제.
 
+<a id="agnes-ai"></a>
+
+## Agnes AI <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-02 공식 가격 페이지 확인 — 프로모션 $0):**
+  - `agnes-3.0-flash` — 현재 $0 청구 (프로모션, 종료 시 유료 전환 가능)
+  - `agnes-2.5-flash` — 현재 $0 청구 (프로모션, 종료 시 유료 전환 가능)
+  <details>
+  <summary>더보기 — 무료 조건 안내</summary>
+
+  - 공식 FAQ: "Our core AI models are free to use indefinitely". 가격 페이지에서 `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 청구 확인.
+  - [Agnes AI](https://agnes-ai.com) — 공식 문구 "Promotional end dates are subject to Agnes AI platform announcements"
+
+  </details>
+
+- **한도**: 일일 쿼터 미공개 (3자 프로브 기준 분당 약 20~30 RPM)
+- **API**: OpenAI 호환. 엔드포인트 `https://apihub.agnes-ai.com/v1`
+- **도구 호출**: 미확인
+- **제한**: 카드 불필요. $0은 상시 계약이 아니라 현재 가격 책정 — 종료 시 유료 전환 가능. 2026-09-14 검증 목록 등록, 9/24 프로브 확인 (provisional 상태)
+- **출처**: https://agnes-ai.com , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/agnes-ai.md
+- **비고**: 프로모션 $0 제공자라 우선순위 낮음. 무료 종료 시 Tracker에서 제거 검토.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -382,6 +428,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-10-03: 신규 제공자 ZeroLimitAI 추가 — 영구 무료 티어("Free — $0 forever", 카드 불필요), 가입 후 첫 주 일 100회 → 이후 일 50회 영구, OpenAI 호환·도구 호출 지원·`auto` 자동 라우팅 + 장애 시 폴오버 (출처: https://www.zerolimitai.com/developers).
+- 2026-10-03: 신규 제공자 Agnes AI 추가 — `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 (프로모션, "Promotional end dates are subject to Agnes AI platform announcements" — 종료 시 유료 전환 가능), 카드 불필요 (출처: https://agnes-ai.com).
+- 2026-10-03: AnyAPI — Gemma 3n 4B가 무료 목록 텍스트에 미노출 (상세 페이지 존재 → 제거 미확정, 다음 워치 재확인).
 - 2026-10-03: Token Harbor — `qwen3.8-flash:free` 무료 기한 2026-10-04 13:00 UTC 종료 예정 (3자 자료 기준), 10/04 저녁 워치에서 만료 확인 필요 (출처: https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md).
 - 2026-10-03: OpenRouter — `:free` 17종 확인. 10/01에 제거됐던 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free` 복귀 + `apodex/apodex-1.1-mini:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free` 신규 등재. 대표 3종 유지 (출처: https://openrouter.ai/api/v1/models).
 - 2026-10-03: Nous Portal — 무료 라인업 로테이션 복귀: 10/01 저녁에 제거됐던 `stepfun/step-3.7-flash:free`·`poolside/laguna-xs-2.1:free`·`inclusionai/ling-3.0-flash-fin:free`·`meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free` 5종의 무료 variant 재등장, 무료 8종. `upstage/solar-pro4:free`는 :free variant가 카탈로그에 없음 (유료 variant만 유지). `space-bunny-alpha` 2026-10-05 만료 예정 유지 (출처: https://inference-api.nousresearch.com/v1/models).
