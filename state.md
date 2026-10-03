@@ -1,4 +1,4 @@
-# Free LLM Tracker — 기준선 (2026-10-01)
+# Free LLM Tracker — 기준선 (2026-10-03)
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
