@@ -33,6 +33,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Api.Airforce](#api-airforce)
 - [Ollama Cloud](#ollama-cloud)
 - [Agnes AI](#agnes-ai)
+- [BazaarLink](#bazaarlink)
 - [Cline](#cline)
 - [변경 이력](#changelog)
 
@@ -348,16 +349,16 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-01 08:05 공개 API 라이브 확인):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-03 18:00 공개 API 라이브 확인):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
-  - `llama-instant` — 무료 티어, 정상 운영
+  - `rnj-1` — 무료 티어, 정상 운영 (10/03 18:00 확인에서 정상 복귀한 `gemma3-270m:free`도 호출 가능)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-01 기준 전체 약 650종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-03 18:00 기준 전체 약 650종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-01 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종(suno-v4.5·suno-v5.5·suno-v5)·`gemma3-270m:free`·`glm-4.7-flash`), `unmoderated-gpt`는 `partial_outage`로 변경 (08:05 정상→18:00 부분 장애). 정상 호출 가능한 무료 모델은 `rnj-1`·`llama-instant`·`kimi-k2.7-code`·`gpt-oss-20b` 4종.
+  - 주의: 2026-10-03 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종(suno-v4.5·suno-v5.5·suno-v5)·`glm-4.7-flash`), `unmoderated-gpt`는 `partial_outage`, `llama-instant`는 `degraded`(10/03 18:00 정상→저하). 정상 호출 가능한 무료 모델은 `rnj-1`·`kimi-k2.7-code`·`gpt-oss-20b`·`gemma3-270m:free` 4종 (`gemma3-270m:free`는 major_outage에서 정상 복귀).
 
   </details>
 
@@ -409,6 +410,28 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://agnes-ai.com , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/agnes-ai.md
 - **비고**: 프로모션 $0 제공자라 우선순위 낮음. 무료 종료 시 Tracker에서 제거 검토.
 
+<a id="bazaarlink"></a>
+
+## BazaarLink <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-03 공식 무료 페이지 직접 확인):**
+  - `qwen/qwen3.7-flash` — 1M 컨텍스트, 텍스트·이미지·비디오 입력 (24시간 프로브 100%)
+  - `deepseek/deepseek-v4-flash-0731free` — 약 1M 컨텍스트, 텍스트 전용 (24시간 프로브 100%)
+  <details>
+  <summary>더보기 — 무료 조건 안내</summary>
+
+  - 공식 페이지: [BazaarLink Free](https://bazaarlink.ai/free) — "Free — No Credit Card Required", 카탈로그 스냅샷(2026-10-03 08:05 UTC) 기준 무료 2종, 매시간 프로브로 실제 응답 확인 공개
+  - 무료 모델은 "enabled free models" 표에서만 제공 (로테이션 가능)
+
+  </details>
+
+- **한도**: 무충전 계정 — 10 RPM · 일 60 가중 단위 / 충전 계정 — 20 RPM · 일 120 가중 단위 (무료 모델 간 공유, 00:00 UTC 일일 리셋). 사이트 전체 무료 RPM 상한 15, 계정당 동시 무료 요청 2개
+- **API**: OpenAI 호환. 엔드포인트 `https://api.bazaarlink.ai/v1`
+- **도구 호출**: 미확인 (공식 무료 페이지에 언급 없음)
+- **제한**: 카드 불필요 (이메일 가입 후 60초 만에 무료 키 발급). 긴 입력은 가중 단위 소모가 커짐 (가중 단위: 입력 길이에 따라 소모량이 달라지는 한도 단위)
+- **출처**: https://bazaarlink.ai/free
+- **비고**: 영구 무료 티어라 조사 범위 충족. 일 한도가 작아(짧은 요청 기준 일 ~60회 수준) 테스트·가벼운 폴백용. 운영사 대만 소재.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -428,6 +451,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-10-03: 신규 제공자 BazaarLink 추가 — 영구 무료 티어("Free — No Credit Card Required", 카드 불필요), `qwen/qwen3.7-flash`·`deepseek/deepseek-v4-flash-0731free` 2종 (24시간 프로브 100%), 무충전 계정 10 RPM·일 60 가중 단위, OpenAI 호환 (출처: https://bazaarlink.ai/free).
+- 2026-10-03: Api.Airforce — `llama-instant` 정상→degraded(저하), `gemma3-270m:free` major_outage→정상 복귀. 정상 호출 가능 무료 모델은 `rnj-1`·`kimi-k2.7-code`·`gpt-oss-20b`·`gemma3-270m:free` 4종 (출처: https://api.airforce/v1/models).
+- 2026-10-03: AnyAPI — Gemma 3n 4B 무료 목록 여부 10/03 저녁에도 확인 불가 (카탈로그 페이지 텍스트에 모델명 미노출, Free 뱃지 매핑 불가) — 제거 미확정 유지, 다음 워치 재확인.
 - 2026-10-03: 신규 제공자 ZeroLimitAI 추가 — 영구 무료 티어("Free — $0 forever", 카드 불필요), 가입 후 첫 주 일 100회 → 이후 일 50회 영구, OpenAI 호환·도구 호출 지원·`auto` 자동 라우팅 + 장애 시 폴오버 (출처: https://www.zerolimitai.com/developers).
 - 2026-10-03: 신규 제공자 Agnes AI 추가 — `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 (프로모션, "Promotional end dates are subject to Agnes AI platform announcements" — 종료 시 유료 전환 가능), 카드 불필요 (출처: https://agnes-ai.com).
 - 2026-10-03: AnyAPI — Gemma 3n 4B가 무료 목록 텍스트에 미노출 (상세 페이지 존재 → 제거 미확정, 다음 워치 재확인).
