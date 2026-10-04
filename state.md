@@ -358,7 +358,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-04 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-05 06:00 기준 무료 28종 중 22종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`), 정상 호출 가능한 무료 모델은 `gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`rnj-1`·`unmoderated-gpt` 6종. `unmoderated-gpt`는 major_outage→정상 복귀, `glm-4.7-flash`는 partial_outage→정상 복귀. 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
+  - 주의: 2026-10-05 06:00 기준 무료 28종 중 22종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`), 정상 호출 가능한 무료 모델은 `gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`unmoderated-gpt` 5종. `unmoderated-gpt`는 major_outage→정상 복귀, `glm-4.7-flash`는 partial_outage→정상 복귀. `rnj-1`은 06:15 정상이었으나 06:30 재확인에서 다시 major_outage — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
 
   </details>
 
