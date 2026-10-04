@@ -358,7 +358,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-04 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-04 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`·`unmoderated-gpt`), 정상 호출 가능한 무료 모델은 `gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`rnj-1` 5종. `rnj-1`은 major_outage→정상 복귀, `unmoderated-gpt`는 partial_outage→major_outage로 악화.
+  - 주의: 2026-10-04 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`·`unmoderated-gpt`), 정상 호출 가능한 무료 모델은 `gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1` 4종. `rnj-1`은 major_outage→정상 복귀, `unmoderated-gpt`는 partial_outage→major_outage로 악화. `glm-4.7-flash`는 18:00 정상에서 18:06 라이브 확인 기준 partial_outage로 재악화 — 상태가 분 단위로 뒤집히는 중이므로 사용 전 재확인이 안전 (10/04 18:06 교정).
 
   </details>
 
@@ -458,6 +458,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - 2026-10-04: 변동 없음 — OpenRouter(:free 17종)·LLM7.io(turbo 7종)·Nous Portal(무료 9종)·OrcaRouter(무료 5종)·BazaarLink(무료 2종)·OpenCode Zen(무료 12종)·Groq·Gemini·Mistral. Token Harbor `qwen3.8-flash:free`는 여전히 Free 등재 (13:00 UTC=22:00 KST 만료 예정 — 내일 아침 워치에서 만료 확인).
 
 - 2026-10-04: OpenCode Zen — 무료 목록 12종으로 교체: `fledge-alpha-free`(신규 스텔스 모델, 10/01 등장 — 커뮤니티에서 Thinking Machines Inkling 연관 추정)·`ling-3.1-flash-free`(신규) 추가 (출처: https://opencode.ai/docs/zen/, https://www.youtube.com/watch?v=4Zb9my4MI3U).
+- 2026-10-04: Api.Airforce — `glm-4.7-flash` 18:00 정상에서 18:06 라이브 확인 기준 partial_outage로 재악화, 정상 호출 가능 무료 모델 5종→4종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`). Airforce 상태는 분 단위로 뒤집히는 중 (출처: https://api.airforce/v1/models).
 - 2026-10-04: AnyAPI — 무료 티어 4종→2종으로 축소: Ling 3.0 Flash Fin이 Premium 티어로 변경, Gemma 3n 4B는 카탈로그 목록에서 완전 제거 확인 (10/02~10/03 '제거 미확정'에서 제거 확정으로 전환). Free 잔류: Ling 3.0 Flash Sante·Qwen2.5 Coder 32B Instruct (출처: https://anyapi.ai/ai-models).
 - 2026-10-04: Api.Airforce — `llama-instant` degraded→정상 복귀, `glm-4.7-flash` major_outage→정상 복귀. 반면 `rnj-1`은 정상→major_outage, `gemma3-270m:free`는 정상→major_outage로 다시 장애. 정상 호출 가능 무료 모델 4종 (`gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`), 대표 모델에서 `rnj-1`→`llama-instant`로 교체 (출처: https://api.airforce/v1/models).
 - 2026-10-04: Nous Portal — 무료 9종: `inclusionai/ling-3.1-flash`가 공식 API에서 input/output $0.00 확인되어 무료 확정 (10/03까지는 $0 표시이나 :free 명칭 없어 미확정). `space-bunny-alpha`는 여전히 무료 등재이나 10/05 만료 예정 유지 (출처: https://inference-api.nousresearch.com/v1/models).
