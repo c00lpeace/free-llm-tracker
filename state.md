@@ -452,7 +452,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>변경 이력 펼쳐보기</summary>
 
 - 2026-10-05: Token Harbor — `qwen3.8-flash:free` 무료 프로모 종료 확인 (2026-10-04 13:00 UTC 경과, Free 목록에서 제거 → 유료 "value" 티어 $0.15/1M 입력으로 전환, isFree:false). 무료 2종 (`deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`)으로 축소, 대표 모델에서 제외 (출처: https://tokenharbor.ai/models?category=free).
-- 2026-10-05: Api.Airforce — `unmoderated-gpt` major_outage→정상 복귀, `glm-4.7-flash` partial_outage→정상 복귀. 정상 호출 가능 무료 모델 4종→6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) (출처: https://api.airforce/v1/models).
+- 2026-10-05: Api.Airforce — `unmoderated-gpt` major_outage→정상 복귀, `glm-4.7-flash` partial_outage→정상 복귀, `rnj-1`도 major_outage→정상 복귀 (06:15 확인). 그러나 06:30경 라이브 재확인에서 `rnj-1`이 다시 major_outage로 복귀 — 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`unmoderated-gpt`). Airforce 상태는 계속 요동 (출처: https://api.airforce/v1/models).
 - 2026-10-05: 변동 없음 — OpenRouter(:free 17종)·LLM7.io(turbo 7종)·Nous Portal(무료 9종)·OrcaRouter(무료 5종)·BazaarLink(무료 2종)·OpenCode Zen(무료 12종)·AnyAPI(Free 3종)·Groq·NVIDIA NIM·Gemini·Mistral·Ollama Cloud. ZeroLimitAI는 여전히 'Free week' 표기 (형님 판단 대기 유지). `space-bunny-alpha`는 OpenRouter·Nous Portal 모두 여전히 $0 등재 (만료일 2026-10-05 — 저녁 워치에서 만료 확인 예정). 신규 상시 무료 제공자 없음.
 
 - 2026-10-04: ZeroLimitAI — 공식 개발자 페이지의 무료 표기가 기준선의 "Free — $0 forever"(10/03)에서 "Free week — $0 for 7 days"(7일 체험 후 유료 플랜 필요, 체험 종료 시 402 upgrade_required)로 변경 확인. 기준선 '영구 무료 티어' 표기와 상충 → Tracker 범위(상시 무료 제공자만 추적) 적용 여부를 형님께 질문 예정, 이번 워치에서는 섹션 미변경 (출처: https://www.zerolimitai.com/developers).
