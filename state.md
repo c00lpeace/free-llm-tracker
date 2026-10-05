@@ -24,7 +24,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Google AI Studio — Gemini](#gemini)
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
-- [ZeroLimitAI](#zerolimitai)
 - [LLM7.io](#llm7)
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
@@ -35,6 +34,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Agnes AI](#agnes-ai)
 - [BazaarLink](#bazaarlink)
 - [Cline](#cline)
+- [기간 한정 무료](#limited-free)
 - [변경 이력](#changelog)
 
 </details>
@@ -205,27 +205,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **제한**: 카드 불필요. 무료 라우트별 데이터 정책 상이 (일부는 학습 활용 경고 있음). upstream 429 빈발 보고.
 - **출처**: https://buldrr.com/openrouter-free-api-keys-free-models-simple-guide/
 - **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고. 구 무료 모델(DeepSeek R1·Llama 3.3 70B·Qwen3 Coder 등)의 `:free` 버전은 2026-09-28 확인 기준 유료 전용으로 전환됨. 2026-09-29 18:00 라이브 스냅샷 기준 `:free` 16종 — `qwen3.8-27b:free`·`liquid/lfm-2.5-2.6b:free` 신규 등록. `inclusionai/ling-3.0-flash-fin:free`는 유료 전환 (input $0.06/1M, output $0.18/1M). 2026-10-03 06:00 라이브 확인: `:free` 17종. 10/01에 제거됐던 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free`가 복귀하고, `apodex/apodex-1.1-mini:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free`가 신규 등재. 대표 3종(ling-3.0-flash-sante·qwen3.8-27b·dots-3-note-preview)은 유지 확인 — 교체 불필요. `:free` 라인업은 일 단위 로테이션이므로 대표 교체는 유지 확인 기준으로만. `stealth/space-bunny-alpha`는 무료 등재이나 expiration_date 2026-10-05 — 2026-10-05 18:00 KST 현재 OpenRouter·Nous Portal 양쪽 카탈로그 모두 여전히 $0 등재 유지 (언제든 제거 가능, 다음 워치 재확인). Thinking Machines Inkling은 에이전트 하네스에서만 응답하고 일반 API 호출에는 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (2026-09-28 3자 검증).
-
-<a id="zerolimitai"></a>
-
-## ZeroLimitAI <span class="prio p-mid">중간</span>
-
-- **대표 무료 모델 (2026-10-02 공식 페이지 확인):**
-  - `auto` — 자동 라우팅: ZeroOptimize™가 매일 재평가한 무료 모델 중 살아 있는 최고 모델로 자동 연결, 장애 시 폴오버
-  <details>
-  <summary>더보기 — 무료 플랜 안내</summary>
-
-  - 공식 개발자 페이지: [ZeroLimitAI Developers](https://www.zerolimitai.com/developers) — "Free — $0 forever. A permanent free tier, not a trial. No credit card, no waiting list."
-  - `model: "auto"` 하나로 호출, chat completions·스트리밍·함수 호출(tools) 지원
-
-  </details>
-
-- **한도**: Free $0 영구 — 가입 후 첫 주 일 100회 → 이후 일 50회 영구 (키 만료 없음). 키당 분당 60회, 일일 리셋 00:00 UTC
-- **API**: OpenAI 호환. 엔드포인트 `https://www.zerolimitai.com/api/v1`
-- **도구 호출**: 지원 (함수 호출 공식 지원)
-- **제한**: 카드 불필요. 상위 무료 모델 할당량은 전체 사용자와 공유 — 부족 시 유료 계정 우선 제공, 무료 요청은 하위 모델로 처리될 수 있음 (공식 FAQ 명시). 임베딩·이미지 입력 미지원
-- **출처**: https://www.zerolimitai.com/developers
-- **비고**: 영구 무료 티어라 조사 범위 충족. Hermes 폴백 키로 유력 — 단, 무료 할당량 공유 구조라 트래픽 몰리면 하위 모델로 떨어질 수 있음.
 
 <a id="llm7"></a>
 
@@ -445,6 +424,63 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://docs.cline.bot/getting-started/free-models
 - **비고**: Cline은 API 제공자가 아니라 VS Code/JetBrains/CLI용 코딩 에이전트 도구임. Hermes Agent에 연결할 수 없으므로 조사 대상에서 제외. 형님께 "Cline 무료 모델은 Cline 안에서만 쓸 수 있다"고 안내 필요.
 
+<a id="limited-free"></a>
+
+## 기간 한정 무료
+
+- **안내**: 상시 무료가 아닌, 기간·조건이 한정된 무료 제공자 모음. 종료일이 다가오면 아침·저녁 워치에서 만료 여부를 확인합니다.
+
+| 제공자 | 무료 조건 | 종료 예정 | OpenAI 호환 |
+|---|---|---|---|
+| [ZeroLimitAI](#zerolimitai) | 7일 체험, 일 100회 | 키 발급 후 7일 (종료 시 402) | O |
+| [Hetzner Inference API](#hetzner-inference-api) | 실험 단계 무료 | 미정 (사전 이메일 공지) | O |
+| [OpenCode Zen](#opencode-zen) 무료 모델 | 기간 한정 (전 모델) | 모델별 상이 | O |
+| [Nous Portal](#nous-portal) `ling-3.1-flash` | 2주 무료 체험 | ~10/13~14 예상 | O |
+| `space-bunny-alpha` ([Nous Portal](#nous-portal)·[OpenRouter](#openrouter)) | 기간 한정 무료 등재 | 2026-10-05 만료 예정이었으나 아직 $0 등재 | O |
+| [Cline](#cline) 무료 모델 | 기간 한정 프로모션 | 모델별 상이 | X (API 미제공) |
+
+<a id="zerolimitai"></a>
+
+## ZeroLimitAI <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-04 공식 개발자 페이지 확인):**
+  - `auto` — 자동 라우팅: ZeroOptimize™가 매일 재평가한 무료 모델 중 살아 있는 최고 모델로 자동 연결, 장애 시 폴오버
+  <details>
+  <summary>더보기 — 무료 플랜 안내</summary>
+
+  - 공식 개발자 페이지: [ZeroLimitAI Developers](https://www.zerolimitai.com/developers) — "Free week — $0 for 7 days" (2026-10-04 변경 확인, 기존 "Free — $0 forever"에서 전환)
+  - `model: "auto"` 하나로 호출, chat completions·스트리밍·함수 호출(tools) 지원
+
+  </details>
+
+- **한도**: Free week — $0 for 7 days. 일 100회, 00:00 UTC 리셋. 체험 종료 후 키는 HTTP 402 upgrade_required — Annual($49/년, 일 2,000회)·Lifetime($99 일회성, 일 5,000회) 필요
+- **API**: OpenAI 호환. 엔드포인트 `https://www.zerolimitai.com/api/v1`
+- **도구 호출**: 지원 (함수 호출 공식 지원)
+- **제한**: 카드 불필요 (체험은 평가용 — 프로덕션은 유료 플랜 필요). 상위 무료 모델 할당량은 전체 사용자와 공유 — 부족 시 무료 요청은 하위 모델로 처리될 수 있음 (공식 FAQ 명시). 임베딩·이미지 입력 미지원
+- **출처**: https://www.zerolimitai.com/developers
+- **비고**: 2026-10-04 "Free — $0 forever"에서 "Free week — $0 for 7 days"로 변경 확인 → 상시 무료 범위에서 제외, 기간 한정 섹션으로 이동 (2026-10-05 형님 승인).
+
+<a id="hetzner-inference-api"></a>
+
+## Hetzner Inference API <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-05 Hetzner Docs 확인):**
+  - `Qwen/Qwen3.6-35B-A3B-FP8` — 35B MoE (토큰당 활성 3B), 262K 컨텍스트, 텍스트·이미지 입력, Apache 2.0
+  <details>
+  <summary>더보기 — 무료 조건 안내</summary>
+
+  - 공식 문서 FAQ: "Can I use the Inference API for free? — As long as the Inference API remains in experimental status, it is free of charge. Should this status change, we will notify you in advance via email with detailed information."
+  - 3자 자료에서 DeepSeek-V4-Flash-0731·GLM-5.2·Kimi-K2.7-Code 등 추가 모델 언급도 있으나 공식 Docs 기준 미확인
+
+  </details>
+
+- **한도**: API 키당 — 60초당 입력 300만 토큰·출력 6만 토큰 / 24시간당 입력 5억 토큰·출력 500만 토큰 (공식 Docs)
+- **API**: OpenAI 호환. 엔드포인트 `https://inference.hetzner.com/api/v1`
+- **도구 호출**: 미확인 (공식 Docs에 언급 없음)
+- **제한**: 카드 불필요 (Hetzner 무료 계정 + API 토큰). 실험 단계 — "as is" 제공, 성능·가용성 보장 없음, SLA 없음, 프로덕션 비권장
+- **출처**: https://docs.hetzner.com/general/company-and-policy/experiments/inference/
+- **비고**: 2026-07 출시 이후 계속 무료. 종료일이 정해져 있지 않으나 언제든 유료 전환 가능 — 기간 한정으로 분류.
+
 <a id="changelog"></a>
 
 ## 변경 이력
@@ -456,6 +492,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - 2026-10-05: Gemini — TTS 모델 2종(`gemini-3.8-flash-tts`·`gemini-3.8-flash-lite-tts`) Free Tier "Free of charge"로 GA 확인 (2026-09-22 changelog, 18:00 가격표 직접 확인 — 기준선 미기록분). 음성 합성 전용이라 Hermes 채팅 연결 대상 아님, 대표 모델 변경 없음 (출처: https://ai.google.dev/gemini-api/docs/pricing, https://ai.google.dev/gemini-api/docs/changelog).
 - 2026-10-05: Api.Airforce — 정상 가용 무료 모델 5종 로테이션: `gemma3-270m:free` major_outage→정상 복귀·`rnj-1` 정상 유지, 반면 `kimi-k2.7-code`·`glm-4.7-flash` major_outage 전환 (18:07 확인). 그러나 18:15경 라이브 재확인에서 `gemma3-270m:free`→major_outage로 재장애, `kimi-k2.7-code`→정상 복귀. 현재 정상 5종 `gpt-oss-20b`·`rnj-1`·`unmoderated-gpt`·`kimi-k2.7-code`·`llama-instant`. 상태가 계속 요동 (출처: https://api.airforce/v1/models).
 - 2026-10-05: `space-bunny-alpha` — 만료일 2026-10-05 도래. 그러나 18:00 KST 현재 OpenRouter·Nous Portal 양쪽 카탈로그 모두 $0로 여전히 등재 중 (expiration_date=2026-10-05, 언제든 제거 가능) — 실제 제거 확인 시 목록에서 정리 예정 (출처: https://openrouter.ai/api/v1/models, https://inference-api.nousresearch.com/v1/models).
+- 2026-10-05: '기간 한정 무료' 섹션 신설 — ZeroLimitAI('Free week — $0 for 7 days' 전환으로 상시 무료 범위 제외)를 상시 목록에서 이동, Hetzner Inference API(실험 단계 무료·종료일 미정) 신규 등록. OpenCode Zen·ling-3.1-flash·space-bunny-alpha·Cline은 요약표로 정리 (형님 승인).
 - 2026-10-05: Intern-AI Discovery API 제외 확정 — 범용 채팅 API(OpenAI SDK 호환)는 맞으나 공식 무료 쿼터 미게시·휴대폰 번호 연동+화이트리스트 가입 구조라 Tracker 범위 미충족. 공식 무료 티어 게시 시 재검토 (출처: https://internlm.intern-ai.org.cn/api/document).
 - 2026-10-05: Token Harbor — `qwen3.8-flash:free` 무료 프로모 종료 확인 (2026-10-04 13:00 UTC 경과, Free 목록에서 제거 → 유료 "value" 티어 $0.15/1M 입력으로 전환, isFree:false). 무료 2종 (`deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`)으로 축소, 대표 모델에서 제외 (출처: https://tokenharbor.ai/models?category=free).
 - 2026-10-05: Api.Airforce — `unmoderated-gpt` major_outage→정상 복귀, `glm-4.7-flash` partial_outage→정상 복귀, `rnj-1`도 major_outage→정상 복귀 (06:15 확인). 그러나 06:30경 라이브 재확인에서 `rnj-1`이 다시 major_outage로 복귀 — 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`·`unmoderated-gpt`). Airforce 상태는 계속 요동 (출처: https://api.airforce/v1/models).
