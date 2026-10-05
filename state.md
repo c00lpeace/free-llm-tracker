@@ -359,7 +359,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-04 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-05 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`kimi-k2.7-code`·`glm-4.7-flash`), 정상 호출 가능한 무료 모델은 `unmoderated-gpt`·`llama-instant`·`gemma3-270m:free`·`rnj-1`·`gpt-oss-20b` 5종. `gemma3-270m:free`는 major_outage→정상 복귀, `rnj-1`은 정상 유지. 반면 `kimi-k2.7-code`·`glm-4.7-flash`가 major_outage로 전환 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
+  - 주의: 2026-10-05 18:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`kimi-k2.7-code`·`glm-4.7-flash`), 정상 호출 가능한 무료 모델은 `gpt-oss-20b`·`rnj-1`·`unmoderated-gpt`·`kimi-k2.7-code`·`llama-instant` 5종. `gemma3-270m:free`는 major_outage→정상 복귀, `rnj-1`은 정상 유지. 반면 `kimi-k2.7-code`·`glm-4.7-flash`가 major_outage로 전환 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
 
   </details>
 
@@ -454,7 +454,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 - 2026-10-05: Groq — `openai/gpt-oss-safeguard-20b` 한도 하향 (RPM 30→5, TPM 8K→2K; RPD 1K·TPD 200K 유지). 나머지 무료 모델(gpt-oss-120b/20b·qwen3.8-27b)은 한도·목록 변동 없음 (출처: https://console.groq.com/docs/rate-limits).
 - 2026-10-05: Gemini — TTS 모델 2종(`gemini-3.8-flash-tts`·`gemini-3.8-flash-lite-tts`) Free Tier "Free of charge"로 GA 확인 (2026-09-22 changelog, 18:00 가격표 직접 확인 — 기준선 미기록분). 음성 합성 전용이라 Hermes 채팅 연결 대상 아님, 대표 모델 변경 없음 (출처: https://ai.google.dev/gemini-api/docs/pricing, https://ai.google.dev/gemini-api/docs/changelog).
-- 2026-10-05: Api.Airforce — 정상 가용 무료 모델 5종 로테이션: `gemma3-270m:free` major_outage→정상 복귀·`rnj-1` 정상 유지, 반면 `kimi-k2.7-code`·`glm-4.7-flash` major_outage 전환. 현재 정상 5종 `unmoderated-gpt`·`llama-instant`·`gemma3-270m:free`·`rnj-1`·`gpt-oss-20b`, 대표 모델에서 `kimi-k2.7-code`→`unmoderated-gpt`로 교체 (출처: https://api.airforce/v1/models).
+- 2026-10-05: Api.Airforce — 정상 가용 무료 모델 5종 로테이션: `gemma3-270m:free` major_outage→정상 복귀·`rnj-1` 정상 유지, 반면 `kimi-k2.7-code`·`glm-4.7-flash` major_outage 전환 (18:07 확인). 그러나 18:15경 라이브 재확인에서 `gemma3-270m:free`→major_outage로 재장애, `kimi-k2.7-code`→정상 복귀. 현재 정상 5종 `gpt-oss-20b`·`rnj-1`·`unmoderated-gpt`·`kimi-k2.7-code`·`llama-instant`. 상태가 계속 요동 (출처: https://api.airforce/v1/models).
 - 2026-10-05: `space-bunny-alpha` — 만료일 2026-10-05 도래. 그러나 18:00 KST 현재 OpenRouter·Nous Portal 양쪽 카탈로그 모두 $0로 여전히 등재 중 (expiration_date=2026-10-05, 언제든 제거 가능) — 실제 제거 확인 시 목록에서 정리 예정 (출처: https://openrouter.ai/api/v1/models, https://inference-api.nousresearch.com/v1/models).
 - 2026-10-05: Intern-AI Discovery API 제외 확정 — 범용 채팅 API(OpenAI SDK 호환)는 맞으나 공식 무료 쿼터 미게시·휴대폰 번호 연동+화이트리스트 가입 구조라 Tracker 범위 미충족. 공식 무료 티어 게시 시 재검토 (출처: https://internlm.intern-ai.org.cn/api/document).
 - 2026-10-05: Token Harbor — `qwen3.8-flash:free` 무료 프로모 종료 확인 (2026-10-04 13:00 UTC 경과, Free 목록에서 제거 → 유료 "value" 티어 $0.15/1M 입력으로 전환, isFree:false). 무료 2종 (`deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`)으로 축소, 대표 모델에서 제외 (출처: https://tokenharbor.ai/models?category=free).
