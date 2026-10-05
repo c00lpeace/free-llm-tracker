@@ -108,6 +108,50 @@
     border-top: 1px solid #d1d9e0;
     margin: 2em 0;
   }
+  article table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+    font-size: 0.9rem;
+  }
+  article th, article td {
+    border: 1px solid #d1d9e0;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  article th { background: #f6f8fa; font-weight: 700; }
+  article tr:nth-child(even) td { background: #fafbfc; }
+  /* 상시/기간한정 탭 */
+  .flt-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 28px 0 0;
+    border-bottom: 2px solid #d1d9e0;
+  }
+  .flt-tab {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 10px 22px;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+    color: #59636e;
+    cursor: pointer;
+    margin-bottom: -2px;
+  }
+  .flt-tab:hover { color: #1f2328; background: #f6f8fa; }
+  .flt-tab.active {
+    color: #0969da;
+    background: #fff;
+    border-color: #d1d9e0;
+  }
+  .flt-tab:focus-visible { outline: 2px solid #0969da; outline-offset: 2px; }
+  @media (max-width: 640px) {
+    .flt-tab { padding: 10px 14px; font-size: 0.88rem; }
+  }
   /* 더보기(펼치기) 영역 */
   article details {
     border: 1px solid #d1d9e0;
@@ -163,6 +207,114 @@
   <script src="marked.min.js"></script>
   <script>
     var RAW_URL = "https://raw.githubusercontent.com/c00lpeace/free-llm-tracker/main/state.md";
+    // 기간 한정 탭에 속하는 앵커 (목차 필터링·탭 자동전환용)
+    var LTD_ANCHORS = { "limited-free": 1, "zerolimitai": 1, "hetzner-inference-api": 1 };
+    var currentTab = "perm";
+
+    function switchTab(name) {
+      currentTab = name;
+      var perm = document.getElementById("tab-perm");
+      var ltd = document.getElementById("tab-ltd");
+      if (perm) perm.style.display = (name === "perm") ? "" : "none";
+      if (ltd) ltd.style.display = (name === "ltd") ? "" : "none";
+      var btns = document.querySelectorAll(".flt-tab");
+      for (var i = 0; i < btns.length; i++) {
+        var on = btns[i].getAttribute("data-tab") === name;
+        if (on) btns[i].classList.add("active");
+        else btns[i].classList.remove("active");
+        btns[i].setAttribute("aria-selected", on ? "true" : "false");
+      }
+      // 목차: 현재 탭의 항목만 표시 (변경 이력은 항상 표시)
+      var items = document.querySelectorAll("#toc-list li");
+      for (var j = 0; j < items.length; j++) {
+        var a = items[j].querySelector('a[href^="#"]');
+        var key = a ? a.getAttribute("href").slice(1) : "";
+        var show;
+        if (key === "changelog") show = true;
+        else if (name === "perm") show = !LTD_ANCHORS[key];
+        else show = !!LTD_ANCHORS[key];
+        items[j].style.display = show ? "" : "none";
+      }
+      try { localStorage.setItem("flt-tab", name); } catch (e) {}
+    }
+
+    function buildTabs(el) {
+      // "기간 한정 무료" h2부터 "변경 이력" h2 전까지를 별도 탭으로 분리
+      var kids = Array.prototype.slice.call(el.childNodes);
+      var head = document.createElement("div");
+      var perm = document.createElement("div");
+      var ltd = document.createElement("div");
+      var cl = document.createElement("div");
+      perm.id = "tab-perm";
+      ltd.id = "tab-ltd";
+      var mode = "head";
+      var seenToc = false;
+      var found = false;
+      for (var i = 0; i < kids.length; i++) {
+        var n = kids[i];
+        if (n.nodeType === 1) {
+          if (!seenToc && n.tagName === "DETAILS") {
+            seenToc = true;
+            head.appendChild(n);
+            mode = "perm";
+            continue;
+          }
+          var q1 = n.querySelector ? (n.querySelector("#limited-free") || (n.id === "limited-free" ? n : null)) : null;
+          var q2 = n.querySelector ? (n.querySelector("#changelog") || (n.id === "changelog" ? n : null)) : null;
+          var txt = (n.textContent || "").replace(/^\s+/, "");
+          if (q1 || (n.tagName === "H2" && txt.indexOf("기간 한정 무료") === 0)) { mode = "ltd"; found = true; }
+          else if (q2 || (n.tagName === "H2" && txt.indexOf("변경 이력") === 0)) { mode = "cl"; }
+        }
+        if (mode === "head") head.appendChild(n);
+        else if (mode === "perm") perm.appendChild(n);
+        else if (mode === "ltd") ltd.appendChild(n);
+        else cl.appendChild(n);
+      }
+      if (!found) {
+        // 기간 한정 섹션이 없으면 탭 없이 원래 순서대로 복원
+        [head, perm, cl].forEach(function (d) {
+          while (d.firstChild) el.appendChild(d.firstChild);
+        });
+        return false;
+      }
+      // 탭 바 삽입
+      var bar = document.createElement("div");
+      bar.className = "flt-tabs";
+      bar.setAttribute("role", "tablist");
+      bar.innerHTML =
+        '<button class="flt-tab active" role="tab" aria-selected="true" data-tab="perm">상시 무료</button>' +
+        '<button class="flt-tab" role="tab" aria-selected="false" data-tab="ltd">기간 한정 무료</button>';
+      var btns = bar.querySelectorAll(".flt-tab");
+      for (var b = 0; b < btns.length; b++) {
+        btns[b].addEventListener("click", function () { switchTab(this.getAttribute("data-tab")); });
+      }
+      el.appendChild(head);
+      el.appendChild(bar);
+      el.appendChild(perm);
+      el.appendChild(ltd);
+      el.appendChild(cl);
+      // 목차 ul에 id 부여
+      var tocUl = head.querySelector("details ul");
+      if (tocUl) tocUl.id = "toc-list";
+      // 목차 링크 클릭: 다른 탭의 섹션이면 탭 전환 후 이동
+      el.addEventListener("click", function (e) {
+        var t = e.target;
+        var a = (t && t.closest) ? t.closest('a[href^="#"]') : null;
+        if (!a) return;
+        var id = a.getAttribute("href").slice(1);
+        if (id === "changelog") return; // 변경 이력은 항상 표시됨
+        var need = LTD_ANCHORS[id] ? "ltd" : "perm";
+        if (need !== currentTab) {
+          e.preventDefault();
+          switchTab(need);
+          setTimeout(function () {
+            var dest = document.getElementById(id);
+            if (dest && dest.scrollIntoView) dest.scrollIntoView();
+          }, 60);
+        }
+      });
+      return true;
+    }
 
     fetch(RAW_URL, { cache: "no-cache" })
       .then(function (r) {
@@ -172,6 +324,10 @@
       .then(function (md) {
         var el = document.getElementById("content");
         el.innerHTML = marked.parse(md);
+        var tabsOn = buildTabs(el);
+        var start = "perm";
+        try { start = localStorage.getItem("flt-tab") || "perm"; } catch (e) {}
+        if (tabsOn) switchTab(start === "ltd" ? "ltd" : "perm");
         var links = el.querySelectorAll("a[href]");
         for (var i = 0; i < links.length; i++) {
           var href = links[i].getAttribute("href") || "";
