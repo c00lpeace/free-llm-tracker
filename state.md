@@ -82,7 +82,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   </details>
 
-- **한도**: 공식 한도 문서의 공개 테이블 기준 — gpt-oss-120b/20b, qwen3.8-27b에 30 RPM / 1K RPD / 8K TPM / 200K TPD (2026-09-24 직접 확인). `openai/gpt-oss-safeguard-20b`는 2026-10-05 18:00 확인 기준 한도 하향 — 5 RPM / 1K RPD / 2K TPM / 200K TPD (공식 한도 문서 직접 추출). Llama 3.1/3.3 채팅 모델은 2026-08-16 종료 이후 무료 테이블에 없음 (2026-09-17 3자 검증 "free plan에 Llama 없음"). 정확한 무료 티어 수치는 계정 limits 페이지에서 확인 필요.
+- **한도**: 공식 한도 문서의 공개 테이블 기준 — gpt-oss-120b/20b, qwen3.8-27b에 30 RPM / 1K RPD / 8K TPM / 200K TPD (2026-09-24 직접 확인). `openai/gpt-oss-safeguard-20b`는 2026-10-05 18:00 확인 기준 한도 하향 — 5 RPM / 1K RPD / 2K TPM / 200K TPD (공식 한도 문서 직접 추출) 후, 2026-10-06 18:00 재확인에서 RPM 5→3으로 추가 하향 (3 RPM / 1K RPD / 2K TPM / 200K TPD). Llama 3.1/3.3 채팅 모델은 2026-08-16 종료 이후 무료 테이블에 없음 (2026-09-17 3자 검증 "free plan에 Llama 없음"). 정확한 무료 티어 수치는 계정 limits 페이지에서 확인 필요.
 - **API**: OpenAI 호환. 엔드포인트 `https://api.groq.com/openai/v1`
 - **도구 호출**: 지원
 - **제한**: 카드 불필요. 학습 활용 안 함 (커뮤니티 보고 기준).
@@ -353,16 +353,16 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-06 06:00 공개 API 라이브 확인):**
-  - `gpt-oss-20b` — 무료 티어, 저하(degraded) 운영
-  - `unmoderated-gpt` — 무료 티어, 정상 운영
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-06 18:00 공개 API 라이브 확인):**
+  - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `llama-instant` — 무료 티어, 정상 운영
+  - `rnj-1` — 무료 티어, 장애(major_outage)에서 정상 복귀
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-04 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-06 18:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-06 06:00 기준 무료 28종 중 23종이 `status: "major_outage"` (mistral 18종·suno 3종·`glm-4.7-flash`·`rnj-1`), 정상 호출 가능 무료 모델은 `gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`unmoderated-gpt` 4종. `gemma3-270m:free`는 06:00 정상이었으나 06:15 재확인에서 다시 major_outage로 전환, `rnj-1`·`glm-4.7-flash`도 major_outage 지속 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
+  - 주의: 2026-10-06 18:00 기준 무료 28종 중 22종이 `status: "major_outage"` (mistral 18종·suno 3종·`gemma3-270m:free`), 정상 호출 가능 무료 모델은 `gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`rnj-1` 4종. `unmoderated-gpt`는 정상→partial_outage, `glm-4.7-flash`는 major_outage→partial_outage로 전환 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
 
   </details>
 
@@ -513,6 +513,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <details>
 <summary>변경 이력 펼쳐보기</summary>
 
+- 2026-10-06: Groq — `openai/gpt-oss-safeguard-20b` 한도 추가 하향: RPM 5→3 (10/05 30→5에 이은 재하향). RPD 1K·TPM 2K·TPD 200K 유지, 나머지 무료 모델(gpt-oss-120b/20b·qwen3.8-27b) 한도 변동 없음 (출처: https://console.groq.com/docs/rate-limits).
+- 2026-10-06: Api.Airforce — 상태 뒤집힘 지속 (18:00 확인): `rnj-1` major_outage→정상 복귀, `unmoderated-gpt` 정상→partial_outage, `glm-4.7-flash` major_outage→partial_outage, `gemma3-270m:free`는 major_outage 유지. 정상 호출 가능 무료 모델은 여전히 4종이나 구성 변경 (`gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`rnj-1`), 대표 모델에서 `unmoderated-gpt`→`rnj-1`로 교체. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
+- 2026-10-06: 저녁 워치 변동 없음 — OpenRouter(`:free` 16종 유지)·Nous Portal(무료 9종 유지)·AnyAPI(Free 4종 유지)·LLM7.io(turbo 7종 유지)·OrcaRouter(무료 5종 유지)·Token Harbor(무료 2종 유지)·BazaarLink(무료 2종 유지)·OpenCode Zen(무료 12종 유지)·Gemini(API 무료 티어 유지)·NVIDIA NIM(무료 4종 유지)·Mistral(Free 월 $10 크레딧 유지)·Hetzner(아침 반영 유지). 신규 상시 무료 제공자 없음.
+- 2026-10-06: 신규 후보 Routeway 발견 (보류 — 형님 판단 대기): OpenAI 호환 게이트웨이, `:free` 9종 라이브 확인 (`deepseek-v4-flash:free`·`minimax-m2.7:free`·`muse-glimmer-30b:free`·gemma-4-26b-a4b-it 5종 persona variant), 5 RPM/200 RPD (3자 검증 2026-09-28 기준). 단, 카드 요구 관련 자료가 상충 — FAQ는 결제 단계 없음 vs 이용약관은 결제 수단 요구 명시 (봇 차단으로 직접 확인 불가) → Tracker 범위(카드 불필요 상시 무료) 충족 여부가 불확정이라 반영 보류 (출처: https://api.routeway.ai/v1/models, https://mvalentsev.github.io/awesome-free-ai-coding/providers/routeway/).
 - 2026-10-06: OpenRouter — `qwen/qwen3.8-27b:free`가 유료 전용으로 전환 확인 (유료 `qwen/qwen3.8-27b`만 잔류, 입력 $0.425/1M), 대표 모델에서 `nemotron-3-super-120b-a12b:free`로 교체. `:free` 16종 (10/03 17종에서 축소). `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거 확인 (출처: https://openrouter.ai/api/v1/models).
 - 2026-10-06: Nous Portal — `stealth/space-bunny-alpha` 카탈로그에서 완전 제거 확인 (만료일 2026-10-05 경과) — 기간 한정 요약표에서 정리. `upstage/solar-mini4:free`가 무료로 신규 등재. 무료 9종 유지 (space-bunny-alpha 제외 → solar-mini4 추가). `inclusionai/ling-3.1-flash`는 $0 등재 유지 (2주 체험 ~10/13~14 예상) (출처: https://inference-api.nousresearch.com/v1/models).
 - 2026-10-06: AnyAPI — `Qwen3.8 27B (free)`가 Free 티어로 신규 등재 확인 (Free 뱃지 직접 확인), Free 3종→4종. 라인업이 하루 새 뒤집히는 패턴 반복 (출처: https://anyapi.ai/ai-models).
