@@ -25,6 +25,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Mistral](#mistral)
 - [OpenRouter](#openrouter)
 - [AIHubMix](#aihubmix)
+- [Z.ai](#z-ai)
 - [LLM7.io](#llm7)
 - [OpenCode Zen](#opencode-zen)
 - [Token Harbor](#token-harbor)
@@ -229,6 +230,30 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **제한**: **카드 불필요**. API 키는 사이트에서 발급
 - **출처**: https://docs.aihubmix.com/en/blogs/free-ai-models
 - **비고**: 800+ 모델 게이트웨이 중 27종 이상을 플랫폼이 비용 부담하며 $0 제공. 유료 플래그십(GPT-5.5·Gemini 3 등)을 무료로 쓸 수 있는 몇 안 되는 경로 (2026-10-05 형님 승인 등록).
+
+<a id="z-ai"></a>
+
+## Z.ai <span class="prio p-mid">중간</span>
+
+- **대표 무료 모델 (사용성 순, 2026-10-07 공식 가격표 확인 — 3종 모두 영구 Free):**
+  - `glm-4.7-flash` — 131K 컨텍스트·도구 호출·추론 지원, 코딩/에이전트에 가장 유망 (컨텍스트·도구 호출은 3자 확인)
+  - `glm-4.5-flash` — 경량 텍스트 모델
+  - `glm-4.6v-flash` — 비전(텍스트·이미지) 모델
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 2026-10-07 공식 가격표 확인 기준 Free 3종: `glm-4.7-flash`·`glm-4.5-flash`·`glm-4.6v-flash` (입력·캐시 입력·출력 전부 Free, "Limited-time Free" 표기 없음 — 상시 무료). 유료 플래그십(GLM-5.3 등)은 별도 유료
+  - 전체 목록: [Z.ai 공식 가격표](https://docs.z.ai/guides/overview/pricing)
+  - 한도: 공식 RPM/RPD 수치 미공개 — concurrency(동시성) 기반 제한 (3자 검증, 2026-09-28). 사용량이 늘면 키당 제한 확인 필요
+
+  </details>
+
+- **한도**: 공식 수치 미공개 — 동시성 기반 제한 (상단 더보기 참조). 무료 토큰 한도는 공식 문서에 별도 명시 없음
+- **API**: OpenAI 호환. 엔드포인트 `https://api.z.ai/api/paas/v4`. Anthropic 형식(`https://api.z.ai/api/anthropic`)도 지원 — Claude Code 직접 연결 가능
+- **도구 호출**: `glm-4.7-flash` 지원 (3자 확인)
+- **제한**: **카드 불필요**. 휴대폰 인증도 불필요 (3자 검증, 2026-08-13·2026-09-28). 이메일 가입 후 사이트에서 API 키 발급
+- **출처**: https://docs.z.ai/guides/overview/pricing
+- **비고**: Zhipu AI(지푸 AI)의 글로벌 브랜드. 2026-03부터 무료 서비스 중 (2026-10-07 형님 승인 등록). Terms of Use는 "경쟁 알고리즘·모델의 개발·학습·개선" 목적 사용을 금지하나, 일반 상용 이용은 허용 (3자 확인).
 
 <a id="llm7"></a>
 
@@ -509,6 +534,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-07: Z.ai 신규 등록 (형님 승인) — GLM Flash 3종 영구 무료 (공식 가격표: `glm-4.7-flash`·`glm-4.5-flash`·`glm-4.6v-flash`, 입력·캐시·출력 전부 Free). OpenAI 호환 (`https://api.z.ai/api/paas/v4`), 카드·휴대폰 불필요 (3자 검증). 한도는 공식 수치 미공개 — concurrency 기반. 우선순위 중간 (출처: https://docs.z.ai/guides/overview/pricing).
 
 <details>
 <summary>변경 이력 펼쳐보기</summary>
