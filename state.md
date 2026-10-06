@@ -362,7 +362,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-07 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-07 06:00 기준 무료 28종 중 21종이 `status: "major_outage"` (mistral 18종·suno 3종), 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`rnj-1`·`kimi-k2.7-code`·`gemma3-270m:free`·`glm-4.7-flash`·`llama-instant`). `gemma3-270m:free`는 major_outage→정상 복귀, `glm-4.7-flash`는 partial_outage→정상 복귀, `unmoderated-gpt`는 partial_outage 유지. ※ 확인 약 1시간 전(05:57 KST) 카탈로그 API 자체가 502 Bad Gateway 장애였다가 복구 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
+  - 주의: 2026-10-07 06:00 기준 무료 28종 중 21종이 `status: "major_outage"` (mistral 18종·suno 3종), 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`rnj-1`·`kimi-k2.7-code`·`glm-4.7-flash`·`llama-instant`). 06:00엔 `gemma3-270m:free`도 정상이었으나 재확인에서 degraded로 재전환, `unmoderated-gpt`는 partial_outage 유지. ※ 확인 약 1시간 전(05:57 KST) 카탈로그 API 자체가 502 Bad Gateway 장애였다가 복구 — 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
 
   </details>
 
@@ -514,7 +514,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <summary>변경 이력 펼쳐보기</summary>
 
 - 2026-10-07: LLM7.io — turbo(무료) 티어 7종→11종으로 확대: `deepseek-v4-pro`·`gemma4:31b`·`glm-5.2`·`minimax-m3` 신규 추가 (06:00 확인). 확인 직전 분 단위로 9→10→11종으로 변동 후 11종으로 안정 — 라인업 로테이션 중이라 사용 전 재확인 권장 (출처: https://api.llm7.io/v1/models).
-- 2026-10-07: Api.Airforce — 카탈로그 API 502 Bad Gateway 장애 발생 (05:57 KST경, 약 1시간) 후 복구. 정상 호출 가능 무료 모델 4종→6종: `gemma3-270m:free`(major_outage→정상 복귀)·`glm-4.7-flash`(partial_outage→정상 복귀), `gpt-oss-20b`·`rnj-1`·`kimi-k2.7-code`·`llama-instant` 정상 유지. `unmoderated-gpt`는 partial_outage 유지. 상태가 시간 단위로 뒤집히는 중이라 사용 전 재확인이 안전 (출처: https://api.airforce/v1/models).
+- 2026-10-07: Api.Airforce — 카탈로그 API 502 Bad Gateway 장애 발생 (05:57 KST경, 약 1시간) 후 복구. 정상 호출 가능 무료 모델 4종→6종: `gemma3-270m:free`(major_outage→정상 복귀)·`glm-4.7-flash`(partial_outage→정상 복귀), `gpt-oss-20b`·`rnj-1`·`kimi-k2.7-code`·`llama-instant` 정상 유지. `unmoderated-gpt`는 partial_outage 유지. ※ 06:25 재확인에서 `gemma3-270m:free`가 다시 degraded로 전환 — 현재 정상 5종 (`gemma3-270m:free` 제외). 상태가 시간 단위로 뒤집히는 중이라 사용 전 재확인이 안전 (출처: https://api.airforce/v1/models).
 - 2026-10-07: 아침 워치 변동 없음 — OpenRouter(`:free` 16종 유지)·Nous Portal(무료 9종 유지)·Groq(한도 동일)·NVIDIA NIM(무료 4종)·OrcaRouter(무료 5종)·Token Harbor(무료 2종)·OpenCode Zen(무료 12종)·AnyAPI(Free 4종)·BazaarLink(무료 2종)·Gemini(API 무료 티어 유지, 10/09 앱 Flash-Lite 제한은 API에 영향 없음 재확인)·Mistral(Free 월 $10 크레딧 유지)·Ollama Cloud·Agnes AI($0 프로모션 유지)·AIHubMix·Hetzner(모델 2종·한도 유지)·ZeroLimitAI('Free week' 유지). 신규 상시 무료 제공자 없음.
 - 2026-10-06: Groq — `openai/gpt-oss-safeguard-20b` 한도 추가 하향: RPM 5→3 (10/05 30→5에 이은 재하향). RPD 1K·TPM 2K·TPD 200K 유지, 나머지 무료 모델(gpt-oss-120b/20b·qwen3.8-27b) 한도 변동 없음 (출처: https://console.groq.com/docs/rate-limits).
 - 2026-10-06: Api.Airforce — 상태 뒤집힘 지속 (18:00 확인): `rnj-1` major_outage→정상 복귀, `unmoderated-gpt` 정상→partial_outage, `glm-4.7-flash` major_outage→partial_outage, `gemma3-270m:free`는 major_outage 유지. 정상 호출 가능 무료 모델은 여전히 4종이나 구성 변경 (`gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`rnj-1`), 대표 모델에서 `unmoderated-gpt`→`rnj-1`로 교체. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
