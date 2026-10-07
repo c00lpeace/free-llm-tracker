@@ -387,7 +387,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-07 06:00 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 2026-10-07 18:00 기준 무료 28종 중 22종이 `status: "major_outage"` (mistral 계열 18종·suno 3종·`glm-4.7-flash`), 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`llama-instant`·`unmoderated-gpt`·`gemma3-270m:free`·`kimi-k2.7-code`·`rnj-1`). 아침 대비 `unmoderated-gpt`(partial_outage→정상)·`gemma3-270m:free`(degraded→정상) 복귀, `glm-4.7-flash`(정상→major_outage) 재전환. ※ 상태가 시간 단위로 뒤집히는 중이므로 사용 전 재확인이 안전.
+  - 주의: 정상 호출 가능 무료 모델은 4종 (`gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`rnj-1`). 18:00엔 6종이었으나 재확인에서 `unmoderated-gpt`(정상→partial_outage)·`gemma3-270m:free`(정상→degraded) 재전환, `glm-4.7-flash`도 major_outage 지속 — 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전.
 
   </details>
 
@@ -534,6 +534,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-07: Api.Airforce — 저녁 워치(18:00)에서 정상 6종 반영했으나 분 단위로 재전환: `unmoderated-gpt`(정상→partial_outage)·`gemma3-270m:free`(정상→degraded)·`glm-4.7-flash` major_outage 지속. 현재 정상 4종 (`gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`rnj-1`) (출처: https://api.airforce/v1/models).
 
 - 2026-10-07: Api.Airforce — 무료 모델 상태 뒤집힘 지속 (18:00 확인): `unmoderated-gpt`(partial_outage→정상)·`gemma3-270m:free`(degraded→정상) 복귀, `glm-4.7-flash`(정상→major_outage) 재전환. 정상 호출 가능 무료 모델 5종→6종 (`gpt-oss-20b`·`llama-instant`·`unmoderated-gpt`·`gemma3-270m:free`·`kimi-k2.7-code`·`rnj-1`). 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
 - 2026-10-07: 저녁 워치 — Api.Airforce 외 변동 없음: LLM7.io(turbo 11종 유지)·OpenRouter(`:free` 16종 유지)·Nous Portal(무료 9종 유지)·OrcaRouter(무료 5종 유지)·AnyAPI(Free 4종 유지)·Token Harbor(무료 2종, 3자 추적 10-05 검증 유지)·BazaarLink(무료 2종·24h 프로브 100%)·OpenCode Zen(무료 12종)·Groq(한도 동일)·NVIDIA NIM·Gemini(API 무료 티어 유지 — 10/09 변경은 Gemini 앱 한정, API 영향 없음)·Mistral(Free 월 $10 크레딧 유지)·AIHubMix·Agnes AI($0 유지, 3자 추적 10-07 갱신 기준)·Hetzner(모델 2종·실험 단계 무료 유지)·ZeroLimitAI('Free week' 유지). 신규 상시 무료 제공자 없음.
