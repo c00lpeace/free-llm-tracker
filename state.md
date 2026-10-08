@@ -308,14 +308,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Token Harbor <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-08 무료 카탈로그 기준 — 무료 3종):**
-  - `deepseek-v4.1-flash:free` — 무료 라우트 (2026-09-30 Free 플랜 Includes 명시 확인, 대시보드에서 :free 라우트 활성화 필요)
-  - `mimo-v2.6-flash:free` — 2026-10-01 Free 목록 확인 (v2.5→v2.6 교체)
-  - `claude-haiku-5.5:free` — Claude Haiku 5.5, 기간 한정 프로모 (10/08 신규 확인, "Limited time" 뱃지, freeUntil 2026-10-15T13:00:00Z)
+- **대표 무료 모델 (2026-10-08 18:11 브라우저 직접 확인 — Free 카테고리 현재 비어 있음):**
+  - 현재 Free 티어에 등재된 모델 없음 ("Nothing in this tier yet")
+  - `deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`·`claude-haiku-5.5:free`는 모두 Value(유료) 티어로 표기됨 — 저녁 워치(18:00)의 claude-haiku-5.5 무료 등재는 10여 분 만에 뒤집힌 것으로 보임
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time"). 2026-10-08 18:00 기준 무료 3종: `deepseek-v4.1-flash:free`, `mimo-v2.6-flash:free`, `claude-haiku-5.5:free` (신규 — "Limited time" 뱃지, freeUntil 2026-10-15T13:00:00+00:00, 약 7일)
+  - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time"). 2026-10-08 18:11 브라우저 직접 확인 기준 Free 카테고리에 모델 없음 ("Nothing in this tier yet") — 18:00 워치에서 확인된 `claude-haiku-5.5:free` ("Limited time" 뱃지, freeUntil 2026-10-15T13:00:00+00:00)는 수 분 만에 목록에서 사라지고 Value(유료, $0.10 입력 / $0.50 출력)로 이동. `deepseek-v4.1-flash`·`mimo-v2.6-flash`도 Value 유료 ($0.30/$1.20, $0.14/$1.28)
   - `qwen3.8-flash:free`는 2026-10-04 13:00 UTC 무료 프로모 종료로 Free 목록에서 제거됨 — 현재 유료 "value" 티어 ($0.15/1M 입력, isFree:false)
   - `deepseek-v4-flash:free` (구형 V4 Flash)는 2026-09-30 pricing Free 목록에서 제외됨 — 공식 블로그(9/23 업데이트)에서는 여전히 무료로 기술 중이라 완전 단정은 불가, 최근 1주 내 무료 라인업에서 빠진 것으로 보임
   - `TH-Rudder` — 2026-09-30 Free 플랜 Includes 신규 표시 (Token Harbor 자체 채팅 제품, API 제공 여부 미확인)
@@ -535,6 +534,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-08: Token Harbor — 저녁 워치(18:00)의 `claude-haiku-5.5:free` 무료 등재를 18:11 브라우저 직접 확인에서 정정: Free 카테고리가 완전히 비어 있음 ("Nothing in this tier yet"), 3종 모두 Value(유료)로 표기. 무료 라인업이 분 단위로 뒤집히는 중 — 다음 워치에서 재확인 (출처: https://tokenharbor.ai/models?category=free).
 
 - 2026-10-08: Token Harbor — `claude-haiku-5.5:free` (Claude Haiku 5.5) 신규 등재 → 무료 2종→3종. "Limited time" 뱃지, freeUntil 2026-10-15T13:00:00+00:00 (약 7일 기간 한정 프로모). 종료 후 목록 제거 여부를 다음 워치에서 추적 (출처: https://tokenharbor.ai/models?category=free — freeRows JSON 직접 파싱).
 - 2026-10-08: Mistral — 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 (직접 확인). Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 — 다음 아침 워치에서 추가 확인 예정, 형님께 판단 질문 (출처: https://mistral.ai/pricing).
