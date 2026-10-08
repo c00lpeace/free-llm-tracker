@@ -96,13 +96,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 - **대표 무료 모델 (사용성 순):**
   - `moonshotai/kimi-k3` — function calling 광고 (2026-09-30 공식 무료 라인업 확인)
-  - `deepseek-ai/deepseek-v4-pro-0813` — 고속 플래그십 (2026-09-30 확인)
+  - `deepseek-ai/deepseek-v4.1-flash` — 고속 플래그십 (2026-10-09 무료 라인업 교체 확인)
   - `nvidia/nemotron-3-ultra-550b-a55b` — 초대형 MoE (2026-09-30 확인)
   - `nvidia/nemotron-3.5-lightning-30b-a3b` — 경량 고속 (2026-09-30 확인)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 추론 모델: [build.nvidia.com](https://build.nvidia.com) — 'Free inference with leading models' 섹션에서 확인 (예고 없이 변경됨, 2026-09-30 기준 4종)
+  - 무료 추론 모델: [build.nvidia.com](https://build.nvidia.com) — 'Free inference with leading models' 섹션에서 확인 (예고 없이 변경됨, 2026-10-09 기준 4종: `moonshotai/kimi-k3`, `deepseek-ai/deepseek-v4.1-flash`, `nvidia/nemotron-3.5-lightning-30b-a3b`, `nvidia/nemotron-3-ultra-550b-a55b`). `deepseek-ai/deepseek-v4-pro-0813`은 2026-10-09 확인에서 `deepseek-ai/deepseek-v4.1-flash`로 교체됨.
   - `meta/llama-3.3-70b-instruct`는 2026-09-30 기준 전면 무료 라인업 노출에서 제외됨 — 무료 종료 여부는 공식 미확인 (모델 페이지는 로그인 요구로 가려져 있음)
 
   </details>
@@ -190,10 +190,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OpenRouter (이전 조사) <span class="prio p-mid">중간</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-06 06:00 기준 — 로테이션됨):**
-  - `inclusionai/ling-3.0-flash-sante:free` — 고속·의료 특화 (유지 확인)
-  - `nvidia/nemotron-3-super-120b-a12b:free` — 120B 대형 (10/03 복귀 후 유지 확인)
+- **대표 무료 모델 (사용성 순, 2026-10-09 06:00 기준 — 로테이션됨):**
+  - `nvidia/nemotron-3-super-120b-a12b:free` — 120B 대형 (10/03 복귀 후 무료 잔류 확인)
   - `dots-studio/dots-3-note-preview:free` — 유지 확인 (최신 등록 구간에서 확인)
+  - `cohere/north-mini-code:free` — 코딩 계열, 무료 잔류 확인 (10/09)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
@@ -206,7 +206,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 무료 라우트별 상이 (각 라우트의 supported_parameters 확인 필요)
 - **제한**: 카드 불필요. 무료 라우트별 데이터 정책 상이 (일부는 학습 활용 경고 있음). upstream 429 빈발 보고.
 - **출처**: https://buldrr.com/openrouter-free-api-keys-free-models-simple-guide/
-- **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고. 구 무료 모델(DeepSeek R1·Llama 3.3 70B·Qwen3 Coder 등)의 `:free` 버전은 2026-09-28 확인 기준 유료 전용으로 전환됨. 2026-09-29 18:00 라이브 스냅샷 기준 `:free` 16종 — `qwen3.8-27b:free`·`liquid/lfm-2.5-2.6b:free` 신규 등록. `inclusionai/ling-3.0-flash-fin:free`는 유료 전환 (input $0.06/1M, output $0.18/1M). 2026-10-03 06:00 라이브 확인: `:free` 17종 — 10/01에 제거됐던 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free`가 복귀하고, `apodex/apodex-1.1-mini:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free`가 신규 등재. `:free` 라인업은 일 단위 로테이션이므로 대표 교체는 유지 확인 기준으로만. `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거됨 (2026-10-06 06:00 확인, OpenRouter·Nous Portal 양쪽) — 기간 한정 요약표에서 정리. `qwen/qwen3.8-27b:free`는 유료 전용으로 전환 확인 (유료 `qwen/qwen3.8-27b`만 잔류, 입력 $0.425/1M) → 대표 모델에서 `nemotron-3-super-120b-a12b:free`로 교체. 2026-10-06 06:00 라이브 확인: `:free` 16종. Thinking Machines Inkling은 에이전트 하네스에서만 응답하고 일반 API 호출에는 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (2026-09-28 3자 검증).
+- **비고**: Hermes 공식 문서의 기본값이라 설정 예제가 가장 풍부. 일 50회는 에이전트 실사용에 빠듯. $10 1회 충전 시 한도 20배 상승이 가성비 최고. 구 무료 모델(DeepSeek R1·Llama 3.3 70B·Qwen3 Coder 등)의 `:free` 버전은 2026-09-28 확인 기준 유료 전용으로 전환됨. 2026-09-29 18:00 라이브 스냅샷 기준 `:free` 16종 — `qwen3.8-27b:free`·`liquid/lfm-2.5-2.6b:free` 신규 등록. `inclusionai/ling-3.0-flash-fin:free`는 유료 전환 (input $0.06/1M, output $0.18/1M). 2026-10-03 06:00 라이브 확인: `:free` 17종 — 10/01에 제거됐던 `nemotron-3-super-120b-a12b:free`·`cohere/north-mini-code:free`·`liquid/lfm-2.5-2.6b:free`가 복귀하고, `apodex/apodex-1.1-mini:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free`가 신규 등재. `:free` 라인업은 일 단위 로테이션이므로 대표 교체는 유지 확인 기준으로만. `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거됨 (2026-10-06 06:00 확인, OpenRouter·Nous Portal 양쪽) — 기간 한정 요약표에서 정리. `qwen/qwen3.8-27b:free`는 유료 전용으로 전환 확인 (유료 `qwen/qwen3.8-27b`만 잔류, 입력 $0.425/1M) → 대표 모델에서 `nemotron-3-super-120b-a12b:free`로 교체. 2026-10-06 06:00 라이브 확인: `:free` 16종. Thinking Machines Inkling은 에이전트 하네스에서만 응답하고 일반 API 호출에는 403을 반환하므로 Hermes 직접 연결 폴백에서 제외 권장 (2026-09-28 3자 검증). 2026-10-09 06:00 라이브 확인: `:free` 15종 — `inclusionai/ling-3.0-flash-sante:free`(당시 대표 #1)가 무료에서 제거됨. 잔류 15종 전부 pricing prompt/output "0" 확인.
 
 <a id="aihubmix"></a>
 
@@ -259,14 +259,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## LLM7.io <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-07 06:00 라이브 API 직접 확인, turbo 11종):**
+- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-09 06:00 라이브 API 직접 확인, turbo 10종):**
   - `DeepSeek-V4-Flash-0731` — 400K 컨텍스트·도구 호출·추론 지원 (에이전트 용도로 가장 유망)
-  - `deepseek-v4-pro` — 10/07 turbo 신규 등재 (프로급 DeepSeek 모델)
+  - `minimax-m2.7` — 180K 컨텍스트·도구 호출·추론 지원
   - `gpt-oss:20b` — 128K 컨텍스트·도구 호출 지원
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 2026-10-07 06:00 라이브 API 직접 확인 기준 turbo(무료) 티어 11종: `DeepSeek-V4-Flash-0731`, `GLM-5.3-Flash`, `codestral-latest`, `gpt-oss:20b`, `minimax-m2.7` (180K 컨텍스트·도구 호출·추론 지원), `mistral-Nemo-Instruct-2407`, `nemotron-3-nano:30b`, `deepseek-v4-pro` (신규), `gemma4:31b` (신규), `glm-5.2` (신규), `minimax-m3` (신규). 확인 직전 분 단위로 9→10→11종으로 변동 후 11종으로 안정 — 라인업이 로테이션 중이라 사용 전 재확인이 안전. `minimax-m2.7`은 10/01 카탈로그에서 제거됐다가 10/02 turbo로 복귀한 이력 있음. `deepseek-v4-flash:0731`(소문자·콜론 표기)은 별개 ID로 pro 티어 유지.
+  - 2026-10-09 06:00 라이브 API 직접 확인 기준 turbo(무료) 티어 10종: `DeepSeek-V4-Flash-0731`, `GLM-5.3-Flash`, `codestral-latest`, `gpt-oss:20b`, `minimax-m2.7` (180K 컨텍스트·도구 호출·추론 지원), `mistral-Nemo-Instruct-2407`, `nemotron-3-nano:30b`, `gemma4:31b`, `glm-5.2`, `minimax-m3`. `deepseek-v4-pro`는 turbo→pro 티어로 강등 (유료 전환). 확인 직전 분 단위로 9→10→11종으로 변동 후 11종으로 안정 — 라인업이 로테이션 중이라 사용 전 재확인이 안전. `minimax-m2.7`은 10/01 카탈로그에서 제거됐다가 10/02 turbo로 복귀한 이력 있음. `deepseek-v4-flash:0731`(소문자·콜론 표기)은 별개 ID로 pro 티어 유지.
   - 전체 목록: [LLM7.io 모델 카탈로그](https://api.llm7.io/v1/models) — `tier: "turbo"` 행이 무료
 
   </details>
@@ -276,7 +276,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: 카드·가입 불필요(익명 가능). 운영자가 upstream을 공개하지 않음. 무료 모델 구성이 변경될 수 있음.
 - **출처**: https://docs.llm7.io/limits , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/llm7.md , https://github.com/velo4705/awesome-free-byok-models
-- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 24시간 10만 토큰은 에이전트 루프 몇 바퀴면 소진이므로 에이전트 실사용 폴백으로는 사실상 부적합 — '가입 없이 짧게 시험' 용도로만 유효. 2026-10-07 아침 기준 turbo가 7종→11종으로 확대 (`deepseek-v4-pro`·`gemma4:31b`·`glm-5.2`·`minimax-m3` 신규) — 단, 확인 직전 분 단위 로테이션 중이라 사용 전 재확인 권장.
+- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 24시간 10만 토큰은 에이전트 루프 몇 바퀴면 소진이므로 에이전트 실사용 폴백으로는 사실상 부적합 — '가입 없이 짧게 시험' 용도로만 유효. 2026-10-07 아침 기준 turbo가 7종→11종으로 확대됐다가 2026-10-09 아침 기준 `deepseek-v4-pro`의 pro 강등으로 10종으로 축소 — 단, 확인 직전 분 단위 로테이션 중이라 사용 전 재확인 권장.
 
 <a id="opencode-zen"></a>
 
@@ -308,13 +308,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Token Harbor <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (2026-10-08 18:11 브라우저 직접 확인 — Free 카테고리 현재 비어 있음):**
-  - 현재 Free 티어에 등재된 모델 없음 ("Nothing in this tier yet")
-  - `deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`·`claude-haiku-5.5:free`는 모두 Value(유료) 티어로 표기됨 — 저녁 워치(18:00)의 claude-haiku-5.5 무료 등재는 10여 분 만에 뒤집힌 것으로 보임
+- **대표 무료 모델 (2026-10-09 06:10 라이브 브라우저 직접 확인 — Free 카테고리 3종):**
+  - `claude-haiku-5.5:free` — "FREE LIMITED TIME", 2026-10-15 22:00까지 무료 (기간 한정 프로모)
+  - `deepseek-v4.1-flash:free` — FREE (뱃지 없음)
+  - `mimo-v2.6-flash:free` — FREE (뱃지 없음)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time"). 2026-10-08 18:11 브라우저 직접 확인 기준 Free 카테고리에 모델 없음 ("Nothing in this tier yet") — 18:00 워치에서 확인된 `claude-haiku-5.5:free` ("Limited time" 뱃지, freeUntil 2026-10-15T13:00:00+00:00)는 수 분 만에 목록에서 사라지고 Value(유료, $0.10 입력 / $0.50 출력)로 이동. `deepseek-v4.1-flash`·`mimo-v2.6-flash`도 Value 유료 ($0.30/$1.20, $0.14/$1.28)
+  - 무료 모델 목록: [Token Harbor 무료 모델](https://tokenharbor.ai/models?category=free) — 로테이션됨 ("Promotional models added over time"). 2026-10-09 06:10 라이브 브라우저 직접 확인 기준 Free 카테고리에 3종 등재: `claude-haiku-5.5:free` ("FREE LIMITED TIME", 2026-10-15 22:00까지 무료 후 표준 요금 전환 — 10/08 저녁 18:00 신규 확인 후 18:11엔 목록에서 사라졌다가 10/09 아침에 복귀), `deepseek-v4.1-flash:free` (FREE), `mimo-v2.6-flash:free` (FREE). Value(유료) 탭에는 각 기본 ID(claude-haiku-5.5 $0.10/$0.50, deepseek-v4.1-flash $0.30/$1.20, mimo-v2.6-flash $0.14/$1.28)가 별도 존재. 무료 라인업이 분 단위로 뒤집히는 중 — 사용 전 재확인이 안전.
   - `qwen3.8-flash:free`는 2026-10-04 13:00 UTC 무료 프로모 종료로 Free 목록에서 제거됨 — 현재 유료 "value" 티어 ($0.15/1M 입력, isFree:false)
   - `deepseek-v4-flash:free` (구형 V4 Flash)는 2026-09-30 pricing Free 목록에서 제외됨 — 공식 블로그(9/23 업데이트)에서는 여전히 무료로 기술 중이라 완전 단정은 불가, 최근 1주 내 무료 라인업에서 빠진 것으로 보임
   - `TH-Rudder` — 2026-09-30 Free 플랜 Includes 신규 표시 (Token Harbor 자체 채팅 제품, API 제공 여부 미확인)
@@ -326,20 +327,20 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: 소규모 게이트웨이 — 중국 본토/홍콩/마카오에서 region_blocked. 무료 요청이 플랫폼에 저장될 수 있음. 할당량·라인업이 예고 없이 바뀔 수 있어 프로토타입/폴백용 권장.
 - **출처**: https://tokenharbor.ai/pricing , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/token-harbor.md
-- **비고**: DeepSeek V4.1 Flash(공식 API는 상시 무료 티어 없음)를 무료로 쓸 수 있는 몇 안 되는 경로. 성능 비교 링크의 대표 모델이라 테스트 가치가 있음. `qwen3.8-flash:free` 무료 프로모는 2026-10-04 13:00 UTC에 종료되어 유료(value 티어)로 전환됨 — 10/05 아침 워치에서 만료 확인. `claude-haiku-5.5:free`는 2026-10-08 18:00 신규 확인된 기간 한정 프로모 (10/15 13:00 UTC 종료) — 종료 후 목록에서 빠지는지 다음 워치에서 추적.
+- **비고**: DeepSeek V4.1 Flash(공식 API는 상시 무료 티어 없음)를 무료로 쓸 수 있는 몇 안 되는 경로. 성능 비교 링크의 대표 모델이라 테스트 가치가 있음. `qwen3.8-flash:free` 무료 프로모는 2026-10-04 13:00 UTC에 종료되어 유료(value 티어)로 전환됨 — 10/05 아침 워치에서 만료 확인. `claude-haiku-5.5:free`는 기간 한정 프로모 (10/15 종료): 10/08 저녁 18:00 신규 확인 후 18:11엔 Free 목록에서 사라졌다가 10/09 아침 라이브 브라우저 확인에서 다시 등재됨. 무료 목록 등재가 불안정하므로 사용 전 재확인 필수.
 
 <a id="nous-portal"></a>
 
 ## Nous Portal (Hermes Agent) <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-06 06:00 기준 — 무료 9종):**
+- **대표 무료 모델 (사용성 순, 2026-10-09 06:00 기준 — 무료 10종):**
   - `poolside/laguna-s-2.1:free`
   - `inclusionai/ling-3.0-flash-sante:free`
   - `upstage/solar-mini4:free` — 신규 무료 등재 (10/06 확인)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 2026-10-06 06:00 기준 무료 9종 (공식 API 전체 텍스트 대조 — 가격 $0 기준): `inclusionai/ling-3.1-flash`, `inclusionai/ling-3.0-flash-sante:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `upstage/solar-mini4:free` (신규), `meituan/longcat-2.0:free`, `inclusionai/ling-3.0-flash-fin:free`, `stepfun/step-3.7-flash:free`, `meituan/longcat-2.5-preview:free`. `upstage/solar-pro4:free`는 :free variant가 카탈로그에 없음 (유료 variant `upstage/solar-pro4`만 유지). `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거 확인 — 기간 한정 요약표에서 정리. ※ `inclusionai/ling-3.1-flash`는 2026-09-30 출시 2주 무료 체험 모델 (체험 종료 ~10/13~14 예상, 이후 유료 전환·오픈소스 공개 예정 — TechNode 보도) — Nous Portal 무료 등재도 체험 종료와 함께 끝날 가능성, 다음 워치에서 지속 확인. `poolside/laguna-s-2.1:free`·`laguna-xs-2.1:free`는 API 응답상 `expiration_date`가 2026-10-31로 표기됨 — 이후 무료 지속 여부는 다음 워치에서 확인 (2026-10-08 라이브 확인).
+  - 2026-10-09 06:00 기준 무료 10종 (공식 API 전체 텍스트 대조 — 가격 $0 기준): `inclusionai/ling-3.1-flash`, `inclusionai/ling-3.0-flash-sante:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `upstage/solar-mini4:free`, `stepfun/step-5-preview:free` (신규), `meituan/longcat-2.0:free`, `inclusionai/ling-3.0-flash-fin:free`, `stepfun/step-3.7-flash:free`, `meituan/longcat-2.5-preview:free`. `upstage/solar-pro4:free`는 :free variant가 카탈로그에 없음 (유료 variant `upstage/solar-pro4`만 유지). `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거 확인 — 기간 한정 요약표에서 정리. ※ `inclusionai/ling-3.1-flash`는 2026-09-30 출시 2주 무료 체험 모델 (체험 종료 ~10/13~14 예상, 이후 유료 전환·오픈소스 공개 예정 — TechNode 보도) — Nous Portal 무료 등재도 체험 종료와 함께 끝날 가능성, 다음 워치에서 지속 확인. `poolside/laguna-s-2.1:free`·`laguna-xs-2.1:free`는 API 응답상 `expiration_date`가 2026-10-31로 표기됨 — 이후 무료 지속 여부는 다음 워치에서 확인 (2026-10-08 라이브 확인).
   - 카탈로그: [Nous Portal 모델 목록](https://portal.nousresearch.com/models) — 'Free Models' 섹션 및 FREE 필터로 무료 모델 직접 확인 (로그인 불필요), 공식 API: https://inference-api.nousresearch.com/v1/models
 
   </details>
@@ -378,16 +379,15 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-08 18:03 공개 API 라이브 확인, 하루 종일 정상 3종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-09 06:01 공개 API 라이브 확인, 정상 2종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
-  - `llama-instant` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 정상 호출 가능 무료 모델은 4종 (`gpt-oss-20b`·`llama-instant`·`kimi-k2.7-code`·`unmoderated-gpt`). 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘 (17:59 operational → 18:03 major_outage). `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전.
+  - 주의: 정상 호출 가능 무료 모델은 2종 (`gpt-oss-20b`·`kimi-k2.7-code`). 2026-10-09 06:01 라이브 확인: 어제 정상이던 `llama-instant`가 degraded로, `unmoderated-gpt`가 major_outage로 전환. `gemma3-270m:free`는 operational이나 소형 모델이라 폴백 가치는 낮음. 5분 간격 재확인에서 추가 뒤집힘 없음. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘 (17:59 operational → 18:03 major_outage). `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전.
 
   </details>
 
@@ -534,6 +534,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-09: Token Harbor — Free 카테고리에 3종 다시 등재 확인 (06:10 라이브 브라우저 직접 확인): `claude-haiku-5.5:free` ("FREE LIMITED TIME", 10/15까지 무료 후 표준 요금 전환), `deepseek-v4.1-flash:free` (FREE), `mimo-v2.6-flash:free` (FREE). 10/08 저녁 18:11엔 "Nothing in this tier yet"이었으나 아침에 복귀 — Free 목록 등재가 불안정, 사용 전 재확인 필수 (출처: https://tokenharbor.ai/models?category=free).
+- 2026-10-09: Api.Airforce — 상태 뒤집힘 지속 (06:01 라이브 확인): 어제 정상이던 `llama-instant`가 degraded로, `unmoderated-gpt`가 major_outage로 전환. 현재 정상 호출 가능 무료 모델은 2종 (`gpt-oss-20b`·`kimi-k2.7-code`) — `gemma3-270m:free`는 operational이나 소형이라 폴백 가치 낮음. 5분 간격 재확인에서 추가 뒤집힘 없음. 대표 모델에서 `llama-instant` 제외, 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
+- 2026-10-09: Nous Portal — 무료 9종→10종. `stepfun/step-5-preview:free` 신규 등재 (공식 API 가격 $0 기준). Nous 무료 라인업은 일 단위로 뒤집히는 로테이션 패턴이 반복되므로 보조·폴백용으로만 권장 (출처: https://inference-api.nousresearch.com/v1/models).
+- 2026-10-09: OpenRouter — `:free` 16종→15종. 당시 대표 #1이던 `inclusionai/ling-3.0-flash-sante:free`가 무료에서 제거됨. 대표 모델 1순위를 `nvidia/nemotron-3-super-120b-a12b:free`로 승격, 3순위에 `cohere/north-mini-code:free` 편입. 잔류 15종 전부 pricing prompt/output "0" 확인 (출처: https://openrouter.ai/api/v1/models).
+- 2026-10-09: LLM7.io — `deepseek-v4-pro`가 turbo→pro 티어로 강등 (무료→유료), turbo 11종→10종. 대표 모델에서 `deepseek-v4-pro`를 제외하고 `minimax-m2.7`(180K 컨텍스트·도구 호출·추론 지원)을 2순위로 편입 (출처: https://api.llm7.io/v1/models).
+- 2026-10-09: NVIDIA NIM — 무료 라인업에서 `deepseek-ai/deepseek-v4-pro-0813`이 `deepseek-ai/deepseek-v4.1-flash`로 교체됨 (무료 4종 유지: kimi-k3·deepseek-v4.1-flash·nemotron-3.5-lightning-30b-a3b·nemotron-3-ultra-550b-a55b). 대표 모델도 교체 반영 (출처: https://build.nvidia.com).
 
 - 2026-10-08: Token Harbor — 저녁 워치(18:00)의 `claude-haiku-5.5:free` 무료 등재를 18:11 브라우저 직접 확인에서 정정: Free 카테고리가 완전히 비어 있음 ("Nothing in this tier yet"), 3종 모두 Value(유료)로 표기. 무료 라인업이 분 단위로 뒤집히는 중 — 다음 워치에서 재확인 (출처: https://tokenharbor.ai/models?category=free).
 
