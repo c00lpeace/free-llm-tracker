@@ -536,7 +536,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 변경 이력
 
-- 2026-10-09: Api.Airforce — 상태 뒤집힘 지속 (18:00 라이브 확인): `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. 정상 호출 가능 무료 모델 4종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free` degraded 지속. 대표 모델 3순위에 `llama-instant` 복귀. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
+- 2026-10-09: Api.Airforce — 상태 뒤집힘 지속 (18:00 라이브 확인): `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 현재 정상 6종. 정상 호출 가능 무료 모델 4종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free` degraded 지속. 대표 모델 3순위에 `llama-instant` 복귀. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
 - 2026-10-09: OpenCode Zen — Free 목록 교체: `fledge-alpha-free` 제거, `step-5-preview-free` 신규 등재 (가격표 Free 행 입·출력·캐시 읽기 모두 Free, "free on OpenCode for a limited time", zero-retention). 무료 13종 유지. Zen 무료 티어는 Hermes 외부 사용 불가 유지라 연결에는 영향 없음 (출처: https://opencode.ai/docs/zen/).
 - 2026-10-09: Mistral — Free 플랜의 "월 $10 API 크레딧" 문구 3회 연속(10/08 저녁·10/09 아침·저녁) 없음. 실제 제거인지 페이지 개편인지는 여전히 미확인 — 형님 판단 대기 (출처: https://mistral.ai/pricing).
 
