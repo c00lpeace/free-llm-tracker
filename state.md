@@ -179,7 +179,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   </details>
 
-- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시). ※ 2026-10-08 18:00 직접 확인: 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 — 10/09 아침·저녁 재확인에서도 문구 없음 (3회 연속). Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 (형님 판단 대기).
+- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시). ※ 2026-10-08 18:00 직접 확인: 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 — 10/09 아침·저녁·10/10 아침 재확인에서도 문구 없음 (4회 연속). Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 (형님 판단 대기).
 - **API**: OpenAI 호환. 엔드포인트 `https://api.mistral.ai/v1`
 - **도구 호출**: 지원
 - **제한**: 카드 불필요. 학습 활용 위험 보고 있음.
@@ -259,14 +259,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## LLM7.io <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-09 06:00 라이브 API 직접 확인, turbo 10종):**
+- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-10-10 06:00 라이브 API 직접 확인, turbo 7종):**
   - `DeepSeek-V4-Flash-0731` — 400K 컨텍스트·도구 호출·추론 지원 (에이전트 용도로 가장 유망)
-  - `minimax-m2.7` — 180K 컨텍스트·도구 호출·추론 지원
+  - `GLM-5.3-Flash` — 멀티모달 플래시
   - `gpt-oss:20b` — 128K 컨텍스트·도구 호출 지원
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 2026-10-09 06:00 라이브 API 직접 확인 기준 turbo(무료) 티어 10종: `DeepSeek-V4-Flash-0731`, `GLM-5.3-Flash`, `codestral-latest`, `gpt-oss:20b`, `minimax-m2.7` (180K 컨텍스트·도구 호출·추론 지원), `mistral-Nemo-Instruct-2407`, `nemotron-3-nano:30b`, `gemma4:31b`, `glm-5.2`, `minimax-m3`. `deepseek-v4-pro`는 turbo→pro 티어로 강등 (유료 전환). 확인 직전 분 단위로 9→10→11종으로 변동 후 11종으로 안정 — 라인업이 로테이션 중이라 사용 전 재확인이 안전. `minimax-m2.7`은 10/01 카탈로그에서 제거됐다가 10/02 turbo로 복귀한 이력 있음. `deepseek-v4-flash:0731`(소문자·콜론 표기)은 별개 ID로 pro 티어 유지.
+  - 2026-10-10 06:00 라이브 API 직접 확인 기준 turbo(무료) 티어 7종: `DeepSeek-V4-Flash-0731`, `GLM-5.3-Flash`, `codestral-latest`, `gpt-oss:20b`, `mistral-Nemo-Instruct-2407`, `nemotron-3-nano:30b`, `gemma4:31b`. `minimax-m2.7`은 카탈로그에서 제거, `glm-5.2`·`minimax-m3`는 turbo→pro 티어 강등 (유료 전환). `deepseek-v4-pro`는 turbo→pro 티어로 강등 (유료 전환, 10/09 반영). `deepseek-v4-flash:0731`(소문자·콜론 표기)은 별개 ID로 pro 티어 유지. 확인 직전 분 단위로 9→10→11종으로 변동 후 11종으로 안정 — 라인업이 로테이션 중이라 사용 전 재확인이 안전.
   - 전체 목록: [LLM7.io 모델 카탈로그](https://api.llm7.io/v1/models) — `tier: "turbo"` 행이 무료
 
   </details>
@@ -276,7 +276,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: 카드·가입 불필요(익명 가능). 운영자가 upstream을 공개하지 않음. 무료 모델 구성이 변경될 수 있음.
 - **출처**: https://docs.llm7.io/limits , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/llm7.md , https://github.com/velo4705/awesome-free-byok-models
-- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 24시간 10만 토큰은 에이전트 루프 몇 바퀴면 소진이므로 에이전트 실사용 폴백으로는 사실상 부적합 — '가입 없이 짧게 시험' 용도로만 유효. 2026-10-07 아침 기준 turbo가 7종→11종으로 확대됐다가 2026-10-09 아침 기준 `deepseek-v4-pro`의 pro 강등으로 10종으로 축소 — 단, 확인 직전 분 단위 로테이션 중이라 사용 전 재확인 권장.
+- **비고**: Hermes 연결 가능. 가입 없이 바로 쓸 수 있어 테스트용으로 가장 간편. 단, 24시간 10만 토큰은 에이전트 루프 몇 바퀴면 소진이므로 에이전트 실사용 폴백으로는 사실상 부적합 — '가입 없이 짧게 시험' 용도로만 유효. 2026-10-10 아침 기준 turbo 7종으로 추가 축소 (`minimax-m2.7` 제거, `glm-5.2`·`minimax-m3` 유료 전환) — 단, 확인 직전 분 단위 로테이션 중이라 사용 전 재확인 권장.
 
 <a id="opencode-zen"></a>
 
@@ -379,7 +379,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-09 18:00 공개 API 라이브 확인, 정상 5종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-10 06:00 공개 API 라이브 확인, 정상 5종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
   - `llama-instant` — 무료 티어, 정상 운영
@@ -388,7 +388,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) — 2026-10-09 18:00 라이브 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. `gemma3-270m:free` degraded 지속. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
+  - 주의: 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) — 2026-10-10 06:00 라이브 확인: `gemma3-270m:free`가 다시 major_outage로 전환 (정상 6→5종). `glm-4.7-flash`는 major_outage 지속. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -535,6 +535,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-10: LLM7.io — turbo(무료) 티어 10종→7종: `minimax-m2.7`이 카탈로그에서 제거되고, `glm-5.2`·`minimax-m3`이 turbo→pro 티어 강등 (유료 전환). 2회 라이브 확인에서 변동 없음 — 안정된 것으로 보임. 대표 모델 2순위에서 `minimax-m2.7` 제외하고 `GLM-5.3-Flash`(멀티모달 플래시)로 교체 (출처: https://api.llm7.io/v1/models).
+- 2026-10-10: Api.Airforce — `gemma3-270m:free`가 다시 major_outage로 전환, 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `glm-4.7-flash`는 major_outage 지속. 대표 모델 3종은 모두 정상 유지. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
+- 2026-10-10: Mistral — Free 플랜의 "월 $10 API 크레딧" 문구 4회 연속(10/08 저녁·10/09 아침·저녁·10/10 아침) 없음. 실제 제거인지 페이지 개편인지는 여전히 미확인 — 형님 판단 대기 (출처: https://mistral.ai/pricing).
 
 - 2026-10-09: Api.Airforce — 상태 뒤집힘 지속 (18:00 라이브 확인): `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 현재 정상 6종. 정상 호출 가능 무료 모델 4종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free` degraded 지속. 대표 모델 3순위에 `llama-instant` 복귀. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
 - 2026-10-09: OpenCode Zen — Free 목록 교체: `fledge-alpha-free` 제거, `step-5-preview-free` 신규 등재 (가격표 Free 행 입·출력·캐시 읽기 모두 Free, "free on OpenCode for a limited time", zero-retention). 무료 13종 유지. Zen 무료 티어는 Hermes 외부 사용 불가 유지라 연결에는 영향 없음 (출처: https://opencode.ai/docs/zen/).
