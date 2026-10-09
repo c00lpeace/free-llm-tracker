@@ -179,7 +179,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   </details>
 
-- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시). ※ 2026-10-08 18:00 직접 확인: 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 — Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 (다음 아침 워치에서 추가 확인 예정).
+- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시). ※ 2026-10-08 18:00 직접 확인: 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 — 10/09 아침·저녁 재확인에서도 문구 없음 (3회 연속). Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 (형님 판단 대기).
 - **API**: OpenAI 호환. 엔드포인트 `https://api.mistral.ai/v1`
 - **도구 호출**: 지원
 - **제한**: 카드 불필요. 학습 활용 위험 보고 있음.
@@ -289,11 +289,11 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-10-08 기준 13종: `fledge-alpha-free`, `ling-3.1-flash-free` (Ling-3.1-flash 출시 2주 무료 체험, ~10/13~14 종료 예상), `mimo-v2.6-flash-free`, `mimo-v2.5-free`, `ling-3.0-flash-fin-free`, `nemotron-3-ultra-free`, `nemotron-3.5-lightning-free`, `big-pickle`, `space-bunny-free`, `longcat-2.5-preview-free`, `muse-spark-1.3-contributor-free`, `jev-1.13-free`, `exo-free` (신규 — 10/08 확인, 입·출력 모두 Free, 상세 스펙 미공개) (전부 기간 한정)
+  - 무료 모델 목록: [OpenCode Zen 문서](https://opencode.ai/docs/zen/) — 가격표 "Free" 행 기준 (로테이션됨). 2026-10-09 기준 13종: `ling-3.1-flash-free` (Ling-3.1-flash 출시 2주 무료 체험, ~10/13~14 종료 예상), `mimo-v2.6-flash-free`, `mimo-v2.5-free`, `ling-3.0-flash-fin-free`, `nemotron-3-ultra-free`, `nemotron-3.5-lightning-free`, `big-pickle`, `space-bunny-free`, `longcat-2.5-preview-free`, `muse-spark-1.3-contributor-free`, `jev-1.13-free`, `exo-free` (10/08 신규 확인, 입·출력 모두 Free, 상세 스펙 미공개), `step-5-preview-free` (10/09 신규 — 가격표 Free 행 입·출력·캐시 읽기 모두 Free, "free on OpenCode for a limited time", zero-retention). `fledge-alpha-free`는 10/09 확인에서 Free 목록에서 제거됨 (전부 기간 한정)
   - 스텔스 모델 관련 정보:
     - Big Pickle: [SWE Atlas 벤치마크 측정](https://github.com/PhillipChaffee/big-pickle-swe-atlas) — 코드베이스 QnA 50.8% 해결률 (정체 미공개, 커뮤니티에서는 GLM-4.6 추정)
     - Space Bunny: [지문 분석](https://github.com/majiayu000/stealthprint/blob/main/docs/case-space-bunny.md) — MiniMax 계열 토크나이저, 1M 컨텍스트 확인. Space Bunny Alpha는 2026-10-05 만료 후 OpenRouter·Nous Portal 양쪽 카탈로그에서 제거 확인 (OpenCode Zen의 `space-bunny-free`와는 별개 ID)
-    - Fledge Alpha: [정체 분석 영상](https://www.youtube.com/watch?v=4Zb9my4MI3U) — 2026-10-01 등장, Thinking Machines Inkling 프로젝트와 연결 (PR 추적 기준 '추정'). [OpenCode 데이터 페이지](https://opencode.ai/data/unknown/fledge-alpha)
+    - Fledge Alpha: [정체 분석 영상](https://www.youtube.com/watch?v=4Zb9my4MI3U) — 2026-10-01 등장, Thinking Machines Inkling 프로젝트와 연결 (PR 추적 기준 '추정'). [OpenCode 데이터 페이지](https://opencode.ai/data/unknown/fledge-alpha). ※ 2026-10-09 확인에서 Zen Free 목록에서 제거됨
 
   </details>
 
@@ -379,15 +379,16 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-09 06:01 공개 API 라이브 확인, 정상 2종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-09 18:00 공개 API 라이브 확인, 정상 5종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
+  - `llama-instant` — 무료 티어, 정상 운영
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 주의: 정상 호출 가능 무료 모델은 4종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`glm-4.7-flash`). 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. `unmoderated-gpt`는 major_outage, `gemma3-270m:free`는 degraded 지속. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘 (17:59 operational → 18:03 major_outage). `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전.
+  - 주의: 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) — 2026-10-09 18:00 라이브 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. `gemma3-270m:free` degraded 지속. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -534,6 +535,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-09: Api.Airforce — 상태 뒤집힘 지속 (18:00 라이브 확인): `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. 정상 호출 가능 무료 모델 4종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free` degraded 지속. 대표 모델 3순위에 `llama-instant` 복귀. 사용 전 재확인 권장 (출처: https://api.airforce/v1/models).
+- 2026-10-09: OpenCode Zen — Free 목록 교체: `fledge-alpha-free` 제거, `step-5-preview-free` 신규 등재 (가격표 Free 행 입·출력·캐시 읽기 모두 Free, "free on OpenCode for a limited time", zero-retention). 무료 13종 유지. Zen 무료 티어는 Hermes 외부 사용 불가 유지라 연결에는 영향 없음 (출처: https://opencode.ai/docs/zen/).
+- 2026-10-09: Mistral — Free 플랜의 "월 $10 API 크레딧" 문구 3회 연속(10/08 저녁·10/09 아침·저녁) 없음. 실제 제거인지 페이지 개편인지는 여전히 미확인 — 형님 판단 대기 (출처: https://mistral.ai/pricing).
 
 - 2026-10-09: Token Harbor — Free 카테고리에 3종 다시 등재 확인 (06:10 라이브 브라우저 직접 확인): `claude-haiku-5.5:free` ("FREE LIMITED TIME", 10/15까지 무료 후 표준 요금 전환), `deepseek-v4.1-flash:free` (FREE), `mimo-v2.6-flash:free` (FREE). 10/08 저녁 18:11엔 "Nothing in this tier yet"이었으나 아침에 복귀 — Free 목록 등재가 불안정, 사용 전 재확인 필수 (출처: https://tokenharbor.ai/models?category=free).
 - 2026-10-09: Api.Airforce — 상태 뒤집힘 지속: 06:01엔 정상 2종(`gpt-oss-20b`·`kimi-k2.7-code`)이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀 — 현재 정상 4종. `unmoderated-gpt` major_outage, `gemma3-270m:free` degraded 지속 (출처: https://api.airforce/v1/models).
