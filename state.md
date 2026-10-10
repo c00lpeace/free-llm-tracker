@@ -356,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## AnyAPI <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (2026-10-11 06:00 공개 카탈로그 확인 — Tier 필터 Free, 5종):**
+- **대표 무료 모델 (2026-10-11 06:15 공개 카탈로그 재확인 — Tier 필터 Free, 4종):**
   - Qwen3.8 27B (free) — 10/06 신규 Free 등재 (Free 뱃지 직접 확인)
   - Ling 3.0 Flash Sante (free) — inclusionAI
   - Ling 3.0 Flash Fin (free) — inclusionAI
@@ -364,7 +364,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [AnyAPI AI 모델 카탈로그](https://anyapi.ai/ai-models) — 좌측 Tier 필터에서 Free 선택 (각 무료 모델에 "Free" 배지 표시)
-  - 2026-10-11 06:00 확인 기준 Free 티어 5종: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free), Google Gemma 3n 4B (free) (10/11 신규 복귀 — 10/04 카탈로그에서 제거된 뒤 Free 티어로 복귀). Ling 3.0 Flash Fin (free)은 10/04 오전 Premium 티어 표기→저녁 Free 복귀 이력 — 하루 새 뒤집힌 라인업이라 불안정.
+  - 2026-10-11 06:15 재확인 기준 Free 티어 4종: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free). 06:00엔 Google Gemma 3n 4B (free)의 복귀가 확인됐으나 06:15 재확인에서 목록에 없음 — 분 단위 로테이션 중. Ling 3.0 Flash Fin (free)은 10/04 오전 Premium 티어 표기→저녁 Free 복귀 이력 — 하루 새 뒤집힌 라인업이라 불안정.
 
   </details>
 
@@ -536,7 +536,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 변경 이력
 
-- 2026-10-11: AnyAPI — Free 4종→5종: Google Gemma 3n 4B (free)가 Free 티어로 복귀 (10/04 카탈로그에서 제거된 뒤 복귀, Free 뱃지 직접 확인). 대표 모델 변경 없음 (출처: https://anyapi.ai/ai-models).
+- 2026-10-11: AnyAPI — 06:00에 Google Gemma 3n 4B (free)의 Free 복귀가 확인됐으나 06:15 재확인에서는 Free 목록에 없음 (Free 4종 유지). 카탈로그가 분 단위로 뒤집히는 중 — 다음 워치에서 재확인 (출처: https://anyapi.ai/ai-models).
 - 2026-10-11: Api.Airforce — `glm-4.7-flash`가 다시 major_outage로 전환, 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free`는 major_outage 유지. 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 정상 (출처: https://api.airforce/v1/models).
 - 2026-10-11: 아침 워치 — 위 2건 외 변동 없음: LLM7.io(turbo 7종 유지)·OpenRouter(`:free` 15종 유지)·Nous Portal(무료 10종 유지, `ling-3.1-flash` 체험 유효 — 종료 예상 ~10/13~14)·OrcaRouter(무료 5종 유지)·Token Harbor(무료 3종 유지, claude-haiku-5.5:free 10/15 13:00 UTC까지)·OpenCode Zen(무료 13종 유지)·Groq(한도 동일)·NVIDIA NIM(무료 4종 유지)·Gemini(API 무료 티어 유지)·Mistral(Free 월 $10 크레딧 문구 7회 연속 없음 — 형님 판단 대기 유지)·AIHubMix(27+ 무료 유지)·Z.ai(Flash 3종 Free 유지 — 3자 매체의 'GLM-4.5-Flash retirement' 주장은 공식 가격표에서 확인 불가)·BazaarLink(무료 2종 유지)·Agnes AI($0 프로모션 유지)·Hetzner(실험 무료 2종 유지)·ZeroLimitAI('Free week' 유지)·Ollama Cloud·Cline(API 미지원 유지). 신규 상시 무료 제공자 없음.
 
