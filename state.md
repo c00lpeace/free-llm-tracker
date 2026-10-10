@@ -356,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## AnyAPI <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (2026-10-06 06:00 공개 카탈로그 확인 — Tier 필터 Free, 4종):**
+- **대표 무료 모델 (2026-10-11 06:00 공개 카탈로그 확인 — Tier 필터 Free, 5종):**
   - Qwen3.8 27B (free) — 10/06 신규 Free 등재 (Free 뱃지 직접 확인)
   - Ling 3.0 Flash Sante (free) — inclusionAI
   - Ling 3.0 Flash Fin (free) — inclusionAI
@@ -364,7 +364,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [AnyAPI AI 모델 카탈로그](https://anyapi.ai/ai-models) — 좌측 Tier 필터에서 Free 선택 (각 무료 모델에 "Free" 배지 표시)
-  - 2026-10-06 06:00 확인 기준 Free 티어 4종: Qwen3.8 27B (free) (신규), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free). Ling 3.0 Flash Fin (free)은 10/04 오전 Premium 티어 표기→저녁 Free 복귀 이력 — 하루 새 뒤집힌 라인업이라 불안정. Gemma 3n 4B는 카탈로그 목록에서 완전 제거 유지
+  - 2026-10-11 06:00 확인 기준 Free 티어 5종: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free), Google Gemma 3n 4B (free) (10/11 신규 복귀 — 10/04 카탈로그에서 제거된 뒤 Free 티어로 복귀). Ling 3.0 Flash Fin (free)은 10/04 오전 Premium 티어 표기→저녁 Free 복귀 이력 — 하루 새 뒤집힌 라인업이라 불안정.
 
   </details>
 
@@ -373,13 +373,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: **카드 불필요** — 가격 페이지 Free 플랜 카드에 "No credit card required" 명시. 무료 모델의 API 호출용 정확한 모델 ID 형식은 키 발급 후 확인 필요.
 - **출처**: https://anyapi.ai/pricing , https://anyapi.ai/ai-models
-- **비고**: Hermes 연결 가능(예상). 로그인 없이 무료 모델 목록을 미리 볼 수 있어 검증이 쉬움. 일 10만 토큰은 에이전트 실사용에는 빠듯 — 테스트·가벼운 용도 적합. 무료 티어 모델이 10/06 아침 기준 4종 (Qwen3.8 27B 신규 Free 등재, Free 뱃지 직접 확인).
+- **비고**: Hermes 연결 가능(예상). 로그인 없이 무료 모델 목록을 미리 볼 수 있어 검증이 쉬움. 일 10만 토큰은 에이전트 실사용에는 빠듯 — 테스트·가벼운 용도 적합. 무료 티어 모델이 10/11 아침 기준 5종 (Google Gemma 3n 4B (free)가 Free 티어로 복귀, Free 뱃지 직접 확인).
 
 <a id="api-airforce"></a>
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-10 18:00 공개 API 라이브 확인, 정상 6종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-11 06:00 공개 API 라이브 확인, 정상 5종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
   - `llama-instant` — 무료 티어, 정상 운영
@@ -388,7 +388,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`) — 2026-10-10 18:00 라이브 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 (아침 5→6종). `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
+  - 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) — 2026-10-11 06:00 라이브 확인: 10/10 저녁에 정상 복귀했던 `glm-4.7-flash`가 다시 major_outage로 전환. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -535,6 +535,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-11: AnyAPI — Free 4종→5종: Google Gemma 3n 4B (free)가 Free 티어로 복귀 (10/04 카탈로그에서 제거된 뒤 복귀, Free 뱃지 직접 확인). 대표 모델 변경 없음 (출처: https://anyapi.ai/ai-models).
+- 2026-10-11: Api.Airforce — `glm-4.7-flash`가 다시 major_outage로 전환, 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free`는 major_outage 유지. 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 정상 (출처: https://api.airforce/v1/models).
+- 2026-10-11: 아침 워치 — 위 2건 외 변동 없음: LLM7.io(turbo 7종 유지)·OpenRouter(`:free` 15종 유지)·Nous Portal(무료 10종 유지, `ling-3.1-flash` 체험 유효 — 종료 예상 ~10/13~14)·OrcaRouter(무료 5종 유지)·Token Harbor(무료 3종 유지, claude-haiku-5.5:free 10/15 13:00 UTC까지)·OpenCode Zen(무료 13종 유지)·Groq(한도 동일)·NVIDIA NIM(무료 4종 유지)·Gemini(API 무료 티어 유지)·Mistral(Free 월 $10 크레딧 문구 7회 연속 없음 — 형님 판단 대기 유지)·AIHubMix(27+ 무료 유지)·Z.ai(Flash 3종 Free 유지 — 3자 매체의 'GLM-4.5-Flash retirement' 주장은 공식 가격표에서 확인 불가)·BazaarLink(무료 2종 유지)·Agnes AI($0 프로모션 유지)·Hetzner(실험 무료 2종 유지)·ZeroLimitAI('Free week' 유지)·Ollama Cloud·Cline(API 미지원 유지). 신규 상시 무료 제공자 없음.
 
 - 2026-10-10: Api.Airforce — 저녁 워치(18:00 라이브 확인): `glm-4.7-flash`가 major_outage에서 정상 복귀, 정상 호출 가능 무료 모델 5종→6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`). 하루 종일 정상 유지 중인 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 대표 모델 유지. `gemma3-270m:free`는 major_outage 유지 (출처: https://api.airforce/v1/models).
 
