@@ -309,14 +309,15 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Nous Portal (Hermes Agent) <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-09 06:00 기준 — 무료 10종):**
+- **대표 무료 모델 (사용성 순, 2026-10-11 18:00 기준 — 무료 11종):**
+  - `stealth/missingno` — 스텔스 신규 무료 추론 모델, 262K 컨텍스트·도구 호출·구조화 출력 지원 (10/11 신규 등재, 정체 미공개)
   - `poolside/laguna-s-2.1:free`
   - `inclusionai/ling-3.0-flash-sante:free`
-  - `upstage/solar-mini4:free` — 신규 무료 등재 (10/06 확인)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 2026-10-09 06:00 기준 무료 10종 (공식 API 전체 텍스트 대조 — 가격 $0 기준): `inclusionai/ling-3.1-flash`, `inclusionai/ling-3.0-flash-sante:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `upstage/solar-mini4:free`, `stepfun/step-5-preview:free` (신규), `meituan/longcat-2.0:free`, `inclusionai/ling-3.0-flash-fin:free`, `stepfun/step-3.7-flash:free`, `meituan/longcat-2.5-preview:free`. `upstage/solar-pro4:free`는 :free variant가 카탈로그에 없음 (유료 variant `upstage/solar-pro4`만 유지). `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거 확인 — 기간 한정 요약표에서 정리. ※ `inclusionai/ling-3.1-flash`는 2026-09-30 출시 2주 무료 체험 모델 (체험 종료 ~10/13~14 예상, 이후 유료 전환·오픈소스 공개 예정 — TechNode 보도) — Nous Portal 무료 등재도 체험 종료와 함께 끝날 가능성, 다음 워치에서 지속 확인. `poolside/laguna-s-2.1:free`·`laguna-xs-2.1:free`는 API 응답상 `expiration_date`가 2026-10-31로 표기됨 — 이후 무료 지속 여부는 다음 워치에서 확인 (2026-10-08 라이브 확인).
+  - 2026-10-11 18:00 기준 무료 11종 (공식 API 가격 $0 기준): `stealth/missingno` (신규), `inclusionai/ling-3.1-flash`, `inclusionai/ling-3.0-flash-sante:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`, `upstage/solar-mini4:free`, `stepfun/step-5-preview:free`, `meituan/longcat-2.0:free`, `inclusionai/ling-3.0-flash-fin:free`, `stepfun/step-3.7-flash:free`, `meituan/longcat-2.5-preview:free`. `upstage/solar-pro4:free`는 :free variant가 카탈로그에 없음 (유료 variant `upstage/solar-pro4`만 유지). `stealth/space-bunny-alpha`는 만료일 2026-10-05 경과 후 카탈로그에서 완전 제거 확인 — 기간 한정 요약표에서 정리. ※ `inclusionai/ling-3.1-flash`는 2026-09-30 출시 2주 무료 체험 모델 (체험 종료 ~10/13~14 예상, 이후 유료 전환·오픈소스 공개 예정 — TechNode 보도) — Nous Portal 무료 등재도 체험 종료와 함께 끝날 가능성, 다음 워치에서 지속 확인. `poolside/laguna-s-2.1:free`·`laguna-xs-2.1:free`는 API 응답상 `expiration_date`가 2026-10-31로 표기됨 — 이후 무료 지속 여부는 다음 워치에서 확인 (2026-10-08 라이브 확인).
+  - 스텔스 모델 관련 정보: MissingNo — 공식 설명상 "free reasoning model, 262K-token context, tool calling and structured outputs, reasoning is always on" (추론 깊이 조절: low/medium/high/xhigh/max). 정체 미공개 — 10/11 신규 등재라 외부 정보 없음 (스텔스 모델 표기 규칙상 정보 확보 시 링크 추가).
   - 카탈로그: [Nous Portal 모델 목록](https://portal.nousresearch.com/models) — 'Free Models' 섹션 및 FREE 필터로 무료 모델 직접 확인 (로그인 불필요), 공식 API: https://inference-api.nousresearch.com/v1/models
 
   </details>
@@ -355,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-11 06:00 공개 API 라이브 확인, 정상 5종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-11 18:00 공개 API 라이브 확인, 정상 6종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
   - `llama-instant` — 무료 티어, 정상 운영
@@ -364,7 +365,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 정상 호출 가능 무료 모델은 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`) — 2026-10-11 06:00 라이브 확인: 10/10 저녁에 정상 복귀했던 `glm-4.7-flash`가 다시 major_outage로 전환. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
+  - 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`) — 2026-10-11 18:00 라이브 확인: 아침에 major_outage로 전환됐던 `glm-4.7-flash`가 다시 정상 복귀. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 06:00 확인: `glm-4.7-flash` major_outage로 전환, 정상 5종. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -511,6 +512,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-11: Nous Portal — `stealth/missingno`(MissingNo) 신규 무료 등재 확인 (18:00 라이브 API): 스텔스 추론 모델, 262K 컨텍스트·도구 호출·구조화 출력 지원, 추론 상시 활성화(깊이 조절 가능), 입·출력 $0. 무료 10종→11종, 대표 모델 1순위에 편입. 정체 미공개 — 10/11 신규 등재라 외부 정보 없음 (스텔스 모델 표기 규칙상 정보 확보 시 링크 추가) (출처: https://inference-api.nousresearch.com/v1/models).
+- 2026-10-11: Api.Airforce — 저녁 워치(18:00 라이브 확인): `glm-4.7-flash`가 다시 정상 복귀, 정상 호출 가능 무료 모델 5종→6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`). `gemma3-270m:free`는 major_outage 유지. 하루 종일 버틴 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 대표 모델 유지 (출처: https://api.airforce/v1/models).
+- 2026-10-11: 저녁 워치 — 위 2건 외 변동 없음: LLM7.io(turbo 7종 유지)·OpenRouter(`:free` 15종 유지)·OrcaRouter(무료 5종 유지)·Token Harbor(무료 3종 유지, claude-haiku-5.5:free 10/15 13:00 UTC까지)·OpenCode Zen(무료 13종 유지 — Docs 'The free models' 섹션 직접 확인)·AnyAPI(Free 4종 유지)·Groq(한도 동일 — 한도 문서 직접 확인)·NVIDIA NIM(무료 4종 유지 — build.nvidia.com 'Free inference' 섹션 직접 확인)·Gemini(API 무료 티어 유지 — 10/10 3자 확인)·AIHubMix(무료 모델 문서 유지)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지)·Agnes AI($0 프로모션 유지 — 3자 최신 확인)·Hetzner(실험 무료 2종 유지 — 공식 Docs 확인)·ZeroLimitAI('Free week' 유지). 신규 상시 무료 제공자 없음.
 
 - 2026-10-11: Mistral 제외 (형님 결정) — 가격 페이지 개편 이후 Free 플랜의 "월 $10 API 크레딧" 문구가 7회 연속 확인되지 않음. 웹 검색상 하루 25회 요청 같은 비공식 정보만 있고 사용량 기준이 모호해 추적 대상에서 제외. 향후 공식 무료 API 티어 확인 시 재등록 검토 (출처: https://mistral.ai/pricing).
 
