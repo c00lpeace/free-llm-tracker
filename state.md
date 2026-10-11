@@ -1,8 +1,8 @@
-# Free LLM Tracker — 기준선 (2026-10-11)
+# Free LLM Tracker — 기준선 (2026-10-12)
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
-모든 수치는 2026-10-11 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
+모든 수치는 2026-10-12 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
 '미확인'은 조사 시점에 확인되지 않은 항목임.
 </p>
 
@@ -356,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-11 18:00 공개 API 라이브 확인, 정상 6종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-12 06:00 공개 API 라이브 확인, 정상 6종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `kimi-k2.7-code` — 무료 티어, 정상 운영
   - `llama-instant` — 무료 티어, 정상 운영
@@ -365,7 +365,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-08 기준 전체 약 637종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`) — 2026-10-11 18:00 라이브 확인: 아침에 major_outage로 전환됐던 `glm-4.7-flash`가 다시 정상 복귀. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 06:00 확인: `glm-4.7-flash` major_outage로 전환, 정상 5종. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
+  - 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`) — 2026-10-12 06:00 라이브 확인: `glm-4.7-flash`가 다시 major_outage로 전환됐으나 5분 간격 재확인에서 정상 복귀, `gemma3-270m:free`도 major_outage로 복귀 — 결과적으로 10/11 저녁과 동일(정상 6종). 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 18:00 확인: 아침에 major_outage로 전환됐던 `glm-4.7-flash`가 다시 정상 복귀. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 06:00 확인: `glm-4.7-flash` major_outage로 전환, 정상 5종. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -512,6 +512,9 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-12: 아침 워치 — Api.Airforce 외 변동 없음: LLM7.io(turbo 7종 유지)·OpenRouter(`:free` 15종 유지)·Nous Portal(무료 11종 유지, `ling-3.1-flash` 체험 유효 — 종료 예상 ~10/13~14)·OrcaRouter(무료 5종 유지)·Token Harbor(무료 3종 유지, claude-haiku-5.5:free 10/15 13:00 UTC까지)·OpenCode Zen(무료 13종 유지)·AnyAPI(Free 4종 유지)·Groq(한도 동일 — 한도 문서 직접 확인)·NVIDIA NIM(무료 4종 유지 — 'Free inference' 섹션 직접 확인)·Gemini(API 무료 티어 유지)·AIHubMix(무료 모델 문서 유지)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지)·Agnes AI($0 프로모션 유지 — 3자 10/05 확인)·Hetzner(실험 무료 2종 유지 — 공식 Docs 확인)·ZeroLimitAI('Free week' 유지)·Ollama Cloud·Cline(API 미지원 유지). 신규 상시 무료 제공자 없음.
+- 2026-10-12: Api.Airforce — 아침 워치(06:00 라이브 확인): `glm-4.7-flash`가 다시 major_outage로 전환, `gemma3-270m:free`가 정상 복귀였으나 5분 간격 재확인에서 다시 뒤집힘 — 최종 어제 저녁 상태(정상 6종: `gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`, `gemma3-270m:free`는 major_outage) 유지. 대표 모델 3종은 모두 정상. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
 - 2026-10-11: Nous Portal — `stealth/missingno`(MissingNo) 신규 무료 등재 확인 (18:00 라이브 API): 스텔스 추론 모델, 262K 컨텍스트·도구 호출·구조화 출력 지원, 추론 상시 활성화(깊이 조절 가능), 입·출력 $0. 무료 10종→11종, 대표 모델 1순위에 편입. 정체 미공개 — 10/11 신규 등재라 외부 정보 없음 (스텔스 모델 표기 규칙상 정보 확보 시 링크 추가) (출처: https://inference-api.nousresearch.com/v1/models).
 - 2026-10-11: Api.Airforce — 저녁 워치(18:00 라이브 확인): `glm-4.7-flash`가 다시 정상 복귀, 정상 호출 가능 무료 모델 5종→6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`). `gemma3-270m:free`는 major_outage 유지. 하루 종일 버틴 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 대표 모델 유지 (출처: https://api.airforce/v1/models).
