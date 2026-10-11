@@ -22,7 +22,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [NVIDIA NIM](#nvidia-nim)
 - [OrcaRouter](#orcarouter)
 - [Google AI Studio — Gemini](#gemini)
-- [Mistral](#mistral)
 - [OpenRouter](#openrouter)
 - [AIHubMix](#aihubmix)
 - [Z.ai](#z-ai)
@@ -162,29 +161,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **제한**: 카드 불필요(Google 계정만). 무료 티어 데이터 학습 활용 가능 (과금 활성화 시 opt-out). 한도가 예고 없이 삭감된 전례 있음 (250→20 RPD 보고).
 - **출처**: https://ai.google.dev/gemini-api/docs/changelog (2026-09-18 공지 — 2.5 모델 무료 접근 기존 실사용자 제한) , https://help.apiyi.com/en/google-ai-studio-free-quota-limits-solution-en.html
 - **비고**: 한국어 성능 강점. 신규 키 발급 시 2.5 Flash 무료는 쓸 수 없으므로 Hermes에 새로 붙일 땐 3.8-flash 또는 3.5-flash-lite 기준. 단, 한도 변동 리스크가 있어 메인 단독 사용은 주의.
-
-<a id="mistral"></a>
-
-## Mistral (이전 조사) <span class="prio p-mid">중간</span>
-
-- **대표 무료 모델 (사용성 순):**
-  - Mistral Large 계열 — 최상위 성능
-  - Codestral — 코드 특화
-  - Mistral Small 계열 — 경량·고속
-  <details>
-  <summary>더보기 — 전체 무료 모델 안내</summary>
-
-  - Free 플랜(월 $10 API 크레딧)으로 이용 — Studio·API·Vibe 공유.
-  - 전체 모델 목록: [Mistral 가격 페이지](https://mistral.ai/pricing)
-
-  </details>
-
-- **한도**: Free 플랜 — 월 $10 API 크레딧 (공식 가격 페이지 기준, 2026-09-24 검증). Studio·API·Vibe 공유, 초과 시 다음 결제 주기까지 중단 (PAYG 전환 시 예외). 무료 모드는 가장 낮은 속도 제한 적용 (정확한 수치는 계정 내 표시). ※ 2026-10-08 18:00 직접 확인: 가격 페이지가 Vibe(Pro $14.99/월·Team $24.99/사용자/월) 중심으로 개편되어 Free 플랜의 "월 $10 API 크레딧" 문구가 사라짐 — 10/09 아침·저녁·10/10 아침·저녁 재확인에서도 문구 없음 (5회 연속). Pro엔 "$25.5/mo in API credits"·다른 등급엔 "$15/mo in API credits" 표기 있으나 Free엔 없음. Free 플랜 자체는 FAQ에 유지. 실제 제거인지 페이지 개편인지는 미확인 (형님 판단 대기).
-- **API**: OpenAI 호환. 엔드포인트 `https://api.mistral.ai/v1`
-- **도구 호출**: 지원
-- **제한**: 카드 불필요. 학습 활용 위험 보고 있음.
-- **출처**: https://console.mistral.ai (커뮤니티 검증 기준), https://mistral.ai/pricing
-- **비고**: 월 $10 크레딧은 에이전트 실사용에 빠듯 (Mistral Large 기준 입력 약 2천만 토큰 수준). 데이터 정책 주의 (기본적으로 학습 활용 가능, Admin 패널 opt-out 필요).
 
 <a id="openrouter"></a>
 
@@ -535,6 +511,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-11: Mistral 제외 (형님 결정) — 가격 페이지 개편 이후 Free 플랜의 "월 $10 API 크레딧" 문구가 7회 연속 확인되지 않음. 웹 검색상 하루 25회 요청 같은 비공식 정보만 있고 사용량 기준이 모호해 추적 대상에서 제외. 향후 공식 무료 API 티어 확인 시 재등록 검토 (출처: https://mistral.ai/pricing).
 
 - 2026-10-11: AnyAPI — 06:00에 Google Gemma 3n 4B (free)의 Free 복귀가 확인됐으나 06:15 재확인에서는 Free 목록에 없음 (Free 4종 유지). 카탈로그가 분 단위로 뒤집히는 중 — 다음 워치에서 재확인 (출처: https://anyapi.ai/ai-models).
 - 2026-10-11: Api.Airforce — `glm-4.7-flash`가 다시 major_outage로 전환, 정상 호출 가능 무료 모델 6종→5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`rnj-1`·`unmoderated-gpt`). `gemma3-270m:free`는 major_outage 유지. 안정 3종(`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`)은 그대로 정상 (출처: https://api.airforce/v1/models).
