@@ -356,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-13 06:00 공개 API 라이브 재확인, 정상 6종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-13 06:15 공개 API 라이브 재확인, 정상 4종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영 (10/12 저녁 degraded → 복귀)
   - `llama-instant` — 무료 티어, 정상 운영
   - `unmoderated-gpt` — 무료 티어, 정상 운영
@@ -365,7 +365,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-13 기준 전체 643종 중 28종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 무료 28종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`
-  - 정상 호출 가능 무료 모델은 6종 (`gpt-oss-20b`·`gemma3-270m:free`·`glm-4.7-flash`·`rnj-1`·`llama-instant`·`unmoderated-gpt`) — 2026-10-13 06:00 재확인에서 `kimi-k2.7-code`가 major_outage로 전환, `gpt-oss-20b`·`gemma3-270m:free`·`glm-4.7-flash`는 정상 복귀. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/12 18:25 재확인: `gpt-oss-20b`이 degraded로 전환 — 당시 정상 4종 (`kimi-k2.7-code`·`llama-instant`·`unmoderated-gpt`·`rnj-1`), `glm-4.7-flash`·`gemma3-270m:free`는 major_outage 유지. (10/12 06:10 재확인: `rnj-1`이 partial_outage로 전환 — 당시 정상 5종. (10/12 06:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환됐으나 5분 간격 재확인에서 정상 복귀, `gemma3-270m:free`도 major_outage로 복귀 — 결과적으로 10/11 저녁과 동일(정상 6종). (10/11 18:00 확인: 아침에 major_outage로 전환됐던 `glm-4.7-flash`가 다시 정상 복귀. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 06:00 확인: `glm-4.7-flash` major_outage로 전환, 정상 5종. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
+  - 정상 호출 가능 무료 모델은 4종 (`gpt-oss-20b`·`glm-4.7-flash`·`llama-instant`·`unmoderated-gpt`) — 2026-10-13 06:15 재확인에서 `gemma3-270m:free`가 degraded, `rnj-1`이 major_outage로 전환. `kimi-k2.7-code`도 major_outage 유지. 06:00 재확인: `kimi-k2.7-code` major_outage 전환, `gpt-oss-20b`·`gemma3-270m:free`·`glm-4.7-flash` 정상 복귀. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/12 18:25 재확인: `gpt-oss-20b`이 degraded로 전환 — 당시 정상 4종 (`kimi-k2.7-code`·`llama-instant`·`unmoderated-gpt`·`rnj-1`), `glm-4.7-flash`·`gemma3-270m:free`는 major_outage 유지. (10/12 06:10 재확인: `rnj-1`이 partial_outage로 전환 — 당시 정상 5종. (10/12 06:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환됐으나 5분 간격 재확인에서 정상 복귀, `gemma3-270m:free`도 major_outage로 복귀 — 결과적으로 10/11 저녁과 동일(정상 6종). (10/11 18:00 확인: 아침에 major_outage로 전환됐던 `glm-4.7-flash`가 다시 정상 복귀. `gemma3-270m:free`는 major_outage 유지. 상태가 분 단위로 뒤집히는 중이라 사용 전 재확인이 안전. (10/11 06:00 확인: `glm-4.7-flash` major_outage로 전환, 정상 5종. (10/10 18:00 확인: `glm-4.7-flash`가 major_outage에서 정상 복귀 — 당시 정상 6종. (10/09 18:00 확인: `glm-4.7-flash`가 다시 major_outage로 전환, `unmoderated-gpt`(major_outage→정상)·`rnj-1` 정상 복귀. ※ 18:15 재확인에서 `gemma3-270m:free`도 정상 복귀 — 당시 정상 6종. (10/09 06:01엔 2종이었으나 07:10 재확인에서 `llama-instant`(degraded→정상)·`glm-4.7-flash`(major_outage→정상) 복귀. 2026-10-08 18:03 라이브 확인: 아침 정상이던 `rnj-1`이 major_outage로 전환, `unmoderated-gpt`는 partial_outage→operational로 복귀. 4분 간격 재확인에서 `glm-4.7-flash`가 정상→major_outage로 뒤집힘. `gemma3-270m:free`는 major_outage 유지.)
 
   </details>
 
@@ -512,6 +512,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-13: Api.Airforce — 06:15 재확인: `gemma3-270m:free`가 degraded, `rnj-1`이 major_outage로 전환 — 현재 정상 4종 (`gpt-oss-20b`·`glm-4.7-flash`·`llama-instant`·`unmoderated-gpt`). `kimi-k2.7-code`도 major_outage 유지 (출처: https://api.airforce/v1/models).
 
 - 2026-10-13: Api.Airforce — 아침 워치(06:00 공개 API 라이브 확인): `kimi-k2.7-code`가 major_outage로 전환, `gpt-oss-20b`·`gemma3-270m:free`·`glm-4.7-flash` 정상 복귀 — 정상 4종→6종 (`gpt-oss-20b`·`gemma3-270m:free`·`glm-4.7-flash`·`rnj-1`·`llama-instant`·`unmoderated-gpt`). 대표 모델에서 `kimi-k2.7-code` 제외, `unmoderated-gpt` 편입. 분 단위 뒤집힘 지속 (출처: https://api.airforce/v1/models).
 
