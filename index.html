@@ -101,7 +101,16 @@
     background: rgba(175, 184, 193, 0.2);
     padding: 0.2em 0.4em;
     border-radius: 6px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
+  /* 표는 모바일에서 가로 스크롤 */
+  .tbl-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 1em 0;
+  }
+  .tbl-scroll table { margin: 0; min-width: 560px; }
   article strong { font-weight: 700; }
   article hr {
     border: 0;
@@ -324,6 +333,12 @@
       .then(function (md) {
         var el = document.getElementById("content");
         el.innerHTML = marked.parse(md);
+        el.querySelectorAll("table").forEach(function (tbl) {
+          var wrap = document.createElement("div");
+          wrap.className = "tbl-scroll";
+          tbl.parentNode.insertBefore(wrap, tbl);
+          wrap.appendChild(tbl);
+        });
         var tabsOn = buildTabs(el);
         var start = "perm";
         try { start = localStorage.getItem("flt-tab") || "perm"; } catch (e) {}
