@@ -356,7 +356,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-15 06:00 공개 API 라이브 확인, 정상 4종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-15 06:20 공개 API 라이브 재확인, 정상 5종):**
   - `llama-instant` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `kimi-k2.7-code` — 무료 티어, 정상 유지 (10/15 아침 `rnj-1`이 major_outage로 전환돼 대표 편입)
@@ -364,7 +364,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
-  - 2026-10-15 06:00 공개 API 라이브 확인 (last_check 10-14 20:55 UTC): tier-free 29종 유지. `rnj-1`이 정상→major_outage로 전환 — 현재 정상 4종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`). `glm-4.7-flash`는 major_outage→degraded로 개선, `gemma3-270m:free`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표에서 `rnj-1` 제외, `kimi-k2.7-code` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+  - 2026-10-15 06:00 공개 API 라이브 확인 (last_check 10-14 20:55 UTC): tier-free 29종 유지. `rnj-1`이 정상→major_outage로 전환 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). 06:20 재확인에서 `rnj-1`이 major_outage→정상 복귀. `glm-4.7-flash`는 major_outage→degraded로 개선, `gemma3-270m:free`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표에서 `rnj-1` 제외, `kimi-k2.7-code` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-14 18:00 공개 API 라이브 확인: tier-free 29종 유지. `gemma3-270m:free`가 정상→major_outage로 전환, `gpt-oss-20b`가 degraded→정상 복귀 — 현재 정상 5종 (`llama-instant`·`mistral-large-4`·`rnj-1`·`kimi-k2.7-code`·`gpt-oss-20b`). `glm-4.7-flash`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표 3종은 모두 정상 유지 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-14 06:00 공개 API 라이브 확인 (last_check 05:56 KST): tier-free 29종 유지. `gpt-oss-20b`가 degraded로 전환, `rnj-1`이 major_outage에서 정상 복귀 — 현재 정상 5종 (`gemma3-270m:free`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). 06:15 재확인에서 `gemma3-270m:free`가 major_outage→정상 복귀. `gpt-oss-20b`는 degraded, `glm-4.7-flash`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표에서 `gpt-oss-20b` 제외, `rnj-1` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수.
   - 무료 29종: mistral 계열 18종, suno 계열 3종, `gemma3-270m:free`, `glm-4.7-flash`, `rnj-1`, `llama-instant`, `kimi-k2.7-code`, `unmoderated-gpt`, `gpt-oss-20b`, `mistral-large-4` (10/13 저녁 신규 free 티어 확인)
@@ -515,6 +515,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 <a id="changelog"></a>
 
 ## 변경 이력
+
+- 2026-10-15: Api.Airforce — 06:20 재확인: `rnj-1`이 major_outage→정상 복귀 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). `glm-4.7-flash`는 degraded, `gemma3-270m:free`는 major_outage 유지 (출처: https://api.airforce/v1/models).
 
 - 2026-10-15: OpenCode Zen — 아침 워치(06:00 `/v1/models` API 직접 확인): 무료 11종→9종. `ling-3.1-flash-free`가 체험 종료일(10/13) 이틀 만에 목록에서 제거됨 (Nous Portal·OpenRouter는 10/14 아침에 이미 유료 전환 — Zen만 이틀 유예). `big-pickle`(스텔스 모델)도 목록에서 제거됨 — 스텔스 관련 정보에서 Big Pickle 링크 정리. 대표에서 `big-pickle` 제외, `jev-1.13-free` 편입. 기간 한정 요약표의 ling-3.1-flash 행 정정 (출처: https://opencode.ai/zen/v1/models).
 
