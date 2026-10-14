@@ -363,7 +363,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 전체 목록: [Api.Airforce 모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 전체 목록: [Api.Airforce 무료 모델 목록](https://api.airforce/ko/models/?plans=free) (한국어, Free 플랜 필터) · [모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
   - 2026-10-15 06:00 공개 API 라이브 확인 (last_check 10-14 20:55 UTC): tier-free 29종 유지. `rnj-1`이 정상→major_outage로 전환 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). 06:20 재확인에서 `rnj-1`이 major_outage→정상 복귀. `glm-4.7-flash`는 major_outage→degraded로 개선, `gemma3-270m:free`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표에서 `rnj-1` 제외, `kimi-k2.7-code` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-14 18:00 공개 API 라이브 확인: tier-free 29종 유지. `gemma3-270m:free`가 정상→major_outage로 전환, `gpt-oss-20b`가 degraded→정상 복귀 — 현재 정상 5종 (`llama-instant`·`mistral-large-4`·`rnj-1`·`kimi-k2.7-code`·`gpt-oss-20b`). `glm-4.7-flash`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표 3종은 모두 정상 유지 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-14 06:00 공개 API 라이브 확인 (last_check 05:56 KST): tier-free 29종 유지. `gpt-oss-20b`가 degraded로 전환, `rnj-1`이 major_outage에서 정상 복귀 — 현재 정상 5종 (`gemma3-270m:free`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). 06:15 재확인에서 `gemma3-270m:free`가 major_outage→정상 복귀. `gpt-oss-20b`는 degraded, `glm-4.7-flash`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표에서 `gpt-oss-20b` 제외, `rnj-1` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수.
@@ -387,7 +387,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - [Ollama Cloud 가격 페이지](https://ollama.com/cloud) — Free 플랜에 "Includes access to starter models" 표기. starter 모델의 구체 목록은 공개 페이지에서 확인 불가 (가입 후 확인 필요).
+  - [Ollama Cloud 가격 페이지](https://ollama.com/pricing) — Free 플랜에 "Includes access to starter models" 표기. starter 모델의 구체 목록은 공개 페이지에서 확인 불가 (가입 후 확인 필요).
 
   </details>
 
@@ -395,7 +395,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **API**: OpenAI 호환 엔드포인트 `https://ollama.com/v1` (3자 검증 기준 — 공식 키는 https://ollama.com/settings/keys 에서 발급)
 - **도구 호출**: 지원 (공식 FAQ: 도구 지원 학습된 클라우드 모델은 실제 에이전트 워크플로로 테스트 후 공개)
 - **제한**: 카드 요구 여부는 가격 페이지에 표기 없음 (미확인). 프롬프트·응답 데이터는 로깅·학습하지 않음 (공식 FAQ 명시).
-- **출처**: https://ollama.com/cloud
+- **출처**: https://ollama.com/pricing
 - **비고**: 매월 리셋되는 상시 무료라 조사 범위 충족. 단, 크레딧 금액·starter 모델 목록이 비공개라 Hermes 폴백으로는 하위 우선순위. 크레딧 구매 시 전체 모델 잠금 해제.
 
 <a id="agnes-ai"></a>
