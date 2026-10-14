@@ -31,7 +31,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Nous Portal (Hermes Agent)](#nous-portal)
 - [AnyAPI](#anyapi)
 - [Api.Airforce](#api-airforce)
-- [Ollama Cloud](#ollama-cloud)
 - [Agnes AI](#agnes-ai)
 - [BazaarLink](#bazaarlink)
 - [Cline](#cline)
@@ -379,25 +378,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://api.airforce/pricing , https://api.airforce/v1/models
 - **비고**: 공개 카탈로그의 `tier` 표기와 가격 페이지의 "Free models" 표기가 일치하는지는 실제 키 테스트로 검증 필요. 현재 무료 모델 다수가 장애 상태라 폴백 우선순위는 낮음.
 
-<a id="ollama-cloud"></a>
-
-## Ollama Cloud <span class="prio p-low">낮음</span>
-
-- **대표 무료 모델**: starter 모델 세트 — 공개 목록 미확인 (가격 페이지에 "smaller set of starter models"로만 표기, 구체 모델명·크레딧 금액 미공개)
-  <details>
-  <summary>더보기 — 전체 무료 모델 목록</summary>
-
-  - [Ollama Cloud 가격 페이지](https://ollama.com/pricing) — Free 플랜에 "Includes access to starter models" 표기. starter 모델의 구체 목록은 공개 페이지에서 확인 불가 (가입 후 확인 필요).
-
-  </details>
-
-- **한도**: Free $0 — starter usage credits 포함 (금액 미공개), 매월 가입일 기준 리셋, 미사용분 이월 불가, 동시 요청 1개
-- **API**: OpenAI 호환 엔드포인트 `https://ollama.com/v1` (3자 검증 기준 — 공식 키는 https://ollama.com/settings/keys 에서 발급)
-- **도구 호출**: 지원 (공식 FAQ: 도구 지원 학습된 클라우드 모델은 실제 에이전트 워크플로로 테스트 후 공개)
-- **제한**: 카드 요구 여부는 가격 페이지에 표기 없음 (미확인). 프롬프트·응답 데이터는 로깅·학습하지 않음 (공식 FAQ 명시).
-- **출처**: https://ollama.com/pricing
-- **비고**: 매월 리셋되는 상시 무료라 조사 범위 충족. 단, 크레딧 금액·starter 모델 목록이 비공개라 Hermes 폴백으로는 하위 우선순위. 크레딧 구매 시 전체 모델 잠금 해제.
-
 <a id="agnes-ai"></a>
 
 ## Agnes AI <span class="prio p-low">낮음</span>
@@ -514,7 +494,22 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 <a id="changelog"></a>
 
+<a id="확인-필요"></a>
+
+## 확인 필요
+
+공식 확인이 안 돼 Tracker에 등록하지 않은 후보 목록. 확인되면 등록, 기준 미달이면 제외.
+
+- **Ollama Cloud** — Free $0 플랜 존재는 공식 확인, 하지만 starter 무료 모델 목록이 비공개 (가입 후 확인 필요). 2026-10-15 형님 결정으로 제외. (출처: https://ollama.com/pricing)
+- **Typhoon (SCB 10X)** — 공식 FAQ "research showcase and free to use", OpenAI 호환 (`https://api.opentyphoon.ai/v1`). 태국어 특화 모델이라 형님 판단 대기 중 (2026-10-15). (출처: https://docs.opentyphoon.ai/en/faq/)
+- **Agnes AI** — `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 청구 확인 (공식 Docs, 2026-10-14). 단 "프로모션" 표기라 종료 시 유료 전환 가능 — 조건부 후보.
+- **Kilo Code 게이트웨이** — 익명 시간당 200회/IP 무료로 보이나 `mayTrainOnYourPrompts` 표기 — 데이터 정책 확인 필요.
+- **Routeway** — OpenAI 호환 무료 `:free` 9종이나 공식 이용약관상 결제 수단 등록 필수 — 카드 불필요 기준 미달로 제외 권고, 형님 답 대기 중.
+- **LLMTR** — 등록 보류 유지.
+
 ## 변경 이력
+
+- 2026-10-15: Ollama Cloud 제외 (형님 결정) — starter 무료 모델 목록이 공개 정보로 확인 불가. '확인 필요' 섹션 신설 (Ollama Cloud·Typhoon·Agnes AI·Kilo Code·Routeway·LLMTR). (출처: https://ollama.com/pricing)
 
 - 2026-10-15: Api.Airforce — 06:20 재확인: `rnj-1`이 major_outage→정상 복귀 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). `glm-4.7-flash`는 degraded, `gemma3-270m:free`는 major_outage 유지 (출처: https://api.airforce/v1/models).
 
