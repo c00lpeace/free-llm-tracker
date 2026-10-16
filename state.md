@@ -363,7 +363,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-17 06:00 공개 API 라이브 확인, 정상 7종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-17 06:20 공개 API 라이브 재확인, 정상 6종):**
   - `llama-instant` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `kimi-k2.7-code` — 무료 티어, 정상 유지 (10/15 아침 `rnj-1`이 major_outage로 전환돼 대표 편입)
@@ -371,7 +371,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 무료 모델 목록](https://api.airforce/ko/models/?plans=free) (한국어, Free 플랜 필터) · [모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
-  - 2026-10-17 06:00 공개 API 라이브 확인 (last_check 2026-10-16T20:56Z): tier-free 29종 유지. `rnj-1`이 major_outage→정상 복귀, `gemma3-270m:free`도 major_outage→정상 복귀 — 현재 정상 7종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`·`rnj-1`·`gemma3-270m:free`). `unmoderated-gpt`는 degraded→partial_outage (여전히 비정상). 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+  - 2026-10-17 06:00 공개 API 라이브 확인 (last_check 2026-10-16T20:56Z): tier-free 29종 유지. `rnj-1`이 major_outage→정상 복귀, `gemma3-270m:free`도 major_outage→정상 복귀 — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`gemma3-270m:free`). 06:20 재확인에서 `glm-4.7-flash`가 정상→degraded로 전환. `unmoderated-gpt`는 partial_outage (여전히 비정상). 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-16 18:00 공개 API 라이브 확인 (last_check 18:02 KST): tier-free 29종 유지 (추적 모델 전부 tier-free 유지). `rnj-1`이 정상→major_outage로 전환, `gemma3-270m:free`가 major_outage→정상 복귀 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`). 18:20 재확인에서 `gemma3-270m:free`가 정상→major_outage로 다시 전환, `rnj-1`은 major_outage 유지, `unmoderated-gpt`는 degraded (아직 정상 아님). 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-16 06:00 공개 API 라이브 확인 (2회 연속 동일): tier-free 29종 유지. `rnj-1`(major_outage→정상)·`glm-4.7-flash`(partial_outage→정상) 복귀 — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`glm-4.7-flash`). `unmoderated-gpt`는 정상→major_outage로 전환, `gemma3-270m:free`는 major_outage 유지. 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-15 18:00 공개 API 라이브 확인 + 재확인: tier-free 29종 유지. `rnj-1`이 major_outage로 재전환 (06:20 정상 복귀 후) — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`unmoderated-gpt`, 재확인에서 `unmoderated-gpt`가 degraded→정상 복귀). `glm-4.7-flash`는 degraded→partial_outage로 악화, `gemma3-270m:free`는 major_outage 유지. 대표 3종은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
@@ -521,6 +521,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **Cloudflare Workers AI** — OpenAI 호환 공식 확인 (`/ai/v1/chat/completions`·`/ai/v1/responses`, 도구 호출 지원 — 2026-10-16 공식 Docs·3자 검증). 무료 10,000 Neurons/day (전 플랜 공통, 일 00:00 UTC 리셋, 카드 불필요). 일부 모델(Kimi K2.6/K2.7-code·GLM-5.2 등)은 Workers Paid 플랜 필요로 제외 — 무료 모델 목록은 공식 카탈로그에서 추가 확인 필요 (2026-10-16 신규 후보). (출처: https://developers.cloudflare.com/workers-ai/platform/pricing/, https://developers.cloudflare.com/ai-gateway/usage/rest-api/)
 
 ## 변경 이력
+
+- 2026-10-17: Api.Airforce — 06:20 재확인: `glm-4.7-flash`가 정상→degraded로 전환 — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`gemma3-270m:free`). `unmoderated-gpt`는 partial_outage 유지 (출처: https://api.airforce/v1/models).
 
 - 2026-10-17: AnyAPI — 아침 워치(06:00 라이브 브라우저 직접 확인, Tier 필터 Free): Free 티어 5종 유지 (전일 동일 — Qwen3.8 27B·Ling 3.0 Flash Sante·Ling 3.0 Flash Fin·Qwen2.5 Coder 32B Instruct·Google Gemma 3n 4B, 각 카드 "Free" 배지 확인). 브라우저 handoff가 지연돼 한 번 더 확인 후 반영 — 대표 변경 없음 (출처: https://anyapi.ai/ai-models).
 
