@@ -336,7 +336,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## AnyAPI <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (2026-10-16 18:00 텍스트 추출 직접 확인 — Tier 필터 Free, 4종):**
+- **대표 무료 모델 (2026-10-16 18:00 라이브 브라우저 직접 확인 — Tier 필터 Free, 5종, 전일 동일):**
   - Qwen3.8 27B (free) — 10/06 신규 Free 등재 (Free 뱃지 직접 확인)
   - Ling 3.0 Flash Sante (free) — inclusionAI
   - Ling 3.0 Flash Fin (free) — inclusionAI
@@ -344,7 +344,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [AnyAPI AI 모델 카탈로그](https://anyapi.ai/ai-models) — 좌측 Tier 필터에서 Free 선택 (각 무료 모델에 "Free" 배지 표시)
-  - 2026-10-16 18:00 텍스트 추출 직접 확인 기준 Free 티어 4종 (5종→4종): Google Gemma 3n 4B (free)가 카탈로그에서 제거됨 (페이지 전체에 'Gemma' 언급 없음). 잔류: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free). 대표 3종은 전부 잔류 — 대표 변경 없음.
+  - 2026-10-16 18:00 라이브 브라우저 직접 확인 기준 Free 티어 5종 유지: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free), Google Gemma 3n 4B (free). 각 모델 카드에 "Free" 배지 표시 확인. ※ 텍스트 추출만으로는 Gemma 3n이 보이지 않아 제거로 오인할 뻔했으나, 라이브 브라우저(JS 렌더링)에서 5종 전부 확인 — 텍스트 추출의 false negative였음. 대표 3종은 전부 잔류 — 대표 변경 없음.
   - 2026-10-14 06:00 라이브 브라우저 직접 확인 기준 Free 티어 5종: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free), Google Gemma 3n 4B (free). Gemma 3n 4B (free)는 10/11 아침 06:00 복귀→06:15 제거→10/12 18:03 재복귀→10/13·10/14 06:00 유지 — 분 단위 로테이션 중. Ling 3.0 Flash Fin (free)은 10/04 오전 Premium 티어 표기→저녁 Free 복귀 이력 — 하루 새 뒤집히는 불안정 라인업.
 
   </details>
@@ -354,7 +354,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **도구 호출**: 미확인
 - **제한**: **카드 불필요** — 가격 페이지 Free 플랜 카드에 "No credit card required" 명시. 무료 모델의 API 호출용 정확한 모델 ID 형식은 키 발급 후 확인 필요.
 - **출처**: https://anyapi.ai/pricing , https://anyapi.ai/ai-models
-- **비고**: Hermes 연결 가능(예상). 로그인 없이 무료 모델 목록을 미리 볼 수 있어 검증이 쉬움. 일 10만 토큰은 에이전트 실사용에는 빠듯 — 테스트·가벼운 용도 적합. 무료 티어 모델이 10/16 저녁 기준 4종 (Google Gemma 3n 4B (free)가 카탈로그에서 제거됨) — 10/11 아침 이후 복귀↔제거를 반복하는 불안정 라인업이라 사용 전 재확인 권장.
+- **비고**: Hermes 연결 가능(예상). 로그인 없이 무료 모델 목록을 미리 볼 수 있어 검증이 쉬움. 일 10만 토큰은 에이전트 실사용에는 빠듯 — 테스트·가벼운 용도 적합. 무료 티어 모델이 10/16 저녁 기준 5종 유지 — 10/11 아침 이후 복귀↔제거를 반복하는 불안정 라인업이라 사용 전 재확인 권장.
 
 <a id="api-airforce"></a>
 
@@ -522,9 +522,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 - 2026-10-16: Api.Airforce — 저녁 워치(18:00 공개 API 라이브 확인, last_check 18:02 KST): tier-free 29종 유지. `rnj-1`이 정상→major_outage로 전환, `gemma3-270m:free`가 major_outage→정상 복귀 — 정상 6종 유지 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`·`gemma3-270m:free`). `unmoderated-gpt`는 major_outage→partial_outage로 개선. 대표 3종 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
-- 2026-10-16: AnyAPI — 저녁 워치(18:00 텍스트 추출 직접 확인): Free 티어 5종→4종. Google Gemma 3n 4B (free)가 카탈로그에서 제거됨 (페이지 전체에 'Gemma' 언급 없음). 잔류 4종: Qwen3.8 27B (free), Ling 3.0 Flash Sante (free), Ling 3.0 Flash Fin (free), Qwen2.5 Coder 32B Instruct (free). 대표 3종은 전부 잔류 — 대표 변경 없음 (출처: https://anyapi.ai/ai-models).
-
-- 2026-10-16: 저녁 워치 — 위 3건 외 직접 확인분 변동 없음: Token Harbor(Free 2종 유지 — `deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`, 텍스트 추출 직접 확인)·NVIDIA NIM(무료 4종 유지 — 텍스트 추출 직접 확인)·LLM7.io(turbo 7종 유지 — 라이브 API 직접 확인)·OpenRouter(`:free` 15종 유지, 대표 3종 잔류 — 라이브 API 직접 확인)·Nous Portal(무료 8종 유지, `stealth/missingno` $0 확인 — 라이브 API 직접 확인)·OrcaRouter(무료 5종 유지 — pricing API 직접 확인)·Groq(한도 동일 — 한도 문서 직접 확인)·Gemini(API 무료 티어 유지 — 가격표 직접 확인)·AIHubMix(27+ 무료 유지 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지 — 무료 페이지 직접 확인)·Agnes AI($0 프로모션 유지 — 공식 Docs 가격표 직접 확인)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인). 신규 상시 무료 제공자 없음.
+- 2026-10-16: 저녁 워치 — 위 2건 외 직접 확인분 변동 없음: Token Harbor(Free 2종 유지 — `deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free`, 라이브 브라우저 직접 확인)·NVIDIA NIM(무료 4종 유지 — 라이브 브라우저 직접 확인)·AnyAPI(Free 5종 유지 — 라이브 브라우저 직접 확인)·LLM7.io(turbo 7종 유지 — 라이브 API 직접 확인)·OpenRouter(`:free` 15종 유지, 대표 3종 잔류 — 라이브 API 직접 확인)·Nous Portal(무료 8종 유지, `stealth/missingno` $0 확인 — 라이브 API 직접 확인)·OrcaRouter(무료 5종 유지 — pricing API 직접 확인)·Groq(한도 동일 — 한도 문서 직접 확인)·Gemini(API 무료 티어 유지 — 가격표 직접 확인)·AIHubMix(27+ 무료 유지 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지 — 무료 페이지 직접 확인)·Agnes AI($0 프로모션 유지 — 공식 Docs 가격표 직접 확인)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인). 신규 상시 무료 제공자 없음.
 
 - 2026-10-16: Token Harbor — 아침 워치(06:00 라이브 브라우저 직접 확인): `claude-haiku-5.5:free` 무료 만료 확인 (종료일 2026-10-15 22:00 KST 경과) — Free 카테고리에서 제외, Value(유료 $0.10/$0.50)로 전환. 무료 3종→2종 (`deepseek-v4.1-flash:free`·`mimo-v2.6-flash:free` 잔류). 대표에서 `claude-haiku-5.5:free` 제외 — 기간 한정 프로모 종료 (출처: https://tokenharbor.ai/models?category=free).
 
