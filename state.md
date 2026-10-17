@@ -1,8 +1,8 @@
-# Free LLM Tracker — 기준선 (2026-10-17)
+# Free LLM Tracker — 기준선 (2026-10-18)
 
 <p class="notice">
 Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조사 기준선.<br>
-모든 수치는 2026-10-17 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
+모든 수치는 2026-10-18 기준 공식 문서·가격 페이지 또는 3자 검증 자료 기준이며,<br>
 '미확인'은 조사 시점에 확인되지 않은 항목임.
 </p>
 
@@ -117,14 +117,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OrcaRouter <span class="prio p-high">높음</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-01 기준 — 로테이션됨):**
+- **대표 무료 모델 (사용성 순, 2026-10-18 기준 — 로테이션됨):**
   - `tencent/hy4-preview-free` — 770B MoE·1M 컨텍스트, 최신 (2026-10-01 공개 API 직접 확인)
   - `deepseek/deepseek-v4-flash-free` — 고속
   - `tencent/hy3-free` — 무료 풀 잔류
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 무료 5종 (2026-10-01 공개 API 직접 확인): `deepseek/deepseek-v4-flash-free`, `tencent/hy3-free`, `tencent/hy4-preview-free`, `z-ai/glm-5.3-flash-free`, `orca/orcaverify-text1.0-free`. `deepseek/deepseek-v4-pro-free`는 무료 풀에서 제외됨 (모델 페이지 404).
+  - 무료 7종 (2026-10-18 라이브 브라우저 직접 확인 — `?price=free` 페이지의 FREE 배지 카드): `tencent/hy4-preview-free`, `tencent/hy3-free`, `deepseek/deepseek-v4.1-flash-free`(신규 — V4 Flash의 production successor, 1M 컨텍스트·비전·도구 호출), `deepseek/deepseek-v4-flash-free`, `z-ai/glm-5.3-flash-free`, `orca/orcaverify-text1.0-free`, `orcarouter/free`(자동 라우팅 별칭 — 신규 목록 포함). 공식 pricing API에는 6개 `-free` ID가 $0 (`deepseek/deepseek-v4-pro-free`는 무료 풀에서 제외됨 — 모델 페이지 404).
   - 무료 라인업: [OrcaRouter 무료 모델](https://www.orcarouter.ai/models?price=free) · [공식 pricing API](https://www.orcarouter.ai/api/pricing) — 로테이션됨. `orcarouter/free` 자동 라우팅 별칭도 제공.
 
   </details>
@@ -365,7 +365,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-17 18:20 공개 API 라이브 재확인, 정상 6종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-18 06:00 공개 API 라이브 확인 + 재확인, 정상 6종):**
   - `llama-instant` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `kimi-k2.7-code` — 무료 티어, 정상 유지 (10/15 아침 `rnj-1`이 major_outage로 전환돼 대표 편입)
@@ -373,6 +373,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 무료 모델 목록](https://api.airforce/ko/models/?plans=free) (한국어, Free 플랜 필터) · [모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 2026-10-18 06:00 공개 API 라이브 확인 (last_check 2026-10-17T20:57:06Z) + 재확인 (last_check 2026-10-17T21:03:06Z, 동일): tier-free 29종 유지. `unmoderated-gpt`가 partial_outage→operational로 복귀 (재확인에서도 유지) — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`). `glm-4.7-flash`는 operational→major_outage로 재전환, `gemma3-270m:free`는 major_outage 유지. 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-17 18:00 공개 API 라이브 확인 (last_check 2026-10-17T08:58:46Z): tier-free 29종 유지. `gemma3-270m:free`가 정상→major_outage로 전환, `glm-4.7-flash`는 partial_outage, `unmoderated-gpt`는 partial_outage — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`glm-4.7-flash`). 18:20 재확인에서 `glm-4.7-flash`가 partial_outage→정상 복귀. `gemma3-270m:free`는 major_outage 유지, `unmoderated-gpt`는 partial_outage. 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-17 06:00 공개 API 라이브 확인 (last_check 2026-10-16T20:56Z): tier-free 29종 유지. `rnj-1`이 major_outage→정상 복귀, `gemma3-270m:free`도 major_outage→정상 복귀 — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`gemma3-270m:free`). 06:20 재확인에서 `glm-4.7-flash`가 정상→degraded로 전환. `unmoderated-gpt`는 partial_outage (여전히 비정상). 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-16 18:00 공개 API 라이브 확인 (last_check 18:02 KST): tier-free 29종 유지 (추적 모델 전부 tier-free 유지). `rnj-1`이 정상→major_outage로 전환, `gemma3-270m:free`가 major_outage→정상 복귀 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`). 18:20 재확인에서 `gemma3-270m:free`가 정상→major_outage로 다시 전환, `rnj-1`은 major_outage 유지, `unmoderated-gpt`는 degraded (아직 정상 아님). 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
@@ -421,11 +422,11 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 - **대표 무료 모델 (2026-10-03 공식 무료 페이지 직접 확인):**
   - `qwen/qwen3.7-flash` — 1M 컨텍스트, 텍스트·이미지·비디오 입력 (24시간 프로브 100%)
-  - `deepseek/deepseek-v4-flash-0731free` — 약 1M 컨텍스트, 텍스트 전용 (24시간 프로브 74%, 2026-10-17 확인 — 이전 100%에서 저하)
+  - `deepseek/deepseek-v4-flash-0731free` — 약 1M 컨텍스트, 텍스트 전용 (24시간 프로브 88%, 2026-10-18 확인 — 10/17 74%에서 회복)
   <details>
   <summary>더보기 — 무료 조건 안내</summary>
 
-  - 공식 페이지: [BazaarLink Free](https://bazaarlink.ai/free) — "Free — No Credit Card Required", 카탈로그 스냅샷(2026-10-03 08:05 UTC) 기준 무료 2종, 매시간 프로브로 실제 응답 확인 공개
+  - 공식 페이지: [BazaarLink Free](https://bazaarlink.ai/free) — "Free — No Credit Card Required", 카탈로그 스냅샷(2026-10-17 17:44 UTC) 기준 무료 2종, 매시간 프로브로 실제 응답 확인 공개 (`deepseek/deepseek-v4-flash-0731free` 24h 프로브 74%→88% 회복)
   - 무료 모델은 "enabled free models" 표에서만 제공 (로테이션 가능)
 
   </details>
@@ -522,9 +523,17 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **Routeway** — OpenAI 호환 무료 `:free` 9종이나 공식 이용약관상 결제 수단 등록 필수 — 카드 불필요 기준 미달로 제외 권고, 형님 답 대기 중.
 - **LLMTR** — 등록 보류 유지.
 - **Cloudflare Workers AI** — OpenAI 호환 공식 확인 (`/ai/v1/chat/completions`·`/ai/v1/responses`, 도구 호출 지원 — 2026-10-16 공식 Docs·3자 검증). 무료 10,000 Neurons/day (전 플랜 공통, 일 00:00 UTC 리셋, 카드 불필요). 일부 모델(Kimi K2.6/K2.7-code·GLM-5.2 등)은 Workers Paid 플랜 필요로 제외 — 무료 모델 목록은 공식 카탈로그에서 추가 확인 필요 (2026-10-16 신규 후보). (출처: https://developers.cloudflare.com/workers-ai/platform/pricing/, https://developers.cloudflare.com/ai-gateway/usage/rest-api/)
-- **UnoRouter** — OpenAI 호환 공식 확인 (`/v1/chat/completions`, "Any OpenAI-compatible client", 모델 페이지에 Tools/Reasoning 태그 — 모델별 상이). 공식 홈페이지 "Free 92, No cost" 표기, 모델별 입·출력 $0.00/1M (2026-10-17 3자+공식 페이지 확인). 카드 불필요 ("No credit card needed to start"). 무료 한도(RPM/RPD) 수치 미공개 — 추가 확인 필요, 형님 판단 대기 (2026-10-17 신규 후보). (출처: https://unorouter.com/en, https://unorouter.com/en/models/liquid/lfm-2.5-2.6b:free)
+- **UnoRouter** — OpenAI 호환 공식 확인 (`/v1/chat/completions`, "Any OpenAI-compatible client", 모델 페이지에 Tools/Reasoning 태그 — 모델별 상이). 공식 홈페이지 "Free 104, No cost"(2026-10-18 확인 — 10/17 "Free 92"에서 증가)·모델별 입·출력 $0.00/1M, 카드 불필요 ("No credit card needed to start"). 무료 한도(RPM/RPD) 수치 미공개 — 추가 확인 필요, 형님 판단 대기 (2026-10-17 신규 후보). (출처: https://unorouter.com/en, https://unorouter.com/en/models/liquid/lfm-2.5-2.6b:free)
 
 ## 변경 이력
+
+- 2026-10-18: OrcaRouter — 아침 워치(라이브 브라우저 직접 확인): 무료 5종→7종 — `deepseek/deepseek-v4.1-flash-free` 신규 등재 (V4 Flash의 production successor, 1M 컨텍스트·비전·도구 호출 지원), `orcarouter/free` 자동 라우팅 별칭이 목록에 포함. 기존 5종 전부 잔류 — 대표 3종 변경 없음. ※ 텍스트 추출만으로는 3종까지만 보여 false negative였음 — 라이브 브라우저에서 7종 전부 확인 (출처: https://www.orcarouter.ai/models?price=free, https://www.orcarouter.ai/api/pricing).
+
+- 2026-10-18: Api.Airforce — 아침 워치(06:00 공개 API 라이브 확인 + 재확인): tier-free 29종 유지. `unmoderated-gpt`가 partial_outage→operational로 복귀 (재확인에서도 유지) — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`). `glm-4.7-flash`는 operational→major_outage로 재전환, `gemma3-270m:free`는 major_outage 유지. 대표 3종(`llama-instant`·`mistral-large-4`·`kimi-k2.7-code`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+
+- 2026-10-18: 확인 필요 — UnoRouter 무료 모델 표기 "Free 92"→"Free 104"로 증가 (공식 홈페이지 직접 확인). 무료 한도(RPM/RPD) 수치 여전히 미공개 — 형님 판단 대기 (출처: https://unorouter.com/en).
+
+- 2026-10-18: 아침 워치 — 위 3건 외 변동 없음: OpenRouter(`:free` 16종 유지, 대표 3종 잔류 — 라이브 API 직접 확인)·LLM7.io(turbo 7종 유지 — 라이브 API 직접 확인)·OpenCode Zen(무료 9종 유지 — 라이브 API 직접 확인)·Nous Portal(무료 8종 유지 — 라이브 API 직접 확인)·AnyAPI(Free 5종 유지 — 라이브 브라우저 직접 확인)·Token Harbor(Free 2종 유지 — 라이브 브라우저 직접 확인)·Groq(한도 동일 — 한도 문서 직접 확인)·NVIDIA NIM(무료 4종 유지, 'kimi' 언급 없음 — 라이브 브라우저 직접 확인)·Gemini(Flash 계열 무료 등급 유지 — 가격표 직접 확인)·AIHubMix(25종 유지 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지, `deepseek-v4-flash-0731free` 24h 프로브 74%→88% 회복 — 무료 페이지 직접 확인)·Agnes AI($0 프로모션 유지 — 3자 10/15 검증)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인). 신규 상시 무료 제공자 없음 — ElectronHub는 3자 블로그 언급만으로 공식 확인 불가라 보류 (조사 원칙: 확실한 정보만).
 
 - 2026-10-17: Api.Airforce — 18:20 재확인: `glm-4.7-flash`가 partial_outage→정상 복귀 — 현재 정상 6종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`glm-4.7-flash`). `gemma3-270m:free`는 major_outage 유지, `unmoderated-gpt`는 partial_outage (출처: https://api.airforce/v1/models).
 
