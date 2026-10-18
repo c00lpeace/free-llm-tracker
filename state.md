@@ -366,7 +366,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-19 06:00 공개 API 라이브 확인, 정상 5종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-19 06:20 공개 API 라이브 재확인, 정상 7종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `glm-4.7-flash` — 131K 컨텍스트·도구 호출·추론 지원 (10/19 아침 `kimi-k2.7-code`가 major_outage로 전환돼 대표 편입)
@@ -530,11 +530,13 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 변경 이력
 
+- 2026-10-19: Api.Airforce — 06:20 재확인: `kimi-k2.7-code`·`gemma3-270m:free` 모두 정상 — 현재 정상 7종 (`gemma3-270m:free`·`glm-4.7-flash`·`gpt-oss-20b`·`kimi-k2.7-code`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`). 06:00의 major_outage는 일시적 뒤집힘 (출처: https://api.airforce/v1/models).
+
 - 2026-10-19: 아침 워치 — 위 3건 외 변동 없음: LLM7.io(turbo 7종 유지 — 첫 시도 502 후 재시도 성공, 라이브 API 직접 확인)·OpenCode Zen(무료 9종 유지 — 라이브 API 직접 확인)·Nous Portal(무료 8종 유지, 구성 동일 — 라이브 API 직접 확인)·OrcaRouter(무료 7종 유지, `orcarouter/free` 별칭 포함 — 라이브 브라우저 직접 확인)·Token Harbor(Free 2종 유지 — 라이브 브라우저 직접 확인)·AnyAPI(Free 5종 유지, Gemma 3n 4B (free) 포함 — 라이브 브라우저 직접 확인)·Groq(한도 동일 — 한도 문서 직접 확인)·NVIDIA NIM(무료 4종 유지, 'kimi' 언급 없음 — 라이브 브라우저 직접 확인)·Gemini(Flash 계열 무료 등급 유지, 가격표 2026-10-16 UTC — 가격표 직접 확인)·AIHubMix(25종 유지, 대표 3종 잔류 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지, "Other Pricing" 섹션 — 공식 가격표 직접 확인)·BazaarLink(무료 2종 유지, `deepseek/deepseek-v4-flash-0731free` 24h 프로브 83%→79% 소폭 하락 — 무료 페이지 직접 확인)·Agnes AI($0 프로모션 유지 — 공식 Docs 가격표 직접 확인)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인)·Cloudflare Workers AI(무료 10,000 Neurons/day 표기 유지 — 공식 가격 문서 직접 확인). 신규 상시 무료 제공자 없음 — ElectronHub·AMD Radeon Cloud·Reka는 3자 언급만으로 공식 확인 불가라 보류.
 
 - 2026-10-19: 확인 필요 — UnoRouter 무료 모델 표기 "Free 114"→"Free 113"로 1 감소 (공식 홈페이지 직접 확인). 무료 한도(RPM/RPD) 수치 여전히 미공개 — 형님 판단 대기 (출처: https://unorouter.com/en).
 
-- 2026-10-19: Api.Airforce — 아침 워치(06:00 공개 API 라이브 확인): tier-free 29종 유지. `kimi-k2.7-code`가 operational→major_outage로 전환 — 현재 정상 5종 (`gpt-oss-20b`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`·`glm-4.7-flash`). `glm-4.7-flash`는 degraded→operational로 복귀. 대표에서 `kimi-k2.7-code` 제외, `glm-4.7-flash` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+- 2026-10-19: Api.Airforce — 아침 워치(06:00 공개 API 라이브 확인): tier-free 29종 유지. `kimi-k2.7-code`가 operational→major_outage로 전환 — 현재 정상 7종 (`gemma3-270m:free`·`glm-4.7-flash`·`gpt-oss-20b`·`kimi-k2.7-code`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`). 06:20 재확인에서 `kimi-k2.7-code`·`gemma3-270m:free` 모두 정상 확인 — 06:00의 major_outage 판정은 일시적 뒤집힘. 대표에 `kimi-k2.7-code` 복귀. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
 - 2026-10-19: OpenRouter — 아침 워치(06:00 공개 API 라이브 확인): `:free` 16종→19종 (prompt/output $0 직접 확인). 신규 3종: `google/lyria-3-clip-preview`·`google/lyria-3-pro-preview`(오디오 계열 — 채팅 용도 아님)·`openrouter/free`(자동 라우팅 별칭). 기존 16종 전부 잔류 — 대표 3종(`nemotron-3-super-120b-a12b:free`·`dots-3-note-preview:free`·`cohere/north-mini-code:free`) 변경 없음 (출처: https://openrouter.ai/api/v1/models).
 
