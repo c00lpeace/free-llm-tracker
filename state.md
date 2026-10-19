@@ -369,7 +369,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-20 06:00 공개 API 라이브 확인, last_check 2026-10-19T20:57:20Z, tier-free 29종 유지):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-20 06:25 공개 API 라이브 재확인, 정상 7종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `llama-instant` — 무료 티어, 정상 운영 (10/20 아침 `kimi-k2.7-code` 상태 미확인으로 대표에서 제외, `llama-instant` 편입)
@@ -536,6 +536,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **DreamPrompting** — OpenAI 호환 공식 확인 (`https://dreamprompting.com/api/v1`). 공식 가격 페이지 기준 무료 플랜 (카드·구독 불필요), 한도 IP당 100 RPM + 계정당 24h 롤링 5,000 요청/500,000 토큰. 자체 모델 없이 27개 업스트림 제공자 무료 티어로 라우팅하는 게이트웨이 (공유 할당량 방식). 런칭일 미공개라 "지난 24시간 내 등장" 확정 아님 — 등록 여부 형님 판단 대기 (2026-10-20 신규 후보). (출처: https://dreamprompting.com)
 
 ## 변경 이력
+
+- 2026-10-20: Api.Airforce — 06:25 재확인: `glm-4.7-flash` 정상 확인 (06:00의 major_outage는 일시적 뒤집힘) — 현재 정상 7종 (`glm-4.7-flash`·`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`unmoderated-gpt`). 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
 - 2026-10-20: Nous Portal — 아침 워치(06:00 공식 API 라이브 확인): 무료 8종→7종 — `stepfun/step-5-preview:free`가 카탈로그에서 제거됨 (유료 변형 `step-5-preview`만 잔류). 잔류 7종: `meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free`·`poolside/laguna-s-2.1:free`·`poolside/laguna-xs-2.1:free`·`reflection/beam-1.0-501b-a23b:free`·`stepfun/step-3.7-flash:free`·`upstage/solar-mini4:free`. 대표에서 `step-5-preview:free` 제외, `step-3.7-flash:free` 편입. `stealth/missingno`는 카탈로그에 없음 (10/17 제거 유지) (출처: https://inference-api.nousresearch.com/v1/models).
 
