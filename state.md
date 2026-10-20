@@ -369,7 +369,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-20 18:00 공개 API 라이브 확인, 정상 5종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-20 18:25 공개 API 라이브 재확인, 정상 4종):**
   - `gpt-oss-20b` — 무료 티어, 정상 운영
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `llama-instant` — 무료 티어, 정상 운영
@@ -540,6 +540,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **SimpleLLM** — OpenAI 호환 공식 확인 (`POST /v1/chat/completions`, `https://api.simplellm.eu/v1`). 무료 모델 2종 — `free-Llama-3.1-8B-Instruct`·`free-gemma-4-E4B` (공개 카탈로그 API `https://simplellm.eu/api/models`에서 `is_free`·enabled·available 직접 확인). 계정+API 키 발급 필요, 카드 불필요 (3자 확인). 무료 모델 별 시간/일 요청·토큰 예산 (3자 검증: Free models only / 100 RPH / 1,000 RPD / 50,000 TPM / 500,000 TPD). 독일 Stage One Solutions UG 운영. 등록 여부 형님 판단 대기 (2026-10-20 신규 후보 — mvalentsev/awesome-free-ai-coding 'New this week'). (출처: https://simplellm.eu/docs/models.md, https://simplellm.eu/api/models)
 
 ## 변경 이력
+
+- 2026-10-20: Api.Airforce — 18:25 재확인: `gpt-oss-20b`이 degraded로 전환 — 현재 정상 4종 (`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`unmoderated-gpt`). `glm-4.7-flash`도 degraded, `rnj-1`·`gemma3-270m:free`는 major_outage 유지. 대표에서 `gpt-oss-20b` 제외. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
 - 2026-10-20: 저녁 워치 — 위 4건 외 변동 없음: OpenRouter(`:free` 17종 동일 — 공개 API 직접 확인)·LLM7.io(turbo 7종 유지 — 라이브 API 직접 확인)·Nous Portal(무료 7종 유지 — 라이브 API 직접 확인)·OrcaRouter($0 `-free` 6종 유지, `orcarouter/free` 별칭은 pricing 응답에 없어 미확인 — pricing API 직접 확인)·Token Harbor(Free 2종 유지 — 라이브 브라우저 직접 확인)·AnyAPI(Free 5종 유지 — 라이브 브라우저 직접 확인)·Groq(한도 동일, "Developer plan의 기본 한도" 표기 유지 — 한도 문서 직접 확인)·NVIDIA NIM(무료 4종 유지, 'kimi' 언급 없음 — 라이브 브라우저 직접 확인; lightning 표기가 `nemotron-3.5-lightning-30b-a3b`로 보임 — 실제 ID 변경은 미확인)·Gemini(Flash 계열 Free Tier 유지, 유료 티어 2027-01-01 인상 예고는 유료에만 — 가격표 직접 확인)·AIHubMix(25종 유지, 대표 3종 잔류 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지, "Other Pricing" 섹션 — 공식 가격표 직접 확인)·Agnes AI($0 프로모션 유지 — 공식 wiki 가격표 직접 확인, agnes-ai.com은 클라이언트 오류 유지)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인)·Cloudflare Workers AI(무료 10,000 Neurons/day 표기 유지, 가격 문서 2026-10-20 업데이트 — 공식 가격 문서 직접 확인)·BazaarLink(무료 7종 유지, `qwen/qwen3.7-flash` 24h 프로브 100% (23/23)·`deepseek/deepseek-v4-flash-0731free` 91% (21/23), 나머지 5종 "Insufficient samples" 유지 — 무료 페이지 직접 확인). 신규 상시 무료 제공자 없음 — Inferbase·IteraCompute·SimpleLLM은 확인 필요 후보로 등록, 등록 여부는 형님 판단 대기.
 
