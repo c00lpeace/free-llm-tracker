@@ -173,7 +173,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
-  - 전체 무료 모델: [OpenRouter 모델 목록](https://openrouter.ai/models) — 무료 필터 사용 (모델명 끝에 `:free`, 로테이션됨)
+  - 전체 무료 모델: [OpenRouter 무료 모델 목록 — 가격 $0 필터](https://openrouter.ai/models?max_price=0) — 가격 필터(max_price=0)가 적용된 주소로, 열면 $0 모델만 보임 (2026-10-21 라이브 브라우저 직접 확인 — 직접 열어도 필터 유지, 표시 모델 전부 `(free)`·$0 표기, 모델명 끝에 `:free`, 로테이션됨). 무료 전용 컬렉션 [Free AI Models on OpenRouter](https://openrouter.ai/collections/free-models)도 있음 (사용량 기준 상위 무료 모델 랭킹)
   - 2026-10-21 06:00 공개 API 라이브 확인: `:free` 17종 유지 (전원 prompt/output $0 재확인). `thinkingmachines/inkling:free`·`inkling-small:free`의 expiration_date 표기가 사라짐 (10/20 기준 4종 모두 2026-10-31이었으나 laguna-s-2.1·laguna-xs-2.1 2종만 2026-10-31 유지) — 기간 한정 요약표 정정 (출처: https://openrouter.ai/api/v1/models).
   - 2026-10-20 06:00 라이브 확인: `:free` 19종→17종 (공개 API 직접 확인, prompt/output $0). `minimax/minimax-m3.1-flash:free` 신규 등재. `google/lyria-3-clip-preview`·`google/lyria-3-pro-preview`(오디오 계열 — 곡당 과금이라 실질 무료 아님)는 집계 제외, `openrouter/free` 자동 라우팅 별칭도 모델 집계에서 제외. 기존 16종 전부 잔류 — 대표 3종(`nvidia/nemotron-3-super-120b-a12b:free`·`dots-studio/dots-3-note-preview:free`·`cohere/north-mini-code:free`) 변경 없음. 현재 17종 전체: `minimax/minimax-m3.1-flash:free`·`xingchen-agi/xing4.0-29b-a4b:free`·`nvidia/nemotron-3.5-super-vl:free`·`dots-studio/dots-3-note-preview:free`·`liquid/lfm-2.5-2.6b:free`·`nvidia/nemotron-3.5-lightning:free`·`thinkingmachines/inkling-small:free`·`poolside/laguna-s-2.1:free`·`thinkingmachines/inkling:free`·`poolside/laguna-xs-2.1:free`·`cohere/north-mini-code:free`·`nvidia/nemotron-3.5-content-safety:free`·`nvidia/nemotron-3-ultra-550b-a55b:free`·`nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free`·`google/gemma-4-26b-a4b-it:free`·`google/gemma-4-31b-it:free`·`nvidia/nemotron-3-super-120b-a12b:free`. ※ `laguna-s-2.1`·`laguna-xs-2.1` :free 2종은 expiration_date 2026-10-31 (10/21 확인 — inkling 2종의 만료일 표기는 사라짐), `dots-3-note-preview:free`는 2026-12-31 만료 (출처: https://openrouter.ai/api/v1/models).
   - 2026-10-19 06:00 라이브 확인: `:free` 16종→19종 — 기존 16종 전부 잔류. 신규 3종 (prompt/output $0 직접 확인): `google/lyria-3-clip-preview`·`google/lyria-3-pro-preview`(오디오 계열 — 채팅 용도 아님, 대표 대상 제외)·`openrouter/free`(자동 라우팅 별칭). 대표 3종(`nvidia/nemotron-3-super-120b-a12b:free`·`dots-studio/dots-3-note-preview:free`·`cohere/north-mini-code:free`) 전부 잔류 — 대표 변경 없음. 현재 19종 전체: 기존 16종 + `google/lyria-3-clip-preview`·`google/lyria-3-pro-preview`·`openrouter/free` (출처: https://openrouter.ai/api/v1/models).
@@ -272,7 +272,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 모델 목록: [OpenCode Zen](https://opencode.ai/zen) — 구 Docs URL(`opencode.ai/docs/zen/`)은 404 (페이지 이전, 정적 Free 목록 없음). 현재는 [`/v1/models` API](https://opencode.ai/zen/v1/models)의 `-free` ID 기준 (로테이션됨). 2026-10-20 18:00 기준 무료 9종 (10종→9종, `/v1/models` API 직접 확인): `space-bunny-free`가 카탈로그에서 제거됨. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. 현재 9종: `beam-free`·`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`longcat-2.5-preview-free`·`mimo-v2.6-flash-free`·`minimax-m3.1-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free` (출처: https://opencode.ai/zen/v1/models).
+  - 무료 모델 목록: [OpenCode Zen 공식 문서 — Free models 섹션](https://opencode.ai/v2/docs/console/models/#free-models) — 사람이 보는 공식 문서 페이지에 무료 모델이 명시돼 있음 (2026-10-21 라이브 확인 — 구 Docs 주소 `opencode.ai/docs/zen/`는 이 페이지로 리다이렉트됨. 기존에 걸려 있던 `https://opencode.ai/zen` 페이지는 모델 목록 자체가 없는 안내 페이지라 이 문서로 교체함). 단, 문서 목록(스텔스·기간 한정 포함 14종 표기)과 API 카탈로그가 서로 달라, 무료 집계는 [`/v1/models` API](https://opencode.ai/zen/v1/models)의 `-free` ID 기준 (로테이션됨). 2026-10-21 08:10 API 재확인에서도 9종 동일. 2026-10-20 18:00 기준 무료 9종 (10종→9종, `/v1/models` API 직접 확인): `space-bunny-free`가 카탈로그에서 제거됨. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. 현재 9종: `beam-free`·`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`longcat-2.5-preview-free`·`mimo-v2.6-flash-free`·`minimax-m3.1-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free` (출처: https://opencode.ai/zen/v1/models).
   - 2026-10-17 18:00 기준 무료 9종 (12종→9종, `/v1/models` API 재확인): `ll-alpha-free`(10/16 저녁 신규 스텔스 — 하루 만에 제거)·`muse-spark-1.2-contributor-free`·`muse-spark-1.3-contributor-free`가 카탈로그에서 제거됨. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종: `deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free` (출처: https://opencode.ai/zen/v1/models). 2026-10-17 06:00 기준 무료 12종: `beam-free`·`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`ll-alpha-free`·`longcat-2.5-preview-free`·`mimo-v2.6-flash-free`·`muse-spark-1.2-contributor-free`·`muse-spark-1.3-contributor-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free`·`space-bunny-free` (당시 `cat-jam-free` 제거·`beam-free` 신규 등재).
   - 2026-10-16 18:00 기준 무료 12종 (11종→12종): `step-5-preview-free`가 카탈로그에서 제거됨 (대표 #1이었음 — 대표에서 제외, `deepseek-v4.1-flash-free`로 교체), `ll-alpha-free`(신규 스텔스 모델)·`glm-5.3-flash-free` 신규 등재. `big-pickle`(스텔스, `-free` 접미사 없음)이 카탈로그에 재등장 (10/15 아침 제거 후 복귀 — `-free` ID 기준이 아니라 무료 집계에서 제외). 잔류 12종: `cat-jam-free`, `deepseek-v4.1-flash-free`, `glm-5.3-flash-free`, `jev-1.13-free`, `ll-alpha-free`, `longcat-2.5-preview-free`, `mimo-v2.6-flash-free`, `muse-spark-1.2-contributor-free`, `muse-spark-1.3-contributor-free`, `nemotron-3.5-lightning-free`, `nemotron-3.5-super-vl-free`, `space-bunny-free`.
   - 2026-10-16 06:00 기준 무료 11종 (10종→11종): `nemotron-3.5-super-vl-free` 신규 등재 (기존 10종 잔류 — 대표 변경 없음). 2026-10-15 18:00 기준 무료 10종 (9종→10종): `deepseek-v4.1-flash-free` 신규 등재 (재확인에서도 10종 유지, 기존 9종 잔류 — 대표 변경 없음). 2026-10-15 06:00 기준 무료 9종 (11종→9종): `ling-3.1-flash-free`가 체험 종료일(10/13) 이틀 만에 목록에서 제거됨 (Nous Portal·OpenRouter는 10/14 아침에 이미 유료 전환 — Zen만 이틀 유예), `big-pickle`(스텔스 모델)도 목록에서 제거됨. 잔류 9종: `cat-jam-free`, `jev-1.13-free`, `longcat-2.5-preview-free`, `mimo-v2.6-flash-free`, `muse-spark-1.2-contributor-free`, `muse-spark-1.3-contributor-free`, `nemotron-3.5-lightning-free`, `space-bunny-free`, `step-5-preview-free`. 대표에서 `big-pickle` 제외, `jev-1.13-free` 편입.
@@ -320,13 +320,15 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Nous Portal (Hermes Agent) <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, 2026-10-20 06:00 기준 — 무료 7종):**
+- **대표 무료 모델 (사용성 순, 2026-10-21 08:10 기준 — 무료 8종):**
   - `stepfun/step-3.7-flash:free` — StepFun 플래시, 에이전트용 (10/20 `step-5-preview:free` 제거로 편입)
   - `poolside/laguna-s-2.1:free`
   - `reflection/beam-1.0-501b-a23b:free` — 신규 등재 (501B MoE)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
+  - 무료 모델 확인: [Nous Portal 모델 목록](https://portal.nousresearch.com/models) — 페이지를 열면 'Free Models' 섹션과 FREE 필터 버튼으로 무료 모델을 바로 볼 수 있음 (단, 필터 상태가 URL에 남지 않아 주소만으로는 필터 화면을 공유할 수 없음 — 2026-10-21 라이브 브라우저 확인). 기계적 확인 원본은 [공식 API 모델 목록](https://inference-api.nousresearch.com/v1/models)의 `:free`·가격 $0 항목.
+  - 2026-10-21 08:10 기준 무료 7종→8종 (공식 API 가격 $0 기준, 무새 직접 확인): `ornith/ornith-1.5-122b:free` 신규 등재. 현재 8종: `meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free`·`ornith/ornith-1.5-122b:free`·`poolside/laguna-s-2.1:free`·`poolside/laguna-xs-2.1:free`·`reflection/beam-1.0-501b-a23b:free`·`stepfun/step-3.7-flash:free`·`upstage/solar-mini4:free`. 대표 3종 변경 없음 (출처: https://inference-api.nousresearch.com/v1/models).
   - 2026-10-20 06:00 기준 무료 8종→7종 (공식 API 가격 $0 기준, 직접 확인): `stepfun/step-5-preview:free`가 카탈로그에서 제거됨 (유료 변형 `step-5-preview`만 잔류). 잔류 7종: `meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free`·`poolside/laguna-s-2.1:free`·`poolside/laguna-xs-2.1:free`·`reflection/beam-1.0-501b-a23b:free`·`stepfun/step-3.7-flash:free`·`upstage/solar-mini4:free`. 대표에서 `step-5-preview:free` 제외, `step-3.7-flash:free` 편입 (출처: https://inference-api.nousresearch.com/v1/models).
   - 2026-10-17 18:00 기준 무료 8종 유지이나 구성 변경 (공식 API 가격 $0 기준, 재확인): `stealth/missingno`가 카탈로그에서 제거되고 `reflection/beam-1.0-501b-a23b:free`가 신규 등재. 대표 3종: `stepfun/step-5-preview:free`·`poolside/laguna-s-2.1:free`·`reflection/beam-1.0-501b-a23b:free`. 현재 8종: `meituan/longcat-2.0:free`·`meituan/longcat-2.5-preview:free`·`poolside/laguna-s-2.1:free`·`poolside/laguna-xs-2.1:free`·`reflection/beam-1.0-501b-a23b:free`·`stepfun/step-3.7-flash:free`·`stepfun/step-5-preview:free`·`upstage/solar-mini4:free` (출처: https://inference-api.nousresearch.com/v1/models).
   - 2026-10-14 06:00 기준 무료 8종 (공식 API 가격 $0 기준): `stealth/missingno`, `stepfun/step-5-preview:free`, `meituan/longcat-2.5-preview:free`, `meituan/longcat-2.0:free`, `stepfun/step-3.7-flash:free`, `upstage/solar-mini4:free`, `poolside/laguna-s-2.1:free`, `poolside/laguna-xs-2.1:free`. `inclusionai/ling-3.1-flash`는 2주 체험 종료 후 유료 전환 확인 (입력 $0.075/1M, 출력 $0.225/1M) — 무료 목록에서 제거. `inclusionai/ling-3.0-flash-sante:free`·`inclusionai/ling-3.0-flash-fin:free`는 카탈로그에서 완전 삭제됨 (유료 variant `inclusionai/ling-3.0-flash`는 별도 유지, $0 아님). 대표 3순위에서 `sante:free` 제외, `step-5-preview:free` 편입. ※ `inclusionai/ling-3.1-flash`는 2026-09-30 출시 2주 무료 체험 모델 (**체험 종료 2026-10-13 확정** — Vercel AI Gateway "free to use through October 13, 2026"·Cline 10/3 발표·LLMTR 조건 공식 확인 — 10/14 아침에 Nous Portal·OpenRouter 양쪽에서 유료 전환 확인, 이후 오픈소스 공개 예정 — TechNode 보도). OpenCode Zen의 `ling-3.1-flash-free`는 10/14 아침에도 목록 유지 — 제거 미발생 (반영 지연 또는 유예, 다음 워치 재확인). `poolside/laguna-s-2.1:free`·`laguna-xs-2.1:free`는 API 응답상 `expiration_date`가 2026-10-31로 표기됨 — 이후 무료 지속 여부는 다음 워치에서 확인 (2026-10-08 라이브 확인).
@@ -417,7 +419,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 무료 조건 안내</summary>
 
   - 공식 FAQ: "Our core AI models are free to use indefinitely". 가격 페이지에서 `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 청구 확인.
-  - [Agnes AI](https://agnes-ai.com) — 공식 문구 "Promotional end dates are subject to Agnes AI platform announcements"
+  - 무료 확인 링크: [Agnes AI 공식 가격표 (Model Pricing)](https://agnes-ai.com/en/docs/pricing) — 무료 모델만 모아보는 전용 페이지·필터는 없음 (2026-10-21 라이브 확인). 이 가격표의 'Current price' 열에서 `agnes-2.5-flash`·`agnes-3.0-flash` 모두 입력·출력·캐시 입력 전부 '$0 / M'으로 표시되고 'Current offers' 섹션에도 현재 무료로 명시됨. 기존에 걸려 있던 홈페이지 주소(`https://agnes-ai.com`)는 가격을 바로 확인할 수 없어 이 가격표로 교체함. 공식 문구 "Promotional end dates are subject to Agnes AI platform announcements"
 
   </details>
 
@@ -425,7 +427,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **API**: OpenAI 호환. 엔드포인트 `https://apihub.agnes-ai.com/v1`
 - **도구 호출**: 미확인
 - **제한**: 카드 불필요. $0은 상시 계약이 아니라 현재 가격 책정 — 종료 시 유료 전환 가능. 2026-09-14 검증 목록 등록, 9/24 프로브 확인 (provisional 상태)
-- **출처**: https://agnes-ai.com , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/agnes-ai.md
+- **출처**: https://agnes-ai.com/en/docs/pricing , https://github.com/mvalentsev/awesome-free-ai-coding/blob/HEAD/providers/agnes-ai.md
 - **비고**: 프로모션 $0 제공자라 우선순위 낮음. 무료 종료 시 Tracker에서 제거 검토.
 
 <a id="bazaarlink"></a>
@@ -544,6 +546,10 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **AnyRouter** — OpenAI 호환 공식 확인 (엔드포인트 `https://anyrouter.dev/api/v1/chat/completions`, `anyrouter/free` 자동 라우팅 + BYOK 지원). 상시 무료 Free plan $0 (체험 아님·일일 캡 없음 — 무료 모델 2400 req/min per key), 카드 불필요 (공식 FAQ "no card required"). 271모델·17개 제공자 게이트웨이. 유료 모델 호출 시 402 반환 (월 크레딧 없음). 등록 여부 형님 판단 대기 (2026-10-21 신규 후보). (출처: https://anyrouter.dev/blog/free-llm-api-for-students, https://anyrouter.dev/blog/anyrouter-pricing-free-vs-go)
 
 ## 변경 이력
+
+- 2026-10-21: 무료 모델 확인 링크 전수 점검·정정 (형님 지시 — "명확하게 확인되는 페이지로 등록" 기준 적용): ① OpenRouter — 필터 없는 전체 목록(`https://openrouter.ai/models`)을 가격 $0 필터 적용 주소(`https://openrouter.ai/models?max_price=0`, 직접 열어도 필터 유지·전부 $0 표기 — 라이브 브라우저 확인)로 교체, 무료 전용 컬렉션 링크 병기. ② OpenCode Zen — 모델 목록이 없는 안내 페이지(`https://opencode.ai/zen`)를 공식 문서 'Free models' 섹션(`https://opencode.ai/v2/docs/console/models/#free-models`)으로 교체 (문서 목록과 API 카탈로그가 달라 집계는 API `-free` 기준 유지 — 2026-10-21 08:10 API 재확인 9종 동일). ③ Agnes AI — 홈페이지 주소를 공식 가격표(`https://agnes-ai.com/en/docs/pricing`, 두 모델 'Current price' 전부 $0 / M 확인)로 교체하고 '가격표'임을 명시 (무료 전용 페이지·필터는 없음). ④ Nous Portal — 모델 목록 페이지에 'Free Models' 섹션·FREE 필터가 있으나 필터 상태가 URL에 남지 않음을 명시하고 API 원본 링크 병기.
+
+- 2026-10-21: Nous Portal — 무료 7종→8종: `ornith/ornith-1.5-122b:free` 신규 등재 (2026-10-21 08:10 공식 API 가격 $0 직접 확인, 웹 모델 목록의 FREE 8종과 일치). 대표 3종 변경 없음 (출처: https://inference-api.nousresearch.com/v1/models).
 
 - 2026-10-21: NVIDIA NIM — '더보기' 무료 모델 확인 링크 정정 (형님 제보): 기존 메인 주소 `https://build.nvidia.com`는 무료 목록으로 바로 가지 않아, 'Free Endpoint' 필터가 적용된 모델 목록 주소 `https://build.nvidia.com/models?filters=nimType%3Anim_type_preview`로 교체 (2026-10-21 라이브 브라우저 직접 확인 — 필터 적용 시 39종 표시·전 카드 'Free Endpoint' 배지, 직접 열어도 필터 유지됨). 메인 페이지 대표 무료 라인업 4종 표기는 별도 항목으로 분리해 유지.
 
