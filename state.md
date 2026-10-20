@@ -100,7 +100,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 무료 추론 모델: [build.nvidia.com](https://build.nvidia.com) — 'Free inference with leading models' 섹션에서 확인 (예고 없이 변경됨, 2026-10-16 기준 4종: `nvidia/nemotron-3.5-super-vl-120b-a12b`, `deepseek-ai/deepseek-v4.1-flash`, `nvidia/nemotron-3.5-lightning-30b-a3b`, `nvidia/nemotron-3-ultra-550b-a55b`). `moonshotai/kimi-k3`는 2026-10-16 확인에서 `nvidia/nemotron-3.5-super-vl-120b-a12b`로 교체됨 (페이지 전체 텍스트에 'kimi' 언급 없음, 라이브 브라우저 재확인).
+  - 전체 무료 모델 목록: [NVIDIA NIM 무료 모델 목록 — Free Endpoint 필터](https://build.nvidia.com/models?filters=nimType%3Anim_type_preview) — 모델 목록 페이지에서 'Free Endpoint' 필터를 켠 주소로, 무료 엔드포인트 모델만 모아볼 수 있음 (2026-10-21 라이브 브라우저 직접 확인: 필터 적용 시 39종 표시, 모든 카드에 'Free Endpoint' 배지, 주소를 직접 열어도 필터 유지됨). 기존에 걸려 있던 메인 주소(`https://build.nvidia.com`)는 무료 목록으로 바로 가지 않아 이 주소로 교체함.
+  - 메인 페이지 'Free inference with leading models' 섹션의 대표 무료 라인업 (예고 없이 변경됨, 2026-10-16 기준 4종: `nvidia/nemotron-3.5-super-vl-120b-a12b`, `deepseek-ai/deepseek-v4.1-flash`, `nvidia/nemotron-3.5-lightning-30b-a3b`, `nvidia/nemotron-3-ultra-550b-a55b`). `moonshotai/kimi-k3`는 2026-10-16 확인에서 `nvidia/nemotron-3.5-super-vl-120b-a12b`로 교체됨 (페이지 전체 텍스트에 'kimi' 언급 없음, 라이브 브라우저 재확인).
   - `meta/llama-3.3-70b-instruct`는 2026-09-30 기준 전면 무료 라인업 노출에서 제외됨 — 무료 종료 여부는 공식 미확인 (모델 페이지는 로그인 요구로 가려져 있음)
 
   </details>
@@ -543,6 +544,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **AnyRouter** — OpenAI 호환 공식 확인 (엔드포인트 `https://anyrouter.dev/api/v1/chat/completions`, `anyrouter/free` 자동 라우팅 + BYOK 지원). 상시 무료 Free plan $0 (체험 아님·일일 캡 없음 — 무료 모델 2400 req/min per key), 카드 불필요 (공식 FAQ "no card required"). 271모델·17개 제공자 게이트웨이. 유료 모델 호출 시 402 반환 (월 크레딧 없음). 등록 여부 형님 판단 대기 (2026-10-21 신규 후보). (출처: https://anyrouter.dev/blog/free-llm-api-for-students, https://anyrouter.dev/blog/anyrouter-pricing-free-vs-go)
 
 ## 변경 이력
+
+- 2026-10-21: NVIDIA NIM — '더보기' 무료 모델 확인 링크 정정 (형님 제보): 기존 메인 주소 `https://build.nvidia.com`는 무료 목록으로 바로 가지 않아, 'Free Endpoint' 필터가 적용된 모델 목록 주소 `https://build.nvidia.com/models?filters=nimType%3Anim_type_preview`로 교체 (2026-10-21 라이브 브라우저 직접 확인 — 필터 적용 시 39종 표시·전 카드 'Free Endpoint' 배지, 직접 열어도 필터 유지됨). 메인 페이지 대표 무료 라인업 4종 표기는 별도 항목으로 분리해 유지.
 
 - 2026-10-21: Api.Airforce — 아침 워치(06:00 공개 API 라이브 확인): tier-free 29종 유지. `kimi-k2.7-code`가 operational→major_outage로 전환, `unmoderated-gpt`는 operational→partial_outage로 전환. 반면 `glm-4.7-flash`(degraded→정상)·`rnj-1`(major_outage→정상)·`gpt-oss-20b`(degraded→정상)은 복귀, `gemma3-270m:free`는 major_outage→partial_outage로 완화 — 현재 정상 5종 (`gpt-oss-20b`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`·`rnj-1`). 대표 3종(`gpt-oss-20b`·`mistral-large-4`·`llama-instant`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
