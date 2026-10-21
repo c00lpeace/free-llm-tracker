@@ -531,7 +531,6 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 공식 확인이 안 돼 Tracker에 등록하지 않은 후보 목록. 확인되면 등록, 기준 미달이면 제외.
 
-- **Ollama Cloud** — Free $0 플랜 존재는 공식 확인, 하지만 starter 무료 모델 목록이 비공개 (가입 후 확인 필요). 2026-10-15 형님 결정으로 제외. (출처: https://ollama.com/pricing)
 - **Typhoon (SCB 10X)** — 공식 FAQ "research showcase and free to use", OpenAI 호환 (`https://api.opentyphoon.ai/v1`). 태국어 특화 모델이라 형님 판단 대기 중 (2026-10-15). (출처: https://docs.opentyphoon.ai/en/faq/)
 - **Agnes AI** — `agnes-2.5-flash`·`agnes-3.0-flash` 현재 $0 청구 확인 (공식 Docs 가격표, 2026-10-19 아침 직접 확인 — 무료 프로모션 명시). 단 "프로모션" 표기라 종료 시 유료 전환 가능 — 조건부 후보.
 - **Kilo Code 게이트웨이** — 익명 시간당 200회/IP 무료로 보이나 `mayTrainOnYourPrompts` 표기 — 데이터 정책 확인 필요.
@@ -546,6 +545,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **AnyRouter** — OpenAI 호환 공식 확인 (엔드포인트 `https://anyrouter.dev/api/v1/chat/completions`, `anyrouter/free` 자동 라우팅 + BYOK 지원). 상시 무료 Free plan $0 (체험 아님·일일 캡 없음 — 무료 모델 2400 req/min per key), 카드 불필요 (공식 FAQ "no card required"). 271모델·17개 제공자 게이트웨이. 유료 모델 호출 시 402 반환 (월 크레딧 없음). 등록 여부 형님 판단 대기 (2026-10-21 신규 후보). (출처: https://anyrouter.dev/blog/free-llm-api-for-students, https://anyrouter.dev/blog/anyrouter-pricing-free-vs-go)
 
 ## 변경 이력
+
+- 2026-10-21: Ollama Cloud — '확인 필요' 후보에서도 완전 제외 (형님 최종 결정): 모델 목록은 로그인을 해야만 확인 가능하고, 무료 모델 정보는 가입된 이메일로 일시적으로만 보내주는 방식이라 공개적으로 명확히 확인할 수 없음 — A안 3순위(확인 수단 자체가 없음) 적용. 2026-10-15 본 목록 제외에 이은 최종 정리로, 비공식 프로브 결과를 메모로 남기는 안도 함께 종결. '확인 필요' 후보 13건→12건. (출처: https://ollama.com/pricing)
 
 - 2026-10-21: 무료 모델 확인 링크 전수 점검·정정 (형님 지시 — "명확하게 확인되는 페이지로 등록" 기준 적용): ① OpenRouter — 필터 없는 전체 목록(`https://openrouter.ai/models`)을 가격 $0 필터 적용 주소(`https://openrouter.ai/models?max_price=0`, 직접 열어도 필터 유지·전부 $0 표기 — 라이브 브라우저 확인)로 교체, 무료 전용 컬렉션 링크 병기. ② OpenCode Zen — 모델 목록이 없는 안내 페이지(`https://opencode.ai/zen`)를 공식 문서 'Free models' 섹션(`https://opencode.ai/v2/docs/console/models/#free-models`)으로 교체 (문서 목록과 API 카탈로그가 달라 집계는 API `-free` 기준 유지 — 2026-10-21 08:10 API 재확인 9종 동일). ③ Agnes AI — 홈페이지 주소를 공식 가격표(`https://agnes-ai.com/en/docs/pricing`, 두 모델 'Current price' 전부 $0 / M 확인)로 교체하고 '가격표'임을 명시 (무료 전용 페이지·필터는 없음). ④ Nous Portal — 모델 목록 페이지에 'Free Models' 섹션·FREE 필터가 있으나 필터 상태가 URL에 남지 않음을 명시하고 API 원본 링크 병기.
 
