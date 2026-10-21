@@ -33,6 +33,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - [Api.Airforce](#api-airforce)
 - [Agnes AI](#agnes-ai)
 - [BazaarLink](#bazaarlink)
+- [Ollama Cloud](#ollama-cloud)
 - [Cline](#cline)
 - [기간 한정 무료](#limited-free)
 - [변경 이력](#changelog)
@@ -452,6 +453,30 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **출처**: https://bazaarlink.ai/free
 - **비고**: 영구 무료 티어라 조사 범위 충족. 일 한도가 작아(짧은 요청 기준 일 ~60회 수준) 테스트·가벼운 폴백용. 운영사 대만 소재.
 
+<a id="ollama-cloud"></a>
+
+## Ollama Cloud <span class="prio p-low">낮음</span>
+
+- **대표 무료 모델 (2026-10-21 라이브 확인):**
+  - `beam` — Reflection의 501B MoE (약 23B 활성), 코딩·에이전트·추론용, 1M 컨텍스트. 클라우드 모델 페이지에 'free' 태그가 붙은 유일한 모델 (2026-10-16 공식 블로그에서 기간 한정 무료 공지 — 종료일 미공지)
+  <details>
+  <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 전체 클라우드 모델: [Ollama 모델 검색 — Cloud 필터](https://ollama.com/search?c=cloud) — 로그인 없이 확인 가능. 클라우드 모델 21개 중 'free' 태그 모델은 `beam` 1개뿐 (2026-10-21 라이브 전수 확인). 나머지 20개는 모델별 가격 표기 (예: `minimax-m3.1-flash` 입력 $0.15 · 출력 $0.60 / 1M 토큰). `beam`은 공식 가격표의 모델 가격 목록에도 유일하게 빠져 있어 무료와 정합함.
+  - 기간 한정 무료 프로모션 (상시 목록이 아니라 공식 블로그·SNS 건별 공지 방식):
+    - `beam` — 2026-10-16 공식 블로그 "Reflection's Beam is freely available on Ollama for a limited time" (기간 한정, 종료일 미공지, zero data retention 표기) (출처: https://ollama.com/blog/reflection-beam)
+    - `minimax-m3.1-flash` — 2026-10-19 공식 SNS 공지로 Ollama Cloud에서 3일간 무료 (종료 2026-10-22 23:59 UTC = 한국 시간 2026-10-23 08:59). 블로그 게시물은 없고 가격표에는 정가로 등재돼 있어, 프로모션 확인은 SNS 공지 기준.
+  - Free 플랜 starter 사용량: Free 계정에 starter 모델용 월간 사용량이 포함됨 (공식 블로그 'transparent pricing' 2026-08-31 + 가격 페이지 FAQ 확인) — 단, 어떤 모델이 starter인지는 공개 명단이 없고 크레딧 금액도 미공개 (미확인).
+
+  </details>
+
+- **한도**: Free 플랜 $0 — starter usage credits 포함, 가입일 기준 월별 리셋·이월 불가, 동시 요청 1개 (공식 가격 페이지 FAQ). starter 크레딧의 구체 금액은 미공개.
+- **API**: OpenAI 호환 API·Anthropic API·Ollama API 제공 (공식 SNS 공지 명시). 클라우드 모델은 `:cloud` 태그로 호출 (예: `ollama run beam:cloud`).
+- **도구 호출**: 지원 (클라우드 모델 페이지의 tools 태그 표기 — beam 포함).
+- **제한**: 사용하려면 Ollama 계정 가입 필요. 카드 필요 여부는 가격 페이지에 관련 문구가 없어 미확인. 무료 형태가 ① free 태그 모델(기간 한정) ② 건별 기간 한정 프로모션 ③ starter 월간 사용량(명단 미공개)의 조합이라, 특정 모델의 상시 무료로 단정할 수 있는 것은 없음.
+- **출처**: https://ollama.com/search?c=cloud , https://ollama.com/pricing , https://ollama.com/blog/reflection-beam
+- **비고**: 2026-10-15 본 목록 제외, 2026-10-21 형님 결정으로 '확인 필요' 후보에서도 완전 제외했으나, 같은 날 형님이 클라우드 모델 페이지가 로그인 없이 열리고 free 태그로 무료 모델을 특정할 수 있음을 직접 확인해 재등록으로 전환. 제외 사유였던 'starter 명단 비공개'는 여전히 유효하므로, 등록 범위를 공개 확인 가능한 free 태그 모델 + 공식 공지 프로모션으로 한정함.
+
 <a id="cline"></a>
 
 ## Cline <span class="prio p-no">연동 불가</span>
@@ -478,6 +503,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 | [Nous Portal](#nous-portal) `ling-3.1-flash` | 2주 무료 체험 | **2026-10-13 (Vercel·Cline·LLMTR 공식 확인)** — **10/14 아침 유료 전환 확인** (Nous Portal·OpenRouter 양쪽, 입력 $0.075/1M·출력 $0.225/1M). OpenCode Zen의 `ling-3.1-flash-free`는 종료일(10/13) 이틀 뒤인 10/15 아침에 목록에서 제거 확인 — 체험 종료 완료 | O |
 | `space-bunny-alpha` ([Nous Portal](#nous-portal)·[OpenRouter](#openrouter)) | 기간 한정 무료 등재 | 만료(2026-10-05) → 양쪽 카탈로그에서 제거 확인 (2026-10-06) | O |
 | laguna `:free` ([OpenRouter](#openrouter)·[Nous Portal](#nous-portal)) | 무료 제공 만료일 2026-10-31 표기 (이후 지속 여부 확인 필요) | 2026-10-31 (laguna-s-2.1·laguna-xs-2.1만 유지 — 10/21 확인, inkling 2종은 만료일 표기 사라짐) | O |
+| [Ollama Cloud](#ollama-cloud) `beam`·`minimax-m3.1-flash` | 기간 한정 무료 (공식 블로그·SNS 건별 공지) | beam: 종료일 미공지 / minimax-m3.1-flash: 2026-10-23 08:59 KST | O |
 | [Cline](#cline) 무료 모델 | 기간 한정 프로모션 | 모델별 상이 | X (API 미제공) |
 
 <a id="zerolimitai"></a>
@@ -545,6 +571,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **AnyRouter** — OpenAI 호환 공식 확인 (엔드포인트 `https://anyrouter.dev/api/v1/chat/completions`, `anyrouter/free` 자동 라우팅 + BYOK 지원). 상시 무료 Free plan $0 (체험 아님·일일 캡 없음 — 무료 모델 2400 req/min per key), 카드 불필요 (공식 FAQ "no card required"). 271모델·17개 제공자 게이트웨이. 유료 모델 호출 시 402 반환 (월 크레딧 없음). 등록 여부 형님 판단 대기 (2026-10-21 신규 후보). (출처: https://anyrouter.dev/blog/free-llm-api-for-students, https://anyrouter.dev/blog/anyrouter-pricing-free-vs-go)
 
 ## 변경 이력
+
+- 2026-10-21: Ollama Cloud — 재등록 (형님 결정 전환): 같은 날 '확인 필요'에서도 완전 제외했으나, 형님이 클라우드 모델 페이지(https://ollama.com/search?c=cloud)가 로그인 없이 열리고 모델별 가격·'free' 태그로 무료 여부를 특정할 수 있음을 직접 확인해 재등록으로 전환. 라이브 전수 확인 (2026-10-21 저녁): 클라우드 모델 21개 중 free 태그는 `beam` 1개뿐 (가격표 모델 목록에서도 beam만 누락 — 무료와 정합). 공식 블로그 확인: beam 기간 한정 무료 공지 (2026-10-16, 종료일 미공지), Free 플랜 starter 월간 사용량 (명단·금액 미공개). MiniMax M3.1 Flash 기간 한정 무료(공식 SNS 공지, 2026-10-23 08:59 KST 종료)도 기간 한정 요약표에 병기. 등록 범위는 공개 확인 가능한 free 태그 모델 + 공식 공지 프로모션으로 한정.
 
 - 2026-10-21: Ollama Cloud — '확인 필요' 후보에서도 완전 제외 (형님 최종 결정): 모델 목록은 로그인을 해야만 확인 가능하고, 무료 모델 정보는 가입된 이메일로 일시적으로만 보내주는 방식이라 공개적으로 명확히 확인할 수 없음 — A안 3순위(확인 수단 자체가 없음) 적용. 2026-10-15 본 목록 제외에 이은 최종 정리로, 비공식 프로브 결과를 메모로 남기는 안도 함께 종결. '확인 필요' 후보 13건→12건. (출처: https://ollama.com/pricing)
 
