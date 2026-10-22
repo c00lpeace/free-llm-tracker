@@ -225,7 +225,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
-  - 2026-10-22 06:00 확인: 유료 모델(GLM-5.3 등)의 Cached Input Storage 열에 "Limited-time Free" 표기 확인 — 무료 3종에는 없음, 무료 상태 변화 없음. 이 열 표기는 기준선에 기록이 없어 신규 여부 미확인 — 다음 워치 비교 포인트 (공식 가격표 직접 확인 — https://docs.z.ai/guides/overview/pricing).
+  - 2026-10-22 18:00 확인: 유료 모델(GLM-5.3 등)의 Cached Input Storage 열 "Limited-time Free" 표기 유지 (페이지 Updated 2026-10-21) — 신설 시점은 페이지에서 확인 불가. 무료 3종에는 "Limited-time Free" 표기 없음 — 무료 상태 변화 없음 (공식 가격표 직접 확인 — https://docs.z.ai/guides/overview/pricing).
   - 2026-10-15 확인: 공식 가격표에서 무료 3종이 본문 요금 테이블→"Other Pricing"(레거시) 접힘 섹션으로 이동 (라이브 브라우저 직접 확인). 3종 모두 입력·캐시·출력 전부 Free 유지, "Limited-time Free" 라벨 없음 — 무료 상태 변화 없음. 향후 변경 전조일 수 있어 관찰 유지.
   - 2026-10-07 공식 가격표 확인 기준 Free 3종: `glm-4.7-flash`·`glm-4.5-flash`·`glm-4.6v-flash` (입력·캐시 입력·출력 전부 Free, "Limited-time Free" 표기 없음 — 상시 무료). 유료 플래그십(GLM-5.3 등)은 별도 유료
   - 전체 목록: [Z.ai 공식 가격표](https://docs.z.ai/guides/overview/pricing)
@@ -270,12 +270,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OpenCode Zen <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, OpenCode 내부 전용 — 2026-10-22 06:00 `/v1/models` API 확인, 무료 10종):**
+- **대표 무료 모델 (사용성 순, OpenCode 내부 전용 — 2026-10-22 18:00 `/v1/models` API 확인, 무료 9종):**
   - `deepseek-v4.1-flash-free` — 고속 플래그십
   - `glm-5.3-flash-free` — 멀티모달 플래시
   - `jev-1.13-free` — TypeSafe의 빠른 구조화 판단(선택/점수) 모델
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 2026-10-22 18:00 기준 무료 10종→9종 (`/v1/models` API 직접 확인): `longcat-2.5-preview-free`가 카탈로그에서 제거됨. 기존 9종 전부 잔류. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. 현재 9종: `beam-free`·`deepseek-v4.1-flash-free`·`flint-40b-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`mimo-v2.6-flash-free`·`minimax-m3.1-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free` (출처: https://opencode.ai/zen/v1/models).
 
   - 2026-10-22 06:00 기준 무료 9종→10종 (`/v1/models` API 직접 확인): `flint-40b-free` 신규 등재 (Recursive Flint의 Zen ID — 10/21 공개, 40B/2.5B MoE 오픈 웨이트 코딩 모델 — 출처: https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/). 기존 9종 전부 잔류. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. 현재 10종: `beam-free`·`deepseek-v4.1-flash-free`·`flint-40b-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`longcat-2.5-preview-free`·`mimo-v2.6-flash-free`·`minimax-m3.1-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free` (출처: https://opencode.ai/zen/v1/models).
   - 무료 모델 목록: [OpenCode Zen 공식 문서 — Free models 섹션](https://opencode.ai/v2/docs/console/models/#free-models) — 사람이 보는 공식 문서 페이지에 무료 모델이 명시돼 있음 (2026-10-21 라이브 확인 — 구 Docs 주소 `opencode.ai/docs/zen/`는 이 페이지로 리다이렉트됨. 기존에 걸려 있던 `https://opencode.ai/zen` 페이지는 모델 목록 자체가 없는 안내 페이지라 이 문서로 교체함). 단, 문서 목록(스텔스·기간 한정 포함 14종 표기)과 API 카탈로그가 서로 달라, 무료 집계는 [`/v1/models` API](https://opencode.ai/zen/v1/models)의 `-free` ID 기준 (로테이션됨). 2026-10-21 08:10 API 재확인에서도 9종 동일. 2026-10-20 18:00 기준 무료 9종 (10종→9종, `/v1/models` API 직접 확인): `space-bunny-free`가 카탈로그에서 제거됨. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. 현재 9종: `beam-free`·`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`·`longcat-2.5-preview-free`·`mimo-v2.6-flash-free`·`minimax-m3.1-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free` (출처: https://opencode.ai/zen/v1/models).
@@ -382,7 +384,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-22 06:00 공개 API 라이브 확인 + 5분 간격 재확인, 정상 5종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-10-22 18:00 공개 API 라이브 확인, 정상 7종):**
   - `kimi-k2.7-code` — 무료 티어, 정상 운영 (major_outage→정상 복귀)
   - `mistral-large-4` — 무료 티어, 정상 운영 (분 단위 변동 중이라 사용 전 재확인 필수)
   - `llama-instant` — 무료 티어, 정상 운영
@@ -390,6 +392,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 무료 모델 목록](https://api.airforce/ko/models/?plans=free) (한국어, Free 플랜 필터) · [모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 2026-10-22 18:00 공개 API 라이브 확인 (last_check 2026-10-22T09:16:57Z, 재확인 09:20:06Z — 2회 연속 동일): tier-free 29종 유지. `glm-4.7-flash`가 major_outage→operational로 정상 복귀, `unmoderated-gpt`는 partial_outage→operational로 복귀, `gemma3-270m:free`는 major_outage→degraded로 개선 — 현재 정상 7종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`glm-4.7-flash`·`unmoderated-gpt`). 대표 3종(`kimi-k2.7-code`·`mistral-large-4`·`llama-instant`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+
   - 2026-10-22 06:00 공개 API 라이브 확인 + 5분 간격 재확인 (2회 연속 동일): tier-free 29종 유지. `gpt-oss-20b`가 partial_outage→operational로 정상 복귀, `unmoderated-gpt`는 operational→partial_outage로 악화, `glm-4.7-flash`는 degraded→major_outage로 악화. `kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`은 operational 유지, `gemma3-270m:free`는 major_outage 유지 — 현재 정상 5종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`). 대표 3종(`kimi-k2.7-code`·`mistral-large-4`·`llama-instant`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-21 18:00 공개 API 라이브 확인 + 18:05 재확인 (last_check 2026-10-21T09:02:39Z, 2회 연속 동일): tier-free 29종 유지. `gpt-oss-20b`가 operational→partial_outage로 전환, `glm-4.7-flash`는 operational→degraded로 전환. 반면 `kimi-k2.7-code`(major_outage→정상)·`unmoderated-gpt`(partial_outage→정상)는 복귀, `llama-instant`·`mistral-large-4`는 정상 유지 — 현재 정상 4종 (`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`unmoderated-gpt`). 대표에서 `gpt-oss-20b` 제외, `kimi-k2.7-code` 편입. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
   - 2026-10-21 06:00 공개 API 라이브 확인: tier-free 29종 유지. `kimi-k2.7-code`가 operational→major_outage로 전환, `unmoderated-gpt`는 operational→partial_outage로 전환. 반면 `glm-4.7-flash`(degraded→정상)·`rnj-1`(major_outage→정상)·`gpt-oss-20b`(degraded→정상)는 복귀, `gemma3-270m:free`는 major_outage→partial_outage로 완화 — 현재 정상 5종 (`gpt-oss-20b`·`llama-instant`·`mistral-large-4`·`glm-4.7-flash`·`rnj-1`). 대표 3종(`gpt-oss-20b`·`mistral-large-4`·`llama-instant`)은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
@@ -452,6 +456,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 무료 조건 안내</summary>
 
   - 공식 페이지: [BazaarLink Free](https://bazaarlink.ai/free) — "Free — No Credit Card Required"
+  - 2026-10-22 18:00 확인 (카탈로그 스냅샷 2026-10-22 07:44 UTC, 프로브 기준 08 UTC): 무료 6종 유지 (동일 ID) — 목록 변동 없음. 24h 프로브(샘플 23개): `qwen/qwen3.7-flash` 100%(23/23)·`deepseek/deepseek-v4-flash-0731free` 100%(23/23)·`nvidia/nemotron-3.5-lightning-free` 100%(23/23)·`reflection/beam-free` 100%(23/23, 96%→상승)·`reflection/beam` 96%(22/23, 100%→소폭 하락)·`stealth/glyph-cluster` 65%(15/23, 63%→소폭 상승). 대표 2종은 모두 100% — 대표 변경 없음 (출처: https://bazaarlink.ai/free).
+
   - 2026-10-22 06:00 확인 (카탈로그 스냅샷 2026-10-21 17:46 UTC): 무료 6종 유지 (동일 ID). 24h 프로브: `qwen/qwen3.7-flash` 100%(24/24)·`deepseek/deepseek-v4-flash-0731free` 100%(24/24)·`nvidia/nemotron-3.5-lightning-free` 100%(24/24)·`reflection/beam` 100%(24/24)·`reflection/beam-free` 96%(23/24)·`stealth/glyph-cluster` 63%(15/24, 52%→상승) (출처: https://bazaarlink.ai/free).
   - 무료 모델은 "enabled free models" 표에서만 제공 (로테이션 가능)
 
@@ -476,7 +482,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   - 전체 클라우드 모델: [Ollama 모델 검색 — Cloud 필터](https://ollama.com/search?c=cloud) — 로그인 없이 확인 가능. 클라우드 모델 21개 중 'free' 태그 모델은 `beam` 1개뿐 (2026-10-21 라이브 전수 확인). 나머지 20개는 모델별 가격 표기 (예: `minimax-m3.1-flash` 입력 $0.15 · 출력 $0.60 / 1M 토큰). `beam`은 공식 가격표의 모델 가격 목록에도 유일하게 빠져 있어 무료와 정합함.
   - 기간 한정 무료 프로모션 (상시 목록이 아니라 공식 블로그·SNS 건별 공지 방식):
     - `beam` — 2026-10-16 공식 블로그 "Reflection's Beam is freely available on Ollama for a limited time" (기간 한정, 종료일 미공지, zero data retention 표기) (출처: https://ollama.com/blog/reflection-beam)
-    - `minimax-m3.1-flash` — 2026-10-19 공식 SNS 공지로 Ollama Cloud에서 3일간 무료 (종료 2026-10-22 23:59 UTC = 한국 시간 2026-10-23 08:59). 블로그 게시물은 없고 가격표에는 정가로 등재돼 있어, 프로모션 확인은 SNS 공지 기준.
+    - `minimax-m3.1-flash` — 2026-10-19 공식 SNS 공지로 Ollama Cloud에서 3일간 무료 (종료 2026-10-22 23:59 UTC = 한국 시간 2026-10-23 08:59). 2026-10-22 저녁 확인: 모델 상세 페이지 Cost 패널에 "free until Oct 22, 2026 11:59 PM UTC"(= 2026-10-23 08:59 KST) 배지 표시 확인 — 종료 시점이 공식 페이지에서 확인됨. 목록 카드에는 여전히 정가(입력 $0.15·출력 $0.60/1M) 표기. 만료(10/23 08:59 KST) 여부는 내일 아침 워치에서 확인 (출처: https://ollama.com/search?c=cloud).
   - Free 플랜 starter 사용량: Free 계정에 starter 모델용 월간 사용량이 포함됨 (공식 블로그 'transparent pricing' 2026-08-31 + 가격 페이지 FAQ 확인) — 단, 어떤 모델이 starter인지는 공개 명단이 없고 크레딧 금액도 미공개 (미확인).
 
   </details>
@@ -574,14 +580,24 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 - **Routeway** — OpenAI 호환 무료 `:free` 9종이나 공식 이용약관상 결제 수단 등록 필수 — 카드 불필요 기준 미달로 제외 권고, 형님 답 대기 중.
 - **LLMTR** — 등록 보류 유지.
 - **Cloudflare Workers AI** — OpenAI 호환 공식 확인 (`/ai/v1/chat/completions`·`/ai/v1/responses`, 도구 호출 지원 — 2026-10-16 공식 Docs·3자 검증). 무료 10,000 Neurons/day (전 플랜 공통, 일 00:00 UTC 리셋, 카드 불필요 — 2026-10-21 아침 확인에서 표기 유지, 문서 Updated 2026-10-20). 일부 모델(Kimi K2.6/K2.7-code·GLM-5.2 등)은 Workers Paid 플랜 필요로 제외 — 무료 모델 목록은 공식 카탈로그에서 추가 확인 필요 (2026-10-16 신규 후보). (출처: https://developers.cloudflare.com/workers-ai/platform/pricing/, https://developers.cloudflare.com/ai-gateway/usage/rest-api/)
-- **UnoRouter** — OpenAI 호환 공식 확인 (`/v1/chat/completions`, "Any OpenAI-compatible client", 모델 페이지에 Tools/Reasoning 태그 — 모델별 상이). 공식 홈페이지 "Free 110, No cost"(2026-10-22 아침 라이브 브라우저 직접 확인 — 분 단위 변동 중; MODELS 245·PROVIDERS 39+·PAID 135 — 이전: 10/21 저녁 "Free 111")·모델별 입·출력 $0.00/1M, 카드 불필요 ("No credit card needed to start"). 무료 한도 수치 공개됨 (2026-10-21 저녁 'Rate Limits & Errors' 공식 문서 라이브 확인): 무료 모델당 사용자당 분당 1요청 (1 RPM per free model per user), 일부 무료 풀은 일일 토큰 예산 (UTC 자정 초기화) + TPM 캡 + 사용자당 병렬 요청 제한, 유료 모델은 UnoRouter 자체 제한 없음. 등록 여부 형님 판단 대기 (2026-10-17 신규 후보). (출처: https://unorouter.com/en, https://unorouter.com/en/docs/platform/errors-and-rate-limits)
+- **UnoRouter** — OpenAI 호환 공식 확인 (`/v1/chat/completions`, "Any OpenAI-compatible client", 모델 페이지에 Tools/Reasoning 태그 — 모델별 상이). 공식 홈페이지 "Free 113, No cost"(2026-10-22 저녁 텍스트 추출 직접 확인 — 분 단위 변동 중; MODELS 248·PROVIDERS 42+·PAID 135 — 이전: 10/22 아침 "Free 110")·모델별 입·출력 $0.00/1M, 카드 불필요 ("No credit card needed to start"). 무료 한도 수치 공개됨 (2026-10-21 저녁 'Rate Limits & Errors' 공식 문서 라이브 확인): 무료 모델당 사용자당 분당 1요청 (1 RPM per free model per user), 일부 무료 풀은 일일 토큰 예산 (UTC 자정 초기화) + TPM 캡 + 사용자당 병렬 요청 제한, 유료 모델은 UnoRouter 자체 제한 없음. 등록 여부 형님 판단 대기 (2026-10-17 신규 후보). (출처: https://unorouter.com/en, https://unorouter.com/en/docs/platform/errors-and-rate-limits)
 - **DreamPrompting** — OpenAI 호환 공식 확인 (`https://dreamprompting.com/api/v1`). 공식 가격 페이지 기준 무료 플랜 (카드·구독 불필요), 한도 IP당 100 RPM + 계정당 24h 롤링 5,000 요청/500,000 토큰. 자체 모델 없이 27개 업스트림 제공자 무료 티어로 라우팅하는 게이트웨이 (공유 할당량 방식). 2026-10-20 저녁: 공식 홈페이지에 라우트 테이블 공개 — 13개 제공자 live 상태 (Groq·Mistral(La Plateforme)·NVIDIA NIM·Cohere·Google AI Studio·OpenRouter·Cloudflare Workers AI·Hugging Face·Codestral·ch.at 등, 무료 티어 우선 라우팅), 14개 추가 제공자 'being enabled'. 런칭일 미공개라 "신규 제공자" 확정은 불가 — 등록 여부 형님 판단 대기 (2026-10-20 신규 후보). (출처: https://dreamprompting.com)
 - **Inferbase** — OpenAI 호환 공식 확인 (엔드포인트 `https://api.inferbase.ai/v1`, client-compatibility 문서). 영구 무료 Free 플랜 ("$0 no time limit", "A free plan, not a trial"), 카드 불필요. 한도: 월 5,000 requests (any model/any key) + managed inference 일 100 requests/$0.50 of model usage (초과 시 402), 키당 60 RPM·managed 10 RPM/organization, 요청당 입력 8,192/출력 1,024 토큰 예산. 자체 provider 계정으로 서빙하는 managed inference를 공유 할당량으로 제공하는 게이트웨이 ("Build on every model within daily limits"). 등록 여부 형님 판단 대기 (2026-10-20 신규 후보 — mvalentsev/awesome-free-ai-coding 'New this week'). (출처: https://inferbase.ai/pricing)
-- **IteraCompute** — OpenAI 호환 공식 확인 (엔드포인트 `https://api.iteracompute.com/v1/chat/completions`, tool calling·streaming 지원). `qwen/qwen3.8-27b` 무료 (입·캐시 입력·출력 전부 $0/1M), 카드 불필요. 한도: 월 30M tokens (일 할당 없음, 매월 1일 00:00 UTC 리셋, 초과 시 429), TPM 160,000, context 128K (출력 8,192 cap). 자체 GPU 인프라에서 서빙 ("Itera Hosted Online"). 카탈로그 2026-10-19 업데이트. 등록 여부 형님 판단 대기 (2026-10-20 신규 후보 — mvalentsev/awesome-free-ai-coding 'New this week'). (출처: https://iteracompute.com/free/)
+- **IteraCompute** — OpenAI 호환 공식 확인 (엔드포인트 `https://api.iteracompute.com/v1/chat/completions`, tool calling·streaming 지원). `qwen/qwen3.8-27b` 무료 (입·캐시 입력·출력 전부 $0/1M), 카드 불필요. 한도: 월 30M tokens (일 할당 없음, 매월 1일 00:00 UTC 리셋, 초과 시 429), TPM 160,000, context 128K (출력 8,192 cap). 자체 GPU 인프라에서 서빙 ("Itera Hosted Online"). 카탈로그 2026-10-19 업데이트. 등록 여부 형님 판단 대기 (2026-10-20 신규 후보 — mvalentsev/awesome-free-ai-coding 'New this week'). ※ 2026-10-22 저녁 확인: `moonshotai/kimi-k3-free`도 카탈로그에 있으나 누적 $10 이상 충전 시에만 $0 — 카드 불필요 기준 미달. (출처: https://iteracompute.com/free/)
 - **SimpleLLM** — OpenAI 호환 공식 확인 (`POST /v1/chat/completions`, `https://api.simplellm.eu/v1`). 무료 모델 2종 — `free-Llama-3.1-8B-Instruct`·`free-gemma-4-E4B` (공개 카탈로그 API `https://simplellm.eu/api/models`에서 `is_free`·enabled·available 직접 확인). 계정+API 키 발급 필요, 카드 불필요 (3자 확인). 무료 모델 별 시간/일 요청·토큰 예산 (3자 검증: Free models only / 100 RPH / 1,000 RPD / 50,000 TPM / 500,000 TPD). 독일 Stage One Solutions UG 운영. 2026-10-22 확인: `is_free:true`이나 `status:"planned"`·`enabled:false`인 2종(`Mistral-7B-Instruct-v0.3`, `kode-14b`)이 카탈로그에 신규 등장 — 사용 불가라 본 목록 변경 없음, 관찰 메모로 유지. 등록 여부 형님 판단 대기 (2026-10-20 신규 후보 — mvalentsev/awesome-free-ai-coding 'New this week'). (출처: https://simplellm.eu/docs/models.md, https://simplellm.eu/api/models)
 - **AnyRouter** — OpenAI 호환 공식 확인 (엔드포인트 `https://anyrouter.dev/api/v1/chat/completions`, `anyrouter/free` 자동 라우팅 + BYOK 지원). 상시 무료 Free plan $0 (체험 아님·일일 캡 없음 — 무료 모델 2400 req/min per key), 카드 불필요 (공식 FAQ "no card required"). 271모델·17개 제공자 게이트웨이. 유료 모델 호출 시 402 반환 (월 크레딧 없음). 등록 여부 형님 판단 대기 (2026-10-21 신규 후보). (출처: https://anyrouter.dev/blog/free-llm-api-for-students, https://anyrouter.dev/blog/anyrouter-pricing-free-vs-go)
 
 ## 변경 이력
+
+- 2026-10-22: OpenCode Zen — 저녁 워치(18:00 `/v1/models` API 직접 확인): 무료 10종→9종 — `longcat-2.5-preview-free`가 카탈로그에서 제거됨. 기존 9종 전부 잔류. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`glm-5.3-flash-free`·`jev-1.13-free`)은 전부 잔류 — 대표 변경 없음. Zen 무료 티어는 Hermes 외부 사용 불가라 형님 연결에는 영향 없음 (출처: https://opencode.ai/zen/v1/models).
+
+- 2026-10-22: Api.Airforce — 저녁 워치(18:00 공개 API 라이브 확인, last_check 2026-10-22T09:16:57Z, 재확인 09:20:06Z — 2회 연속 동일): tier-free 29종 유지. `glm-4.7-flash`가 major_outage→operational로 정상 복귀, `unmoderated-gpt`는 partial_outage→operational로 복귀, `gemma3-270m:free`는 major_outage→degraded로 개선 — 현재 정상 7종 (`gpt-oss-20b`·`kimi-k2.7-code`·`llama-instant`·`mistral-large-4`·`rnj-1`·`glm-4.7-flash`·`unmoderated-gpt`). 대표 3종은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+
+- 2026-10-22: 저녁 워치 — 위 4건 외 변동 없음: OpenRouter(`:free` 18종 유지, 전원 prompt/output $0, 만료일 표기 유지 — 공개 API 직접 확인)·LLM7.io(turbo 5종 유지 — 라이브 API 직접 확인)·Nous Portal(무료 8종 유지 — 라이브 API 직접 확인)·OrcaRouter($0 `-free` 6종 유지 — pricing API 직접 확인)·Token Harbor(Free 2종 유지 — 라이브 브라우저 직접 확인)·AnyAPI(Free 4종 유지 — 라이브 브라우저 직접 확인)·Groq(한도 동일, "Developer plan의 기본 한도" 표기 유지 — 한도 문서 직접 확인)·NVIDIA NIM(대표 무료 라인업 4종 유지·'kimi' 언급 없음, Free Endpoint 필터 42종 — 라이브 브라우저 직접 확인)·Gemini(Flash 계열 Free Tier 유지 — 가격표 직접 확인)·AIHubMix(25종 유지, 대표 3종 잔류 — '27+' 공식 표기는 10/17부터 동일 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 Free 유지 — 공식 가격표 직접 확인; 유료 모델 Cached Input Storage 열 "Limited-time Free" 표기 유지, 무료 3종에는 없음)·Agnes AI($0 프로모션 유지 — 공식 Docs 가격표 직접 확인)·Hetzner(실험 무료 2종·한도 동일 — 공식 Docs 확인)·ZeroLimitAI('Free week — $0 for 7 days' 유지 — 개발자 페이지 직접 확인)·Cline(API 미지원 유지 — 문서 직접 확인)·Cloudflare Workers AI(무료 10,000 Neurons/day 표기 유지, 문서 Updated 2026-10-20 — 공식 가격 문서 직접 확인)·BazaarLink(무료 6종 유지, 24h 프로브 갱신 — 무료 페이지 직접 확인)·SimpleLLM(무료 2종 유지 — 공개 카탈로그 API 직접 확인, 확인 필요 후보)·Inferbase·IteraCompute·DreamPrompting(유지 — 확인 필요 후보; IteraCompute의 kimi-k3-free는 누적 $10+ 충전 시에만 $0라 카드 불필요 기준 미달). 신규 상시 무료 제공자 없음 — awesome-free-ai-coding에 2026-10-22 새 커밋 없음.
+
+- 2026-10-22: Ollama Cloud — 저녁 워치(18:00 라이브 브라우저 직접 확인): free 태그는 `beam` 1개 유지, 클라우드 모델 21개 동일 — 목록 변동 없음. `minimax-m3.1-flash` 상세 페이지 Cost 패널에 "free until Oct 22, 2026 11:59 PM UTC"(= 2026-10-23 08:59 KST) 배지 표시 확인 — 프로모션 종료 시점이 공식 페이지에서 확인됨 (아침엔 목록 카드 정가 표기만, 상세 배지는 미확인). 만료(10/23 08:59 KST) 여부는 내일 아침 워치에서 확인 (출처: https://ollama.com/search?c=cloud).
+
+- 2026-10-22: 확인 필요 — UnoRouter 무료 표기 "Free 110"→"Free 113"으로 3 증가 확인 (MODELS 245→248·PROVIDERS 39+→42+·PAID 135 유지, 공식 홈페이지 텍스트 추출 직접 확인 — 분 단위 변동 중). 등록 여부 형님 판단 대기 유지 (출처: https://unorouter.com/en).
 
 - 2026-10-22: OpenRouter — 아침 워치(06:00 공개 API 라이브 확인): `:free` 17종→18종 (prompt/output $0 직접 확인). `recursive/flint-v1.0:free` 신규 등재 — Recursive가 10/21 공개한 40B/2.5B MoE 오픈 웨이트 코딩 모델 (SWE-bench Pro v2 89.7% 자체 보고·Apache 2.0·262K 컨텍스트·도구 호출·추론 지원 — 출처: https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/). 기존 17종 전부 잔류. 만료일 표기 유지 (`dots-3-note-preview:free` 2026-12-31·laguna 2종 2026-10-31). 대표 3종 전부 잔류 — 대표 변경 없음 (출처: https://openrouter.ai/api/v1/models).
 
