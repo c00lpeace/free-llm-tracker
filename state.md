@@ -360,12 +360,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## LLM7.io <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-11-20 06:00 라이브 API 직접 확인 + 재확인, 2회 동일, turbo 4종):**
-  - `gpt-oss:20b` — 20B 플래그십 (기존 #2 → #1 승격)
-  - `codestral-latest` — 코딩 특화 (#2 편입)
-  - `gemma-3-27b` — 27B 범용 (#3 편입)
+- **대표 무료 모델 (사용성 순, turbo 티어 — 2026-11-23 18:00 라이브 API 직접 확인 + 재확인, 2회 동일, turbo 6종):**
+  - `DeepSeek-V4-Flash-0731` — DeepSeek 플래그십 플래시 (복귀, #1 편입)
+  - `gpt-oss:20b` — 20B 플래그십 (#1 → #2)
+  - `codestral-latest` — 코딩 특화 (#2 → #3)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 2026-11-23 18:00 라이브 API 직접 확인 + 재확인 (2회 동일) 기준 turbo(무료) 티어 4종→6종: `DeepSeek-V4-Flash-0731`·`minimax-m2.7`이 카탈로그에 복귀 (전원 usage_based_only=false — 무료 토큰 접근 가능). 잔류 6종: `codestral-latest`·`gemma-3-27b`·`gpt-oss:20b`·`mistral-Nemo-Instruct-2407` + 복귀 2종. 대표 변경: `DeepSeek-V4-Flash-0731`을 #1으로 신규 편입, `gpt-oss:20b`를 #2로, `codestral-latest`를 #3으로 (출처: https://api.llm7.io/v1/models).
 
   - 2026-11-20 06:00 라이브 API 직접 확인 + 재확인 (2회 동일) 기준 turbo(무료) 티어 7종→4종: `gemma4:31b`·`glm-5.3-flash`·`mimo-v2.6-flash`가 turbo→pro 티어로 유료 전환 (pro 표기 확인). 잔류 4종: `codestral-latest`·`gemma-3-27b`·`gpt-oss:20b`·`mistral-Nemo-Instruct-2407` (전원 usage_based_only=false — 무료 토큰 접근 가능). 대표 변경: `glm-5.3-flash`(#1)·`mimo-v2.6-flash`(#3) 제외로 `gpt-oss:20b`를 #1으로 승격, `codestral-latest`를 #2로, `gemma-3-27b`를 #3으로 신규 편입 (출처: https://api.llm7.io/v1/models).
 
@@ -1125,6 +1127,7 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 변경 이력
 
+- 2026-11-23: LLM7.io — 저녁 워치 직후 검수(라이브 API 직접 확인 + 재확인, 2회 동일): turbo(무료) 티어 4종→6종 — `DeepSeek-V4-Flash-0731`·`minimax-m2.7`이 저녁 워치 스냅샷(18:02 KST, 4종) 직후 카탈로그에 복귀 (전원 usage_based_only=false — 무료 토큰 접근 가능). 대표 변경: `DeepSeek-V4-Flash-0731`을 #1으로 신규 편입, `gpt-oss:20b`를 #2로, `codestral-latest`를 #3으로 (출처: https://api.llm7.io/v1/models).
 - 2026-11-23: OpenRouter — 저녁 워치(공개 API 직접 확인 + 재확인, 2회 동일): `:free` 11종→12종 — `dots-studio/dots-3-note-preview:free`가 카탈로그에 복귀 (2026-11-21 제거 후 2일 만에 복귀, prompt/output $0 확인, expiration_date 2026-12-31 표기 유지 — 원래 만료일 그대로). 대표 변경: `dots-studio/dots-3-note-preview:free`를 #1으로 복원, `recursive/flint-v1.0:free`를 #2로, `nvidia/nemotron-3-ultra-550b-a55b:free`를 #3으로 조정, `particle-ai/particle-1:free`는 대표에서 제외 (출처: https://openrouter.ai/api/v1/models).
 - 2026-11-23: OpenCode Zen — 저녁 워치(`/v1/models` API 직접 확인 + 재확인, 2회 동일): 무료 10종→11종 — `qwen4-max-free` 신규 등재 (Qwen4 Max 플래그십 멀티모달 모델, API 메타데이터 release_date 2026-11-16 — Nous Portal의 `qwen/qwen4-max:free`와 동일 모델). 대표 3종 전부 잔류 — 대표 변경 없음. Hermes 외부 사용 불가라 Hermes 연결에는 영향 없음 (출처: https://opencode.ai/zen/v1/models).
 - 2026-11-23: Hetzner Inference API — 저녁 워치(공식 Docs 직접 확인): 실험 종료일 2026-12-08 공식 확인 — Docs에 'This Experiment will end on 8 December 2026' 문구 신규 표기 (11/11 3자 정리글 주장의 공식 확인). base URL이 `https://inference.hetzner.com/v1`로 변경 (구 `/api/v1` 표기는 문서에서 소실). 실험 무료 2종·한도 동일 (출처: https://docs.hetzner.com/general/company-and-policy/experiments/inference/).
