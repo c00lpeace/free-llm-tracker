@@ -102,6 +102,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 무료 모델 목록: [NVIDIA NIM 무료 모델 목록 — Free Endpoint 필터](https://build.nvidia.com/models?filters=nimType%3Anim_type_preview) — 모델 목록 페이지에서 'Free Endpoint' 필터를 켠 주소로, 무료 엔드포인트 모델만 모아볼 수 있음 (2026-10-21 18:00 라이브 브라우저 직접 확인 — 필터 적용 시 42종 표시. 2026-10-23 18:00 재확인에서 43종 (42→43, 1종 증가), 모든 카드에 'Free Endpoint' 배지, 주소를 직접 열어도 필터 유지됨). 기존에 걸려 있던 메인 주소(`https://build.nvidia.com`)는 무료 목록으로 바로 가지 않아 이 주소로 교체함.
+  - 2026-11-23 18:00 curl 페이지 추출 확인: Free Endpoint 39종 유지 (본문 '39 models' 표기 유지, 대표 4종 전부 확인 — 대표 변경 없음). `nvidia/nemotron-3-embed-1b`(임베딩 모델)에 'Deprecated' 표기 신규 확인 (채팅 모델 아님 — 무료 채팅 범위 변경 없음). 목록 최상단 kimi-k3.1-pro 잔류, `deepseek-v4.1-flash` 없음 (출처: https://build.nvidia.com/models?filters=nimType%3Anim_type_preview).
+
   - 2026-11-20 18:00 라이브 브라우저 직접 확인 + curl 페이지 추출 교차 확인 (2회 동일): Free Endpoint 38종→39종 (1종 증가 — 증가 모델 특정 불가, 정렬 기본값 Most Recent라 추가 모델이 1페이지 상단에 오면서 2페이지 구성 변경). 본문 '39 models'·좌측 필터 'Free Endpoint 39'·SSR 페이로드 resultTotal 39·실제 카드 39개(1페이지 24개 + 2페이지 15개) 일치. 대표 무료 4종(`nvidia/nemotron-3.5-super-vl-120b-a12b`·`moonshotai/kimi-k3.1-pro`·`nvidia/nemotron-3.5-lightning-30b-a3b`·`nvidia/nemotron-3-ultra-550b-a55b`)이 필터 목록에서 전부 확인됨 — 대표 변경 없음. 목록 최상단 kimi-k3.1-pro 잔류, `deepseek-v4-pro-0813` 없음 (출처: https://build.nvidia.com/models?filters=nimType%3Anim_type_preview).
 
   - 2026-11-20 06:00 라이브 브라우저 직접 확인 + curl 페이지 추출 교차 확인 (2회 동일): Free Endpoint 39종→38종 (1종 감소 — 제거 모델 특정 불가, 11/19 저녁 39종 전체 목록 미보관). 본문 '38 models'·SSR 페이로드 resultTotal 38·실제 카드 38개(1페이지 24개 + 2페이지 14개) 일치. 대표 무료 4종(`nvidia/nemotron-3.5-super-vl-120b-a12b`·`moonshotai/kimi-k3.1-pro`·`nvidia/nemotron-3.5-lightning-30b-a3b`·`nvidia/nemotron-3-ultra-550b-a55b`)이 필터 목록에서 전부 확인됨 — 대표 변경 없음. 목록 최상단 kimi-k3.1-pro 잔류, `deepseek-v4-pro-0813` 없음 (출처: https://build.nvidia.com/models?filters=nimType%3Anim_type_preview).
@@ -242,14 +244,16 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OpenRouter (이전 조사) <span class="prio p-mid">중간</span>
 
-- **대표 무료 모델 (사용성 순, 2026-11-21 18:00 기준 — 로테이션됨):**
-  - `recursive/flint-v1.0:free` — 오픈 웨이트 코딩 모델, 도구 호출·추론 지원 (#2→#1 승격)
-  - `nvidia/nemotron-3-ultra-550b-a55b:free` — 초대형 (#3→#2 승격)
-  - `particle-ai/particle-1:free` — 토큰 효율 에이전트 코딩 모델, 1M 컨텍스트 (신규 편입)
+- **대표 무료 모델 (사용성 순, 2026-11-23 18:00 기준 — 로테이션됨):**
+  - `dots-studio/dots-3-note-preview:free` — 오픈 웨이트 추론 모델, 512K 컨텍스트 (복귀 — #1 복원)
+  - `recursive/flint-v1.0:free` — 오픈 웨이트 코딩 모델, 도구 호출·추론 지원 (#1→#2)
+  - `nvidia/nemotron-3-ultra-550b-a55b:free` — 초대형 (#2→#3)
   <details>
   <summary>더보기 — 전체 무료 모델 안내</summary>
 
   - 전체 무료 모델: [OpenRouter 무료 모델 목록 — 가격 $0 필터](https://openrouter.ai/models?max_price=0) — 가격 필터(max_price=0)가 적용된 주소로, 열면 $0 모델만 보임 (2026-10-21 라이브 브라우저 직접 확인 — 직접 열어도 필터 유지, 표시 모델 전부 `(free)`·$0 표기, 모델명 끝에 `:free`, 로테이션됨). 무료 전용 컬렉션 [Free AI Models on OpenRouter](https://openrouter.ai/collections/free-models)도 있음 (사용량 기준 상위 무료 모델 랭킹)
+  - 2026-11-23 18:00 공개 API 라이브 확인 + 재확인 (2회 동일): `:free` 11종→12종 — `dots-studio/dots-3-note-preview:free`가 카탈로그에 복귀 (2026-11-21 제거 후 2일 만에 복귀, prompt/output $0 직접 확인, expiration_date 2026-12-31 표기 유지 — 원래 만료일 그대로). 잔류 11종 전부 잔류. 대표 변경: `dots-studio/dots-3-note-preview:free`를 #1으로 복원, `recursive/flint-v1.0:free`를 #2로, `nvidia/nemotron-3-ultra-550b-a55b:free`를 #3으로 조정, `particle-ai/particle-1:free`는 대표에서 제외 (출처: https://openrouter.ai/api/v1/models).
+
   - 2026-11-21 18:00 공개 API 라이브 확인 + 재확인 (2회 동일): `:free` 12종→11종 — `dots-studio/dots-3-note-preview:free`가 카탈로그에서 제거됨 (유료 변형도 카탈로그에 없음 — `dots` 검색 무결과, 완전 제거 — 만료일 2026-12-31 표기였으나 약 40일 조기 종료). 잔류 11종 전부 잔류. 대표 변경: `dots-studio/dots-3-note-preview:free`(#1) 제외, `recursive/flint-v1.0:free`를 #1으로, `nvidia/nemotron-3-ultra-550b-a55b:free`를 #2로 승격, `particle-ai/particle-1:free`를 #3으로 신규 편입 (출처: https://openrouter.ai/api/v1/models).
 
   - 2026-11-20 18:00 공개 API 라이브 확인 + 재확인 (2회 동일): `:free` 13종→12종 — `cohere/north-mini-code:free`가 카탈로그에서 제거됨 (유료 변형도 카탈로그에 없음 — `cohere`·`north` 검색 무결과, 완전 제거). 잔류 12종 전부 잔류. 대표 변경: `cohere/north-mini-code:free`(#2) 제외, `recursive/flint-v1.0:free`를 #2로 신규 편입 (출처: https://openrouter.ai/api/v1/models).
@@ -412,12 +416,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## OpenCode Zen <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (사용성 순, OpenCode 내부 전용 — 2026-11-23 06:00 `/v1/models` API 확인, 무료 10종):**
+- **대표 무료 모델 (사용성 순, OpenCode 내부 전용 — 2026-11-23 18:00 `/v1/models` API 확인, 무료 11종):**
   - `deepseek-v4.1-flash-free` — 고속 플래그십
   - `hy4-flash-free` — Tencent Hy4 플래시, 1M 컨텍스트·도구 호출·추론 지원 (11/16 신규 등재)
   - `flint-40b-free` — 오픈 웨이트 코딩 모델 (40B MoE, 10/21 공개)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
+
+  - 2026-11-23 18:00 기준 무료 10종→11종 (`/v1/models` API 직접 확인 + 재확인 2회 동일): `qwen4-max-free` 신규 등재 (Qwen4 Max — 플래그십 멀티모달 모델, 코딩·오피스·프론트엔드·복잡한 에이전트 작업용, API 메타데이터 release_date 2026-11-16 — Nous Portal의 `qwen/qwen4-max:free`와 동일 모델). 기존 10종 전부 잔류. `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`hy4-flash-free`·`flint-40b-free`)은 전부 잔류 — 대표 변경 없음. 현재 11종: `beam-free`·`deepseek-v4.1-flash-free`·`flint-40b-free`·`hy4-flash-free`·`iceman-free`·`jev-1.13-free`·`mimo-v2.6-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free`·`qwen4-max-free`·`tidepool-alpha-free` (출처: https://opencode.ai/zen/v1/models).
 
   - 2026-11-23 06:00 기준 무료 11종→10종 (`/v1/models` API 직접 확인 + 재확인 3회 동일): `longcat-2.5-free`가 카탈로그에서 완전 제거됨 (카탈로그 내 'longcat' 검색 무결과 — 유료 변형도 없음, 완전 제거, 2026-11-10 등재 후 13일 만에 종료). `big-pickle`(스텔스)은 카탈로그 잔류 (`-free` 접미사 없음 — 무료 집계 제외). 대표 3종(`deepseek-v4.1-flash-free`·`hy4-flash-free`·`flint-40b-free`)은 전부 잔류 — 대표 변경 없음. 현재 10종: `beam-free`·`deepseek-v4.1-flash-free`·`flint-40b-free`·`hy4-flash-free`·`iceman-free`·`jev-1.13-free`·`mimo-v2.6-flash-free`·`nemotron-3.5-lightning-free`·`nemotron-3.5-super-vl-free`·`tidepool-alpha-free` (출처: https://opencode.ai/zen/v1/models). ※ 3자 추적 저장소 같은 날 커밋 f1f72fc 'fix: reconcile retired OpenCode free models'에서도 LongCat 무료 할당량 제거 확인 — 독립 교차 확인 (출처: https://github.com/mvalentsev/awesome-free-ai-coding/commit/f1f72fc45b4d322586381ce6f4eae1cc0f457183).
 
@@ -640,14 +646,16 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## Api.Airforce <span class="prio p-low">낮음</span>
 
-- **대표 무료 모델 (`tier: "free"` 기준 — 2026-11-23 06:00 공개 API 라이브 확인 + 재확인, 3회 동일, tier-free 26종·정상 4종):**
+- **대표 무료 모델 (`tier: "free"` 기준 — 2026-11-23 18:00 공개 API 직접 확인, tier-free 26종·정상 3종):**
   - `kimi-k2.7-code` — 무료 티어, 정상 복귀 (major_outage→operational, 2026-11-09 아침 확인 — 1회 비정상 후 복귀라 대표 유지)
-  - `llama-instant` — 무료 티어, 2026-11-21 저녁 degraded→operational 복귀 (아침 1회 비정상 후 회복 — 대표 유지)
+  - `llama-instant` — 무료 티어, 2026-11-23 저녁 operational→partial_outage 전환 (1회 비정상, 분 단위 뒤집힘 범위 내라 대표 유지)
   - `mistral-large-4` — 무료 티어, 정상 복귀 (major_outage→operational, 2026-11-12 아침 확인 — 2회 확인 동일, 대표 #3 복원)
   <details>
   <summary>더보기 — 전체 무료 모델 목록</summary>
 
   - 전체 목록: [Api.Airforce 무료 모델 목록](https://api.airforce/ko/models/?plans=free) (한국어, Free 플랜 필터) · [모델 카탈로그 API](https://api.airforce/v1/models) — `tier: "free"`인 항목이 무료 (2026-10-15 기준 전체 657종 중 29종). ※ `access_tiers`는 유료 모델도 전부 `["free"]`라 무료 지표로 사용 불가.
+  - 2026-11-23 18:00 공개 API 직접 확인: tier-free 26종 유지. 정상 4종→3종 — `llama-instant`가 operational→partial_outage로 전환 (대표 #2 — 1회 비정상, 분 단위 뒤집힘 범위 내라 대표 유지). 정상 3종 (`kimi-k2.7-code`·`mistral-large-4`·`gpt-oss-20b`). `gemma3-270m:free`는 major_outage 유지 (대표 아님). 대표 3종 중 `kimi-k2.7-code`·`mistral-large-4`는 정상, `llama-instant`만 비정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
+
   - 2026-11-23 06:00 공개 API 라이브 확인 + 재확인 (3회 동일): tier-free 26종 유지. `gemma3-270m:free`가 degraded→major_outage로 악화 (대표 아님 — 11/22 저녁 degraded, 오늘 major_outage). 정상 4종 (`kimi-k2.7-code`·`mistral-large-4`·`gpt-oss-20b`·`llama-instant`) 유지. 대표 3종은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
 
   - 2026-11-22 18:00 공개 API 라이브 확인 (1차와 2·3차 상충 — 최종 2·3차 동일): tier-free 26종 유지. 1차 확인에서 `gemma3-270m:free`가 partial_outage→operational로 회복해 정상 5종이었으나, 2차·3차 확인에서 degraded로 재전환 — 최종 정상 4종 (`kimi-k2.7-code`·`mistral-large-4`·`gpt-oss-20b`·`llama-instant`) 유지. 대표 3종은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 — 사용 전 재확인 필수 (출처: https://api.airforce/v1/models).
@@ -1013,14 +1021,14 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 | 제공자 | 무료 조건 | 종료 예정 | OpenAI 호환 |
 |---|---|---|---|
 | [ZeroLimitAI](#zerolimitai) | 7일 체험, 일 25회 | 키 발급 후 7일 (종료 시 402) | O |
-| [Hetzner Inference API](#hetzner-inference-api) | 실험 단계 무료 | 미정 (사전 이메일 공지) | O |
+| [Hetzner Inference API](#hetzner-inference-api) | 실험 단계 무료 | **2026-12-08** (공식 Docs 2026-11-23 저녁 확인 — 'This Experiment will end on 8 December 2026' 문구 신규 표기) | O |
 | [OpenCode Zen](#opencode-zen) 무료 모델 | 기간 한정 (전 모델) | 모델별 상이 | O |
 | [Nous Portal](#nous-portal) `ling-3.1-flash` | 2주 무료 체험 | **2026-10-13 (Vercel·Cline·LLMTR 공식 확인)** — **10/14 아침 유료 전환 확인** (Nous Portal·OpenRouter 양쪽, 입력 $0.075/1M·출력 $0.225/1M). OpenCode Zen의 `ling-3.1-flash-free`는 종료일(10/13) 이틀 뒤인 10/15 아침에 목록에서 제거 확인 — 체험 종료 완료. ※ 2026-10-30 아침 Nous Portal에 `inclusionai/ling-3.1-flash:free` 변형이 가격 $0으로 재등재 확인 (유료 변형과 별개 ID) — 같은 날 저녁 재제거 확인 (무료 7종→6종, 당일 재등재→재제거) | O |
 | `space-bunny-alpha` ([Nous Portal](#nous-portal)·[OpenRouter](#openrouter)) | 기간 한정 무료 등재 | 만료(2026-10-05) → 양쪽 카탈로그에서 제거 확인 (2026-10-06) | O |
 | laguna `:free` ([OpenRouter](#openrouter)·[Nous Portal](#nous-portal)) | 무료 제공 만료일 2026-10-31 표기 — **2026-11-01 아침 확인: 만료일 경과 후 양쪽 카탈로그에서 완전 제거 확인 — 무료 종료 확정** (10/31 당일에는 아침·저녁 모두 $0 등재 유지됐으나 만료 다음 날 제거됨) | 2026-10-31 → **종료 확정 2026-11-01** | O |
 | [OpenRouter](#openrouter) `minimax-m3.1-flash:free` | 기간 한정 무료 (공식 X 10/19 "72시간 무료" 공지) | **2026-10-23 06:00 카탈로그에서 제거 확인 — 무료 종료 확정** (10/22 저녁까지 $0 유지, 10/23 아침 제거) | O |
 | [OpenRouter](#openrouter) `liquid/lfm-2.5-2.6b:free` | 무료 제공 만료일 2026-11-13 표기 — **2026-11-14 06:00 카탈로그에서 제거 확인 — 무료 종료 확정** (11/13 저녁까지 $0 등재 유지됐으나 만료 다음 날 제거됨) | 2026-11-13 → **종료 확정 2026-11-14** | O |
-| [OpenRouter](#openrouter) `dots-3-note-preview:free` | 무료 제공 만료일 2026-12-31 표기 — **2026-11-21 18:00 카탈로그에서 제거 확인 — 만료일보다 약 40일 조기 종료** (`dots` 검색 무결과, 유료 변형도 없음 — 완전 제거) | 2026-12-31 → **종료 확정 2026-11-21** | O |
+| [OpenRouter](#openrouter) `dots-3-note-preview:free` | 무료 제공 만료일 2026-12-31 표기 — **2026-11-21 18:00 카탈로그에서 제거 확인 후 2026-11-23 18:00 복귀 확인** (prompt/output $0, expiration_date 2026-12-31 표기 유지 — 원래 만료일 그대로) | 2026-12-31 (복귀 — 11/21 조기 종료 후 2일 만에 재등재) | O |
 | [Ollama Cloud](#ollama-cloud) `beam`·`minimax-m3.1-flash` | 기간 한정 무료 (공식 블로그·SNS 건별 공지) | beam: **2026-11-09 18:00 무료 종료 확정** (상세 페이지 Cost 패널 'free until Nov 9, 2026 12:01 AM PST' 문구 소실, 입력 $0.125·캐시 $0.015·출력 $0.40/1M 유료 가격만 표시 — 라이브 브라우저 직접 확인, 종료 예정 17:01 KST 경과 후 확인) / minimax-m3.1-flash: **2026-10-23 08:59 KST 무료 종료 확정** (10/23 저녁 유료 전환 확인) | O |
 | [Cline](#cline) 무료 모델 | 기간 한정 프로모션 | 모델별 상이 | X (API 미제공) |
 
@@ -1056,6 +1064,8 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   <summary>더보기 — 무료 조건 안내</summary>
 
   - 공식 문서 FAQ: "Can I use the Inference API for free? — As long as the Inference API remains in experimental status, it is free of charge. Should this status change, we will notify you in advance via email with detailed information."
+  - 2026-11-23 18:00 공식 Docs 직접 확인: 실험 종료일 문구 신규 표기 — "This Experiment will end on 8 December 2026" (11/11 3자 정리글 주장의 공식 확인 — 종료일 2026-12-08 확정). base URL이 `https://inference.hetzner.com/v1`로 변경 (구 `https://inference.hetzner.com/api/v1` 표기는 문서에서 소실 — 구 base URL 만료). 실험 무료 2종(`Qwen/Qwen3.6-35B-A3B-FP8`·`Qwen3.8-27B`)·한도 동일. 페이지 표기 Last change 2026-07-24 유지 (출처: https://docs.hetzner.com/general/company-and-policy/experiments/inference/).
+
   - 2026-10-31 18:00 라이브 브라우저 직접 확인 (뒤늦게 도착한 결과로 확정, 18:04~18:05 KST): 실험 무료 2종 유지 (`Qwen/Qwen3.6-35B-A3B-FP8`·`Qwen3.8-27B`, 각 262,144 컨텍스트), 한도 동일 (API 키당 60초당 입력 4M·출력 100K·요청 10회, 초과 시 HTTP 429). 페이지 표기 Last change 2026-07-24 — 변경 없음 (출처: https://docs.hetzner.com/general/company-and-policy/experiments/inference/).
   - 2026-11-11 18:00 확인: 3자 정리글(emit-solution.com, 11/04 업데이트)에서 '실험 무료 2026-12-08 종료·신규 실험 키 발급 중단·구 base URL(`https://inference.hetzner.com/api/v1`) 11/10 만료·신 base URL(`/v1`)' 주장 확인 — 같은 날 공식 Docs(Last change 2026-07-24)에는 해당 내용 없음, 구 base URL·실험 무료 FAQ 유지 — 공식 미확인 유지, 다음 워치에서 공식 Docs 재확인 필요 (출처: https://emit-solution.com/en/blog/hetzner-ai-inference-api, https://docs.hetzner.com/general/company-and-policy/experiments/inference/).
   - 3자 자료에서 DeepSeek-V4-Flash-0731·GLM-5.2·Kimi-K2.7-Code 등 추가 모델 언급도 있으나 공식 Docs 기준 미확인
@@ -1063,11 +1073,11 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
   </details>
 
 - **한도**: API 키당 — 60초당 입력 400만 토큰·출력 10만 토큰 + 60초당 10회 요청 제한 (2026-10-06 공식 Docs FAQ 기준 — 기존의 "24시간당 입력 5억·출력 500만 토큰" 표기는 삭제됨, 입력 300만→400만·출력 6만→10만으로 변경)
-- **API**: OpenAI 호환. 엔드포인트 `https://inference.hetzner.com/api/v1`
+- **API**: OpenAI 호환. 엔드포인트 `https://inference.hetzner.com/v1` (2026-11-23 저녁 공식 Docs 기준 — 구 `/api/v1` 표기는 문서에서 소실)
 - **도구 호출**: 미확인 (공식 Docs에 언급 없음)
 - **제한**: 카드 불필요 (Hetzner 무료 계정 + API 토큰). 실험 단계 — "as is" 제공, 성능·가용성 보장 없음, SLA 없음, 프로덕션 비권장
 - **출처**: https://docs.hetzner.com/general/company-and-policy/experiments/inference/
-- **비고**: 2026-07 출시 이후 계속 무료. 종료일이 정해져 있지 않으나 언제든 유료 전환 가능 — 기간 한정으로 분류.
+- **비고**: 2026-07 출시 이후 계속 무료. 2026-11-23 저녁 공식 Docs에 'This Experiment will end on 8 December 2026' 문구 신규 확인 — 실험 종료일 2026-12-08 확정. 종료 후 유료 전환 여부·신규 키 발급 중단 여부는 미공개 — 12/08 전후 종료 여부 확인 필요. 기간 한정으로 분류.
 
 <a id="changelog"></a>
 
@@ -1115,6 +1125,12 @@ Hermes Agent(OCI 무료 인스턴스)에 연결할 무료 LLM API 제공자 조�
 
 ## 변경 이력
 
+- 2026-11-23: OpenRouter — 저녁 워치(공개 API 직접 확인 + 재확인, 2회 동일): `:free` 11종→12종 — `dots-studio/dots-3-note-preview:free`가 카탈로그에 복귀 (2026-11-21 제거 후 2일 만에 복귀, prompt/output $0 확인, expiration_date 2026-12-31 표기 유지 — 원래 만료일 그대로). 대표 변경: `dots-studio/dots-3-note-preview:free`를 #1으로 복원, `recursive/flint-v1.0:free`를 #2로, `nvidia/nemotron-3-ultra-550b-a55b:free`를 #3으로 조정, `particle-ai/particle-1:free`는 대표에서 제외 (출처: https://openrouter.ai/api/v1/models).
+- 2026-11-23: OpenCode Zen — 저녁 워치(`/v1/models` API 직접 확인 + 재확인, 2회 동일): 무료 10종→11종 — `qwen4-max-free` 신규 등재 (Qwen4 Max 플래그십 멀티모달 모델, API 메타데이터 release_date 2026-11-16 — Nous Portal의 `qwen/qwen4-max:free`와 동일 모델). 대표 3종 전부 잔류 — 대표 변경 없음. Hermes 외부 사용 불가라 Hermes 연결에는 영향 없음 (출처: https://opencode.ai/zen/v1/models).
+- 2026-11-23: Hetzner Inference API — 저녁 워치(공식 Docs 직접 확인): 실험 종료일 2026-12-08 공식 확인 — Docs에 'This Experiment will end on 8 December 2026' 문구 신규 표기 (11/11 3자 정리글 주장의 공식 확인). base URL이 `https://inference.hetzner.com/v1`로 변경 (구 `/api/v1` 표기는 문서에서 소실). 실험 무료 2종·한도 동일 (출처: https://docs.hetzner.com/general/company-and-policy/experiments/inference/).
+- 2026-11-23: Api.Airforce — 저녁 워치(공개 API 직접 확인): tier-free 26종 유지, 정상 4종→3종 — `llama-instant`가 operational→partial_outage로 전환 (대표 #2, 1회 비정상 — 분 단위 뒤집힘 범위 내라 대표 유지). 정상 3종 (`kimi-k2.7-code`·`mistral-large-4`·`gpt-oss-20b`). `gemma3-270m:free`는 major_outage 유지. 분 단위 뒤집힘 지속 (출처: https://api.airforce/v1/models).
+- 2026-11-23: 확인 필요 — UnoRouter 텍스트 추출 기준 Free 132→143 (MODELS 273→284·PROVIDERS 49+→52+·PAID 141 유지, 143+141=284 일치) — 분 단위 변동 지속. Teapot Router: 홈페이지 히어로 'signup includes 30,000 credits' 표시 소실 지속, FAQ 'usually it is not' 유지 — 실제 지급 여부 단정 불가. LLMTR 무료 채팅 10종 유지, 라이브 카탈로그 $0 20종 유지 (입력 $0 기준, 어제 스냅샷과 동일 구성 — evren 7종 포함; 입·출력 모두 $0인 모델은 19종); `gemma-4-31b`·`muse-glimmer-30b`·`qwen3.6-35b-a3b`·`creekside/qwen3.8-27b-creekside-free` until 2026-11-24 (1일 남음 — 내일 아침 워치에서 만료 여부 확인 필요); Docs 'free until 1 November 2026' 표기와 라이브 $0 유지 상충 지속. Maritaca AI `S5-free` 공식 Docs 가격표에서 문구 미표시 지속 (어제 스냅샷과 동일 파일) — 3자 검증(Perq 11/19 18:43 KST 무료 유지)과 상충 지속. Ollama Cloud 클라우드 모델 23종 유지 (텍스트 추출 변동은 다운로드 수·경과 일수만 — 무료 범위 변경 없음), free 태그 0종 유지. NVIDIA NIM Free Endpoint 39종 유지, `nvidia/nemotron-3-embed-1b`에 'Deprecated' 표기 신규 확인 (임베딩 모델 — 무료 채팅 범위 변경 없음). 3자 추적 저장소 신규 커밋 없음 (최신 2026-11-22 19:30 UTC 69239d7 — 아침 워치에서 이미 확인한 범위) — 신규 제공자 추가 없음 (출처: https://unorouter.com/en, https://teapotrouter.com, https://llmtr.com/v1/models, https://docs.maritaca.ai/, https://ollama.com/search?c=cloud, https://build.nvidia.com/models?filters=nimType%3Anim_type_preview, https://github.com/mvalentsev/awesome-free-ai-coding/commits/main.atom).
+- 2026-11-23: 저녁 워치 — 위 5건 외 직접 확인한 범위에서 변동 없음: Groq(한도 동일 — gpt-oss-120b/20b·qwen3.8-27b 30 RPM / 1K RPD / 8K TPM / 200K TPD, safeguard 3 RPM — 텍스트 추출본 아침과 동일)·OrcaRouter($0 `-free` 5종 유지, 전체 카탈로그 220종 유지 — pricing API 직접 확인)·Gemini(공식 changelog 최신 항목 2026-11-19 Genie 4 GA 그대로 — 유료 전용 월드 생성 모델, 무료 채팅 모델 변경 없음 — 텍스트 추출본 아침과 동일)·LLM7.io(turbo 4종 유지, 구성 동일 — 라이브 API 직접 확인)·Nous Portal(무료 5종 유지, 전원 가격 $0 — 공식 API 직접 확인)·AIHubMix(대표 3종 잔류, '27+' 공식 표기 유지 — 무료 모델 문서 직접 확인)·Z.ai(Flash 3종 전부 Free 유지 — 공식 가격표 직접 확인)·Token Harbor(Free 2종 유지, `mimo-v2.6-flash:free`·`deepseek-v4.1-flash:free` — 무료 카테고리 페이지 직접 확인)·Agnes AI(`agnes-2.5-flash`·`agnes-3.0-flash` $0 프로모션 유지, `agnes-2.5-flash` 'Retires on November 30, 2026' 표기 유지 (7일 남음 — 11/30 전후 만료 여부 확인 필요) — 공식 Docs 가격표 직접 확인)·AnyAPI(Free 5종 유지 — 텍스트 추출본 아침과 동일)·BazaarLink(무료 4종 유지, 카탈로그 스냅샷 2026-11-23 05:04 UTC — 무료 페이지 직접 확인)·ZeroLimitAI('Free week — $0 for 7 days'·일 25회 유지 — 개발자 페이지 직접 확인, ZeroOptimize 라우팅 상태만 변동)·Cline(무료 모델 API 경유 미지원 문구 유지, Updated 2026-07-29 — 문서 직접 확인)·Cloudflare Workers AI(무료 10,000 Neurons/day 유지 — 공식 가격 문서 직접 확인)·LLM.kiwi(무료 5종 유지 — 공개 카탈로그 API 직접 확인, 확인 필요 후보)·cheapllm.shop(베타 전 계정 무료 유지 — 공식 Docs 직접 확인, 확인 필요 후보)·Requesty(Free $0·일 200회 유지 — 공식 가격표 직접 확인, 확인 필요 후보)·Infron(표준 :free 일 1,000회·$5 잔액 유지 필수 — 공식 Docs 직접 확인, 확인 필요 후보)·SimpleLLM(무료 2종 유지, planned 무료 표기 2종 유지 — 공개 카탈로그 API 직접 확인, 확인 필요 후보)·BeatAPI(무료 3종 유지 — 공식 free-models Docs 직접 확인, 확인 필요 후보)·SenseNova Token Plan(Free·公测 ¥0/월 유지 — 공식 Token Plan 페이지 직접 확인, 확인 필요 후보)·Zro(무료 일일 사용량 `deepseek-v4.1-flash` 유지 — 공식 홈페이지 직접 확인, 확인 필요 후보)·Novita AI(무료 모델 0종 유지 — 공개 모델 카탈로그 API 직접 확인, 확인 필요 후보).
 - 2026-11-23: OpenCode Zen — 아침 워치(`/v1/models` API 직접 확인 + 재확인, 3회 동일): 무료 11종→10종 — `longcat-2.5-free`가 카탈로그에서 완전 제거됨 (카탈로그 내 'longcat' 검색 무결과 — 유료 변형도 없음, 완전 제거, 2026-11-10 등재 후 13일 만에 종료). 대표 3종(`deepseek-v4.1-flash-free`·`hy4-flash-free`·`flint-40b-free`) 전부 잔류 — 대표 변경 없음. Hermes 외부 사용 불가라 Hermes 연결에는 영향 없음. ※ 3자 추적 저장소 같은 날 커밋 f1f72fc 'fix: reconcile retired OpenCode free models'에서도 LongCat 무료 할당량 제거 확인 — 독립 교차 확인 (출처: https://opencode.ai/zen/v1/models, https://github.com/mvalentsev/awesome-free-ai-coding/commit/f1f72fc45b4d322586381ce6f4eae1cc0f457183).
 - 2026-11-23: Api.Airforce — 아침 워치(공개 API 직접 확인 + 재확인, 3회 동일): tier-free 26종 유지, 정상 4종 유지 — `gemma3-270m:free`가 degraded→major_outage로 악화 (대표 아님). 정상 4종 (`kimi-k2.7-code`·`mistral-large-4`·`gpt-oss-20b`·`llama-instant`). 대표 3종은 모두 정상 — 대표 변경 없음. 분 단위 뒤집힘 지속 (출처: https://api.airforce/v1/models).
 - 2026-11-23: Agnes AI — 아침 워치(공식 Docs 가격표 직접 확인): `agnes-2.5-flash`·`agnes-3.0-flash` $0 프로모션 유지, `agnes-2.5-flash` 'Retires on November 30, 2026' 표기 유지 (7일 남음 — 11/30 전후 만료 여부 확인 필요). `agnes-3.0-flash`에는 종료일 표기 없음 (출처: https://agnes-ai.com/en/docs/pricing).
